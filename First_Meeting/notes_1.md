@@ -137,6 +137,8 @@ A contact list application that tracks contacts and their names, phone numbers, 
 
 I deleted a few lines here to test merge conflict- Ainaa
 
+*Hey so I'm assuming we can have multiple branches of changes and them merge them? What I readz online is that we would have to coordinate when we woud push, so I guess everytime we pull first then push any changes* - Marcos
+
 An application that tracks team names and members, for sports or other activities.
 
 A survey application that asks a set of questions and persists the answers for display in a report. To add more complexity, responses could be stored in files based on the current time (to avoid collisions).
