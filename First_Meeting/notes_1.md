@@ -135,9 +135,7 @@ https://launchschool.com/forum?tab=Show+and+Tell
 
 A contact list application that tracks contacts and their names, phone numbers, and email addresses. To add more complexity, assign contacts to categories (friends, family, work, etc).
 
-A flight tracking application that allows a user to enter the airline, flight number, destination, and departure time for a flight.
-
-A monthly budget application that tracks bills, categories or expenses, and provides totals by month or year.
+I deleted a few lines here to test merge conflict- Ainaa
 
 An application that tracks team names and members, for sports or other activities.
 
