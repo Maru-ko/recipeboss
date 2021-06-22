@@ -1,5 +1,8 @@
-# Something to do with Recipes #
+#Recipe related tasks and more#
 
-### getting familiar with 'github' collaboration
+##Recipe App
 
-#### ps this isn't the offical name of anything, I just needed to make a repo... 
+### Group coding acitivity
+
+#### getting familiar with 'github' collaboration
+
