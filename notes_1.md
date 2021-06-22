@@ -135,9 +135,9 @@ https://launchschool.com/forum?tab=Show+and+Tell
 
 A contact list application that tracks contacts and their names, phone numbers, and email addresses. To add more complexity, assign contacts to categories (friends, family, work, etc).
 
-I deleted a few lines here to test merge conflict- Ainaa
+A flight tracking application that allows a user to enter the airline, flight number, destination, and departure time for a flight.
 
-*Hey so I'm assuming we can have multiple branches of changes and them merge them? What I readz online is that we would have to coordinate when we woud push, so I guess everytime we pull first then push any changes* - Marcos
+A monthly budget application that tracks bills, categories or expenses, and provides totals by month or year.
 
 An application that tracks team names and members, for sports or other activities.
 
@@ -146,3 +146,5 @@ A survey application that asks a set of questions and persists the answers for d
 A simple version of any site you use on a daily basis.
 
 An online version of one of the games we wrote in RB101 and RB120.
+
+humidity level is 
