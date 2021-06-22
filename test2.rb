@@ -1,2 +1,2 @@
 require 'prime'
-require 'lets try this?'
+require 'flavor'
