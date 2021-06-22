@@ -1,6 +1,6 @@
-#Recipe related tasks and more#
+# Recipe related tasks and more
 
-##Recipe App
+## Recipe App
 
 ### Group coding acitivity
 
