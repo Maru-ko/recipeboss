@@ -1,1 +1,2 @@
 require 'prime'
+require 'mint'
