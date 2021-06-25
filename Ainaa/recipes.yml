@@ -1,0 +1,32 @@
+---
+- :id: 1
+  :name: Chicken Wing
+  :description: Grandma's good old recipe
+  :cook_time: 50 minutes
+  :ingredients:
+  - Chicken
+  - Flour
+  - Salt
+  - Pepper
+  :steps:
+  - Cut the chicken
+  - Do stuff
+- :id: 2
+  :name: Roast Beef
+  :description: Slow cooked roast beef
+  :cook_time: 2 hour 30 minutes
+  :ingredients:
+  - Beef
+  - Beer
+  :steps:
+  - do stuff
+  - do stuff
+- :id: 3
+  :name: Random recipe 3
+  :description: rand recipe description
+  :ingredients:
+  - random ingredients
+  - random ingredient
+  :steps:
+  - do random
+  - do random stuff
