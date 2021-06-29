@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
 
+require_relative 'recipe_book'
+
 configure do
   enable :sessions
   set :session_secret, 'chicken'
@@ -10,7 +12,7 @@ configure do
 end
 
 before do
-
+  @recipe_book = RecipeBook.new
 end
 
 helpers do
