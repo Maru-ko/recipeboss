@@ -1,29 +1,15 @@
-require 'sinatra'
-require 'sinatra/reloader' if development?
-require 'tilt/erubis'
+require_relative 'ingredient'
+require_relative 'step'
 
-require_relative 'recipe_book'
+class Recipe
+  attr_accessor :id, :name, :description, :cook_time, :ingredients, :steps
 
-configure do
-  enable :sessions
-  set :session_secret, 'chicken'
-
-  set :erb, :escape_html => true
-end
-
-before do
-  @recipe_book = RecipeBook.new
-end
-
-helpers do
- # this is for views
-end
-
-
-
-
-
-get "/" do
-  #{}"<html><body><h1>Welcome to Recipe World</h1></body></html>"
-  erb :index, layout: :layout
+  def initialize(id, name, description, cook_time, ingredients, steps)
+    @id = id
+    @name = name
+    @description = description
+    @cook_time = cook_time
+    @ingredients = ingredients
+    @steps = steps
+  end
 end
