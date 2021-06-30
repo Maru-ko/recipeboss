@@ -27,3 +27,8 @@ get "/" do
   #{}"<html><body><h1>Welcome to Recipe World</h1></body></html>"
   erb :index, layout: :layout
 end
+
+# View the form to add a new recipe
+get "/recipes/new" do
+  erb :new_recipe, layout: :layout
+end
