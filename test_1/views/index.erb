@@ -1,20 +1,10 @@
-<h3>Welcome to Recipe World</h3>
+<h1>Welcome to Recipe World</h1>
 
-  <div class="nav">
-   <p><a href="#">Add Recipe</a></p>
+<p><a href="#">Add Recipe</a></p>
+<p><a href="#">Generate Weekly Menu</a></p>
 
-   <p><a href="">Display All Recipes</a></p>
-
-   <p><a href="">Generate Weekly Menu</a></p>
-  </div>
-
-
-<div>
-  <ul>
-  <% @recipe_book.recipes.each do |recipe| %>
-    <li>
-     <a href="/recipes/<%=recipe.id %>"><%= recipe.name %></a>
-    </li>
+<ul>
+  <% session[:recipe_book].recipes.sort_by{|recipe| recipe.id}.each do |recipe| %>
+    <li><a href="recipes/<%= recipe.name %>"><%= recipe.name %></a></li>
   <% end %>
-  </ul>
-</div>
+</ul>
