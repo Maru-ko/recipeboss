@@ -18,6 +18,11 @@ before do
   session[:recipe_book] ||= RecipeBook.new
 end
 
+def update_recipe(recipe)
+  session[:recipe_book].recipes.reject! { |r| r.name == recipe.name}
+  session[:recipe_book].recipes << recipe
+end
+
 get "/" do
   erb :index, layout: :layout
 end
@@ -49,7 +54,27 @@ post "/recipes/:recipe_name/edit" do
     step.name = params["step_#{step.id}"].strip
   end
 
-  session[:recipe_book].recipes.reject! { |r| r.name == recipe.name}
-  session[:recipe_book].recipes << recipe
-  redirect "/"
+  update_recipe(recipe)
+  redirect "/recipes/#{recipe.name}"
+end
+
+get "/recipes/:recipe_name/ingredients/:ingredient_id/delete" do
+  recipe_name = params[:recipe_name]
+  ingredient_id = params[:ingredient_id].to_i
+  recipe = session[:recipe_book].recipes.select {|recipe| recipe.name == recipe_name}.first
+  recipe.ingredients.reject! {|i| i.id == ingredient_id}
+
+  update_recipe(recipe)
+
+  redirect "/recipes/#{recipe.name}/edit"
+end
+
+get "/recipes/:recipe_name/ingredients/add" do
+  recipe_name = params[:recipe_name]
+  recipe = session[:recipe_book].recipes.select {|recipe| recipe.name == recipe_name}.first
+  current_id = recipe.ingredients.map {|i| i.id}.max
+  current_id ||= 1
+  recipe.ingredients << Ingredient.new(current_id + 1, "")
+
+  redirect "/recipes/#{recipe.name}/edit"
 end

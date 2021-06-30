@@ -10,7 +10,9 @@
       <dt><label for="ingredient">Ingredient</label></dt>
       <% @recipe.ingredients.each do |ingredient| %>
         <dd><input class="ingredient" type="text" name="ingredient_<%= ingredient.id %>" value="<%= ingredient.name %>"></dd>
+        <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/ingredients/<%= ingredient.id %>/delete">Delete</a></dd>
       <% end %>
+      <p><a href="/recipes/<%= @recipe.name %>/ingredients/add">Add</a></p>
 
       <dt><label for="steps">Steps</label></dt>
       <% @recipe.steps.each do |step| %>
