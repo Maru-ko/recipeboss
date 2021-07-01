@@ -11,8 +11,8 @@ configure do
   set :erb, :escape_html => true
 end
 
-before do
-  @recipe_book = RecipeBook.new
+before do  
+  session[:recipe_book] ||= RecipeBook.new
 end
 
 helpers do
