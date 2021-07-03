@@ -1,7 +1,6 @@
 ---
 - :id: 1
   :name: Chicken Wing
-  :description: Grandma's good old recipe
   :cook_time: 50 minutes
   :ingredients:
   - :id: 1
@@ -15,7 +14,6 @@
     :name: add lots of salt
 - :id: 2
   :name: Roast Beef
-  :description: Slow cooked roast beef
   :cook_time: 2 hour 30 minutes
   :ingredients:
   - :id: 3
@@ -29,7 +27,6 @@
     :name: do more stuff
 - :id: 3
   :name: Random new recipe
-  :description: Mom's secret recipe
   :cook_time: 50 minutes
   :ingredients:
   - :id: 5
@@ -49,7 +46,6 @@
     :name: Cook on the grill
 - :id: 5
   :name: Random new recipe
-  :description: Mom's secret recipe
   :cook_time: 50 minutes
   :ingredients:
   - :id: 7

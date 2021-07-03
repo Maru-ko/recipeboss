@@ -23,6 +23,9 @@
   <title>Recipe World</title>
 </head>
 <body>
+  <% if session[:message] %>
+    <p class="message"><%= session.delete(:message) %></p>
+  <% end %>
   <%== yield %>
 </body>
 </html>
