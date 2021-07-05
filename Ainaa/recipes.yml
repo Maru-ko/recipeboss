@@ -1,59 +1,392 @@
 ---
 - :id: 1
-  :name: Chicken Wing
-  :description: Grandma's good old recipe
-  :cook_time: 50 minutes
+  :name: John Legend's Macaroni and Cheese
   :ingredients:
   - :id: 1
-    :name: chicken
+    :name: 4 tablespoons (1/2 stick) unsalted butter, plus more for baking dish
+    :origin_recipe_id: 1
   - :id: 2
-    :name: Salt
+    :name: Coarse salt and freshly ground pepper
+    :origin_recipe_id: 1
+  - :id: 3
+    :name: 3 cups elbow macaroni
+    :origin_recipe_id: 1
+  - :id: 4
+    :name: 2 (12-ounce) cans evaporated milk
+    :origin_recipe_id: 1
+  - :id: 5
+    :name: 1/3 cup skim milk
+    :origin_recipe_id: 1
+  - :id: 6
+    :name: 2 large eggs
+    :origin_recipe_id: 1
+  - :id: 7
+    :name: 1/2 teaspoon seasoned salt
+    :origin_recipe_id: 1
+  - :id: 8
+    :name: 1/4 teaspoon garlic powder
+    :origin_recipe_id: 1
+  - :id: 9
+    :name: 2 (8-ounce) packages extra-sharp cheddar cheese, grated
+    :origin_recipe_id: 1
+  - :id: 10
+    :name: 1 (8-ounce) package Monterey Jack cheese, grated
+    :origin_recipe_id: 1
+  - :id: 11
+    :name: Paprika, for sprinkling
+    :origin_recipe_id: 1
   :steps:
   - :id: 1
-    :name: cut chickens
+    :name: Preheat oven to 375 degrees. Generously butter a 13-by-9-inch glass baking
+      dish; set aside. Bring a large pot of water to a boil; add salt and macaroni.
+      Cook until al dente according to package directions. Drain, and return to pot.
+      Add butter, and toss until pasta is coated and butter has melted; set aside.
+    :origin_recipe_id: 1
   - :id: 2
-    :name: add lots of salt
+    :name: In a medium bowl, whisk together evaporated milk, skim milk, and eggs.
+      Add seasoned salt, garlic powder, 1 teaspoon salt, and 1/2 teaspoon pepper;
+      set aside. In another medium bowl, combine cheeses; set aside.
+    :origin_recipe_id: 1
+  - :id: 3
+    :name: Place 1/3 macaroni in an even layer in the bottom of prepared baking dish;
+      cover evenly with 1/3 cheese. Repeat with remaining macaroni and cheese mixture.
+      Pour milk mixture evenly over contents of baking dish. Sprinkle with paprika.
+      Bake until top layer is lightly browned, 35 to 45 minutes. Let stand 10 to 15
+      minutes before serving.
+    :origin_recipe_id: 1
 - :id: 2
-  :name: Roast Beef
-  :description: Slow cooked roast beef
-  :cook_time: 2 hour 30 minutes
+  :name: Vegetarian Shepherd's Pie
   :ingredients:
-  - :id: 3
-    :name: chicken
-  - :id: 4
-    :name: Salt
+  - :id: 12
+    :name: 2 tablespoons extra-virgin olive oil
+    :origin_recipe_id: 2
+  - :id: 13
+    :name: 1 large onion, finely diced
+    :origin_recipe_id: 2
+  - :id: 14
+    :name: 2 carrots, peeled and thinly sliced
+    :origin_recipe_id: 2
+  - :id: 15
+    :name: 2 celery stalks, thinly sliced
+    :origin_recipe_id: 2
+  - :id: 16
+    :name: 10 ounces cremini mushrooms, trimmed and sliced
+    :origin_recipe_id: 2
+  - :id: 17
+    :name: 1 tablespoon tomato paste
+    :origin_recipe_id: 2
+  - :id: 18
+    :name: 1 tablespoon vegetarian Worcestershire sauce, such as Annie's Naturals
+    :origin_recipe_id: 2
+  - :id: 19
+    :name: 1 dried bay leaf
+    :origin_recipe_id: 2
+  - :id: 20
+    :name: 1 cup French green lentils, picked over
+    :origin_recipe_id: 2
+  - :id: 21
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 2
+  - :id: 22
+    :name: 1 cup frozen peas
+    :origin_recipe_id: 2
+  - :id: 23
+    :name: 2 pounds Yukon Gold potatoes, scrubbed and cut into 1 1/2-inch pieces
+    :origin_recipe_id: 2
+  - :id: 24
+    :name: 4 cloves garlic
+    :origin_recipe_id: 2
+  - :id: 25
+    :name: 4 tablespoons unsalted butter
+    :origin_recipe_id: 2
+  - :id: 26
+    :name: 1/2 cup whole milk, warmed
+    :origin_recipe_id: 2
   :steps:
-  - :id: 3
-    :name: do stuff
-  - :id: 4
-    :name: do more stuff
+  - :id: 12
+    :name: Heat oil in a medium pot over medium. Add onion, carrots, and celery and
+      cook, stirring, until tender, 6 to 8 minutes. Add mushrooms and cook, stirring,
+      until tender, 8 to 10 minutes. Add tomato paste and cook, stirring, 1 minute.
+      Add Worcestershire, bay leaf, 4 cups water, and lentils; season with salt and
+      pepper. Bring to a boil, then reduce to a simmer and cook until lentils are
+      tender, 30 to 35 minutes. Stir in peas; remove from heat and season with salt
+      and pepper.
+    :origin_recipe_id: 2
+  - :id: 13
+    :name: Preheat oven to 400 degrees. Place potatoes and garlic in a medium saucepan;
+      cover with 2 inches of cold water. Season generously with salt; bring to a boil,
+      then reduce to a simmer and cook until a knife pierces potatoes easily, 10 to
+      12 minutes. Drain; return potatoes and garlic to pot. Add butter and milk; mash
+      with a fork or potato masher until smooth. Season with salt and pepper.
+    :origin_recipe_id: 2
+  - :id: 14
+    :name: Transfer lentil mixture to a 2-quart baking dish. Dollop with mashed potatoes;
+      spread evenly to edges. Transfer to a baking sheet; bake until golden and bubbling
+      around edges, about 15 minutes. Let stand 20 minutes; serve.
+    :origin_recipe_id: 2
 - :id: 3
-  :name: Random new recipe
-  :description: Mom's secret recipe
-  :cook_time: 50 minutes
+  :name: Split-Pea Soup with Spinach and Barley
   :ingredients:
-  - :id: 5
-    :name: random ingredient
+  - :id: 27
+    :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 3
+  - :id: 28
+    :name: 3 leeks, white and light-green parts only, chopped and well washed
+    :origin_recipe_id: 3
+  - :id: 29
+    :name: 2 carrots, peeled and chopped
+    :origin_recipe_id: 3
+  - :id: 30
+    :name: 2 celery stalks, chopped
+    :origin_recipe_id: 3
+  - :id: 31
+    :name: 8 cups low-sodium chicken broth or water, or a combination
+    :origin_recipe_id: 3
+  - :id: 32
+    :name: 1 pound dried split peas, picked over
+    :origin_recipe_id: 3
+  - :id: 33
+    :name: 5 ounces baby spinach
+    :origin_recipe_id: 3
+  - :id: 34
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 3
+  - :id: 35
+    :name: 1/2 cup full-fat plain yogurt (not Greek), whisked, for serving
+    :origin_recipe_id: 3
+  - :id: 36
+    :name: 2 cups <a href="http://www.marthastewart.com/1527738/how-cook-barley">cooked
+      barley</a>, for serving
+    :origin_recipe_id: 3
   :steps:
-  - :id: 5
-    :name: Cook on the grill
+  - :id: 27
+    :name: Heat oil in a large pot over medium. Add leeks, carrots, and celery; cook,
+      stirring, until tender, 6 to 8 minutes. Add broth and peas; bring to a boil,
+      then reduce to a simmer and cook, partially covered, until peas are creamy,
+      50 to 55 minutes. Stir in spinach; cook until just wilted, about 5 minutes.
+      Let cool slightly.
+    :origin_recipe_id: 3
+  - :id: 28
+    :name: Working in batches, puree soup in a blender until smooth. Return to pot;
+      season with salt and pepper. (If too thick, add water, 1 tablespoon at a time.)
+      Ladle soup into bowls, drizzle with yogurt and oil, top with barley, and serve.
+    :origin_recipe_id: 3
 - :id: 4
-  :name: Random new recipe
-  :description: Mom's secret recipe
-  :cook_time: 50 minutes
+  :name: Vegan Lentil Soup
   :ingredients:
-  - :id: 6
-    :name: random ingredient
+  - :id: 37
+    :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 4
+  - :id: 38
+    :name: 1/2 cup chopped shallot
+    :origin_recipe_id: 4
+  - :id: 39
+    :name: 1/2 cup chopped carrot
+    :origin_recipe_id: 4
+  - :id: 40
+    :name: 1/2 cup chopped celery
+    :origin_recipe_id: 4
+  - :id: 41
+    :name: 1/2 teaspoon ground cumin
+    :origin_recipe_id: 4
+  - :id: 42
+    :name: 1/2 teaspoon ground coriander
+    :origin_recipe_id: 4
+  - :id: 43
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 4
+  - :id: 44
+    :name: 1 cup dried French lentils
+    :origin_recipe_id: 4
+  - :id: 45
+    :name: 1 can (15 ounces) crushed tomatoes
+    :origin_recipe_id: 4
+  - :id: 46
+    :name: 4 cups chopped broccoli rabe
+    :origin_recipe_id: 4
+  - :id: 47
+    :name: 2 teaspoons red-wine vinegar
+    :origin_recipe_id: 4
   :steps:
-  - :id: 6
-    :name: Cook on the grill
+  - :id: 37
+    :name: Heat oil in a pot over medium-high. Add shallot, carrot, celery, cumin,
+      coriander, and a pinch of salt. Cook, stirring, until vegetables have softened,
+      4 to 6 minutes.
+    :origin_recipe_id: 4
+  - :id: 38
+    :name: Stir in lentils, tomatoes, and 4 1/2 cups water. Season with salt and pepper.
+      Bring to a boil, then reduce heat to medium-low and simmer, partially covered,
+      until lentils are tender, 40 to 45 minutes.
+    :origin_recipe_id: 4
+  - :id: 39
+    :name: Stir in broccoli rabe (if soup is too thick, add up to 1/2 cup water);
+      cook until tender, about 3 minutes more. Stir in red-wine vinegar, season with
+      salt and pepper, and serve, with more pepper and a drizzle of oil.
+    :origin_recipe_id: 4
 - :id: 5
-  :name: Random new recipe
-  :description: Mom's secret recipe
-  :cook_time: 50 minutes
+  :name: Brown-Butter Sweet-Potato Gnocchi with Seeds
   :ingredients:
-  - :id: 7
-    :name: random ingredient
+  - :id: 48
+    :name: 1 pound sweet potatoes (2 to 3)
+    :origin_recipe_id: 5
+  - :id: 49
+    :name: 1 1/2 cups unbleached all-purpose flour, plus more for dusting
+    :origin_recipe_id: 5
+  - :id: 50
+    :name: 1 large egg, room temperature, beaten
+    :origin_recipe_id: 5
+  - :id: 51
+    :name: 1 1/2 teaspoons kosher salt
+    :origin_recipe_id: 5
+  - :id: 52
+    :name: 3 tablespoons pepitas
+    :origin_recipe_id: 5
+  - :id: 53
+    :name: 1 tablespoon sesame seeds
+    :origin_recipe_id: 5
+  - :id: 54
+    :name: 2 teaspoons poppy seeds
+    :origin_recipe_id: 5
+  - :id: 55
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 5
+  - :id: 56
+    :name: 1 stick unsalted butter
+    :origin_recipe_id: 5
+  - :id: 57
+    :name: Handful of fresh sage leaves, sliced if large
+    :origin_recipe_id: 5
   :steps:
-  - :id: 7
-    :name: Cook on the grill
+  - :id: 48
+    :name: 'Gnocchi: In a pot, cover potatoes with 2 inches of cold water. Bring to
+      a boil and cook until easily pierced with the tip of a knife, 20 to 25 minutes.
+      Drain and let sit until cool enough to handle. Peel and quarter potatoes and
+      let cool completely.'
+    :origin_recipe_id: 5
+  - :id: 49
+    :name: Using a ricer or colander, press potatoes into a large bowl. Add flour,
+      egg, and salt to bowl and gently stir until a ragged dough forms, being careful
+      not to overwork. Transfer dough to a floured work surface and gently knead until
+      dough just becomes uniform in color (sprinkling surface and hands with more
+      flour as needed to prevent sticking).
+    :origin_recipe_id: 5
+  - :id: 50
+    :name: Divide dough into 6 pieces; roll one out to an approximately 3/4-inch-diameter
+      rope. Using a bench scraper or knife, cut crosswise into 1/2-inch-thick "pillows."
+      Transfer in a single layer to a rimmed baking sheet generously dusted with flour.
+      Repeat with remaining dough.
+    :origin_recipe_id: 5
+  - :id: 51
+    :name: 'Sauce: Heat a large skillet over medium. Add pepitas and sesame and poppy
+      seeds; cook, shaking frequently, until pepitas puff slightly and begin to pop,
+      about 2 minutes. Transfer to a plate and season with salt and pepper.'
+    :origin_recipe_id: 5
+  - :id: 52
+    :name: Melt butter in skillet over medium heat, swirling occasionally, until dark
+      golden brown, 8 to 10 minutes. Add sage leaves to brown butter and cook until
+      darkened slightly, about 45 seconds. Remove skillet from heat. Using a fork,
+      transfer sage to plate with seeds.
+    :origin_recipe_id: 5
+  - :id: 53
+    :name: Meanwhile, cook gnocchi in a large pot of generously salted boiling water
+      until they float and are al dente, 3 to 4 minutes; drain. Add to skillet with
+      brown butter and return to medium heat. Cook, stirring occasionally, until gnocchi
+      begin to crisp at edges, 3 to 4 minutes. Serve topped with seeds and sage.
+    :origin_recipe_id: 5
+- :id: 6
+  :name: Quick Carrots and Snap Peas with Lemony Mustard Dressing
+  :ingredients:
+  - :id: 58
+    :name: 2 tablespoons Dijon mustard
+    :origin_recipe_id: 6
+  - :id: 59
+    :name: 1 teaspoon finely grated lemon zest, plus 3 tablespoons fresh juice
+    :origin_recipe_id: 6
+  - :id: 60
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 6
+  - :id: 61
+    :name: 1/3 cup extra-virgin olive oil
+    :origin_recipe_id: 6
+  - :id: 62
+    :name: 1 1/2 pounds carrots, peeled and cut on the bias into 1/4-inch-thick slices
+      (4 1/2 cups)
+    :origin_recipe_id: 6
+  - :id: 63
+    :name: 3 tablespoons unsalted butter
+    :origin_recipe_id: 6
+  - :id: 64
+    :name: 12 ounces sugar snap peas, trimmed if stringy, halved on the bias
+    :origin_recipe_id: 6
+  :steps:
+  - :id: 58
+    :name: Whisk together mustard and lemon zest and juice. Season generously with
+      salt and pepper and slowly whisk in oil.
+    :origin_recipe_id: 6
+  - :id: 59
+    :name: Combine carrots, butter, 1/2 cup water, and 1 1/2 teaspoons salt in a large
+      straight-sided skillet or wide, shallow pot. Bring to a boil, then cover, reduce
+      heat to medium, and simmer 5 minutes. Uncover and cook, stirring occasionally,
+      until carrots are just tender but holding their shape, 5 to 7 minutes more.
+    :origin_recipe_id: 6
+  - :id: 60
+    :name: Stir in snap peas and continue cooking just until peas have turned crisp-tender
+      and bright green, about 2 minutes. Remove from heat and carefully drain any
+      liquid remaining in skillet; toss with half of mustard dressing and season to
+      taste. Serve, with remaining dressing on the side.
+    :origin_recipe_id: 6
+- :id: 7
+  :name: Spaghetti with Tomato Saute
+  :ingredients:
+  - :id: 65
+    :name: 3 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 7
+  - :id: 66
+    :name: 3 pints red, orange, and yellow pear or cherry tomatoes (about 2 pounds),
+      halved if large; plus a few more, still on the vine (optional)
+    :origin_recipe_id: 7
+  - :id: 67
+    :name: Kosher salt
+    :origin_recipe_id: 7
+  - :id: 68
+    :name: 2 cloves garlic, minced
+    :origin_recipe_id: 7
+  - :id: 69
+    :name: Large pinch of red-pepper flakes, plus more for serving
+    :origin_recipe_id: 7
+  - :id: 70
+    :name: 12 ounces spaghetti or bucatini
+    :origin_recipe_id: 7
+  - :id: 71
+    :name: 2 ounces Parmigiano-Reggiano, finely grated (1/2 cup)
+    :origin_recipe_id: 7
+  - :id: 72
+    :name: 1/2 cup fresh ricotta cheese
+    :origin_recipe_id: 7
+  - :id: 73
+    :name: Small fresh basil leaves, for serving
+    :origin_recipe_id: 7
+  :steps:
+  - :id: 65
+    :name: If you aren't using any tomatoes on vine, skip to step 2. Otherwise, heat
+      1 tablespoon oil in a large skillet over medium. Add tomatoes on vine, season
+      with salt, and cook, gently stirring, until skins begin to pucker, about 3 minutes,
+      depending on size. Transfer to a plate.
+    :origin_recipe_id: 7
+  - :id: 66
+    :name: Heat remaining 2 tablespoons oil in skillet over medium-high. Add garlic
+      and remaining tomatoes and cook, stirring occasionally, until tomatoes are just
+      beginning to break down, 3 to 5 minutes. Add red-pepper flakes and season with
+      salt. Remove from heat.
+    :origin_recipe_id: 7
+  - :id: 67
+    :name: Meanwhile, cook pasta in a large pot of salted boiling water 1 minute less
+      than package directions. Reserve 1 cup pasta water, then drain pasta and return
+      to pot. Add 1/3 cup pasta water, tomato mixture, and Parmigiano.
+    :origin_recipe_id: 7
+  - :id: 68
+    :name: Cook over medium heat, tossing, until pasta is evenly coated, about 2 minutes,
+      adding more pasta water as needed. To serve, top pasta with ricotta and sautéed
+      tomatoes on the vine (if using); drizzle pasta with oil, then sprinkle with
+      more red-pepper flakes and basil.
+    :origin_recipe_id: 7
