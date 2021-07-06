@@ -5,6 +5,7 @@
   :ingredients:
     - :id: 1
       :name: 1/4 cup, plus 3 tablespoons extra virgin olive oil
+      :origin_id: 1
     - :id: 2
       :name: 2 tablespoons honey
     - :id: 3
