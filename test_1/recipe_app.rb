@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
+require 'pry'
 
 require_relative 'data/recipe_book'
 
@@ -102,6 +103,7 @@ post "/recipes" do
 
   # TODO: Any validation needed here?
   @recipe_book.recipes << new_recipe
+  binding.pry
   session[:message] = "Your new recipe has been added."
 
   redirect "/"
