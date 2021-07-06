@@ -21,10 +21,18 @@ class RecipeBook
         recipe[:name],
         recipe[:cook_time],
         recipe[:ingredients].map do |ingredient|
-          Ingredient.new(ingredient[:id], ingredient[:name])
+          Ingredient.new(
+            ingredient[:id],
+            ingredient[:name],
+            ingredient[:origin_recipe_id]
+            )
         end,
         recipe[:steps].map do |step|
-          Step.new(step[:id], step[:name])
+          Step.new(
+            step[:id],
+            step[:name],
+            step[:origin_recipe_id]
+            )
         end
       )
       @recipes << recipe
@@ -45,20 +53,45 @@ class RecipeBook
       new_recipe[:ingredients] = []
 
       recipe.ingredients.each do |ingredient|
-        new_recipe[:ingredients] << { id: ingredient.id, name: ingredient.name }
+        new_recipe[:ingredients] << {
+          id: ingredient.id,
+          name: ingredient.name,
+          origin_recipe_id: ingredient.origin_recipe_id
+        }
       end
 
       new_recipe[:steps] = []
 
       recipe.steps.each do |step|
-        new_recipe[:steps] << { id: step.id, name: step.name }
+        new_recipe[:steps] << {
+          id: step.id,
+          name: step.name,
+          origin_recipe_id: step.origin_recipe_id
+        }
       end
 
       formatted_recipes << new_recipe
     end
 
-    File.open('./recipes.yaml', 'w') do |file|
+    File.open('./recipes.yml', 'w') do |file|
       file.write(Psych.dump(formatted_recipes))
     end
   end
+
+  def each
+    @recipes.each do |recipe|
+      yield(recipe)
+    end
+    self
+  end
+
+  def last
+    @recipes.last
+  end
+
+  def <<(recipe)
+    raise TypeError, 'can only add Recipe objects' unless recipe.instance_of? Recipe
+    @recipes << recipe
+  end
+  alias_method :add, :<<
 end
