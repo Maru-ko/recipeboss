@@ -77,6 +77,7 @@ end
 
 # View the form to add a new recipe
 get "/recipes/new" do
+  # @recipe_book
   erb :new_recipe, layout: :layout
 end
 
@@ -86,8 +87,7 @@ end
 #   @recipe_id = params[:recipe_id].to_i
 #   @recipe = @recipe_book.recipes.select { |recipe| recipe.id == @recipe_id }.first
 #   erb :view_recipe
-# end
-
+# endkz
 post "/recipes" do
   @recipe_book = session[:recipe_book]
   ingredients = make_arr(:ingredient)

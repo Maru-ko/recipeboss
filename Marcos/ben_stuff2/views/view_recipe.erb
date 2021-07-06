@@ -1,5 +1,5 @@
 <header>
-  <h1><%= @recipe.name %></h1>
+  <h1><a href="/"><%= @recipe.name %></a></h1>
   <p>Cook time: <%= @recipe.cook_time %></p>
   <ul class= "edit-recipe">
     <li><a href="/recipes/<%= @recipe.name %>/delete">Delete Recipe</a></li>
