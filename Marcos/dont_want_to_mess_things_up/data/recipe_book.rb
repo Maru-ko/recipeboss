@@ -14,11 +14,12 @@ class RecipeBook
 
   # Recipes is an array
   def load_recipes
-    recipes = Psych.load_file('recipes.yml')
+    recipes = Psych.load_file("./recipes.yml")
     recipes.each do |recipe|
       recipe =  Recipe.new(
         recipe[:id],
         recipe[:name],
+        recipe[:description],
         recipe[:cook_time],
         recipe[:ingredients].map do |ingredient|
           Ingredient.new(ingredient[:id], ingredient[:name])
@@ -40,6 +41,7 @@ class RecipeBook
 
       new_recipe[:id] = recipe.id
       new_recipe[:name] = recipe.name
+      new_recipe[:description] = recipe.description
       new_recipe[:cook_time] = recipe.cook_time
 
       new_recipe[:ingredients] = []

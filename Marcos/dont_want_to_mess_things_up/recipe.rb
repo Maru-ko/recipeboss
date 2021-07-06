@@ -12,7 +12,7 @@ configure do
 end
 
 before do
-  @recipe_book = RecipeBook.new
+  @recipe_book = RecipeBook.new || []
 end
 
 helpers do
@@ -24,6 +24,6 @@ end
 
 
 get "/" do
-  #{}"<html><body><h1>Welcome to Recipe World</h1></body></html>"
-  erb :index, layout: :layout
+  "<html><body><h1>Welcome to Recipe World</h1></body></html>"
+  #erb :layout
 end

@@ -14,7 +14,7 @@ class RecipeBook
 
   # Recipes is an array
   def load_recipes
-    recipes = Psych.load_file('recipes.yml')
+    recipes = Psych.load_file("./recipes.yml")
     recipes.each do |recipe|
       recipe =  Recipe.new(
         recipe[:id],
