@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style type="text/css">
+    body {
+      font-family: verdana;
+      font-size: 20px;
+      background-color: #a0c4ffff;
+      color:  #2a9d8fff;
+    }
+
+    .ingredient-list {
+      columns: 2;
+      padding-left: 2rem;
+    }
+
+    .edit-recipe {
+      list-style: none;
+      padding: 0;
+    }
+
+    .edit-recipe > li {
+      display: inline;
+
+    }
+
+    dl {
+      margin: 0px;
+      padding-bottom: 20px;
+    }
+    dt {
+      padding-bottom: 10px;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    dd {
+      display: inline;
+      padding-bottom: 20px;
+    }
+
+    .edit-delete {
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    input[type="text"] {
+      height: 40px;
+      padding: 0 8px;
+      margin-bottom: 10px;
+      font: 14px normal Helvetica, Arial, sans-serif;
+      border: 1px solid #cecece;
+
+    }
+
+    .steps {
+      width: 80%;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .ingredient {
+      width: 40%;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+  </style>
+<!--  <link href="/stylesheets/whitespace-reset.css" rel="stylesheet" type="text/css "> -->
+<!--  <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" /> -->
+  <meta charset="utf-8">
+  <title>Recipe World</title>
+</head>
+<body>
+  <%== yield %>
+</body>
+</html>
