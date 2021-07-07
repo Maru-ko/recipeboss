@@ -1,4 +1,9 @@
+* {
+  margin: 200px;
+  padding: 200px;
+}
 
+/*
     body {
       font-family: verdana;
       font-size: 20px;
@@ -63,7 +68,7 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
-
+*/
 
 /*
 palette a
