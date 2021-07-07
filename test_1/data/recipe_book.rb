@@ -12,7 +12,7 @@ class RecipeBook
     load_recipes
   end
 
-  # Recipes is an array
+  # Recipes is an arrays
   def load_recipes
     recipes = Psych.load_file('recipes.yml')
     recipes.each do |recipe|
@@ -42,7 +42,7 @@ class RecipeBook
   def save_recipes
     formatted_recipes = []
 
-    @recipes.sorty_by{|recipe| recipe.id}.each do |recipe|
+    @recipes.sort_by {|recipe| recipe.id}.each do |recipe|
       new_recipe = {}
 
 
