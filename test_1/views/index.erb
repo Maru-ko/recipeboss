@@ -4,7 +4,7 @@
 <p><a href="#">Generate Weekly Menu</a></p>
 
 <ul>
-  <% session[:recipe_book].recipes.sort_by{|recipe| recipe.id}.each do |recipe| %>
+  <% @recipe_book.recipes.sort_by{|recipe| recipe.id}.each do |recipe| %>
     <li><a href="recipes/<%= recipe.name %>"><%= recipe.name %></a></li>
   <% end %>
 </ul>

@@ -42,7 +42,7 @@ class RecipeBook
   def save_recipes
     formatted_recipes = []
 
-    @recipes.each do |recipe|
+    @recipes.sorty_by{|recipe| recipe.id}.each do |recipe|
       new_recipe = {}
 
 
@@ -94,4 +94,17 @@ class RecipeBook
     @recipes << recipe
   end
   alias_method :add, :<<
+
+  def find_recipe(recipe_name)
+    @recipes.select {|recipe| recipe.name == recipe_name}.first
+  end
+
+  def delete_recipe(recipe_name)
+    @recipes.reject! { |recipe| recipe.name == recipe_name}
+  end
+
+# For testing
+  # def show_names
+  #   @recipes.map { |recipe| recipe.name }
+  # end
 end
