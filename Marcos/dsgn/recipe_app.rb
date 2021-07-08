@@ -202,7 +202,7 @@ get '/recipes/:recipe_name/steps/:step_id/delete' do
   redirect "/recipes/#{recipe.name}/edit"
 end
 
-# dynami
+# dynamic
 # Add an ingredient when editing recipes
 get '/recipes/:recipe_name/ingredients/add' do
   recipe_name = params[:recipe_name]

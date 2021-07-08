@@ -397,3 +397,26 @@
       tomatoes on the vine (if using); drizzle pasta with oil, then sprinkle with
       more red-pepper flakes and basil.
     :origin_recipe_id: 7
+- :id: 14
+  :name: '9'
+  :cook_time: '9'
+  :ingredients:
+  - :id: 147
+    :name: "-0"
+    :origin_recipe_id: 15
+  - :id: 148
+    :name: '8'
+    :origin_recipe_id: 15
+  - :id: 149
+    :name: '7'
+    :origin_recipe_id: 15
+  :steps:
+  - :id: 51
+    :name: jl
+    :origin_recipe_id: 15
+  - :id: 52
+    :name: m,
+    :origin_recipe_id: 15
+  - :id: 53
+    :name: j
+    :origin_recipe_id: 15

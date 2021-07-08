@@ -227,14 +227,3 @@ get "/recipes/:recipe_name/steps/add" do
 
   redirect "/recipes/#{recipe.name}/edit"
 end
-
-#fluffery
-
-get "/recipes" do
-  erb :all_recipes, layout: :layout
-end
-
-get "/about" do
-  erb :about, layout: :layout
-end
-

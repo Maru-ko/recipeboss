@@ -1,7 +1,7 @@
 ---
 - :id: 1
   :name: John Legend's Macaroni and Cheese
-  :cook_time: ''
+  :cook_time:
   :ingredients:
   - :id: 1
     :name: 4 tablespoons (1/2 stick) unsalted butter, plus more for baking dish

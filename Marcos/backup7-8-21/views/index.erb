@@ -1,0 +1,10 @@
+<h1>Welcome to Recipe World</h1>
+
+<p><a href="/recipes/new">Add Recipe</a></p>
+<p><a href="#">Generate Weekly Menu</a></p>
+
+<ul>
+  <% @recipe_book.recipes.sort_by{|recipe| recipe.id}.each do |recipe| %>
+    <li><a href="recipes/<%= recipe.name %>"><%= recipe.name %></a></li>
+  <% end %>
+</ul>

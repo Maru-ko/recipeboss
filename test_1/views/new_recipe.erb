@@ -1,49 +1,62 @@
-<form action="/recipes/new" method="post">
 
-  <h1>Add a New Recipe</h1>
 
-  <section>
-    <p>
-      <label for="name">Recipe name:</label>
-      <input type="text" id="name" name="name">
-    </p>
-    <p>
-      <%# Should cook_time be an integer? We could specify it must be minutes. %>
-      <label for="cook_time">How long does this it take to prepare?</label>
-      <br>
-      <input type="text" id="cook_time" name="cook_time">
-    </p>
-  </section>
+<div class="div4lunch">
+      <h1>Lets add a new recipe!</h1>
+</div>
 
-  <section>
-    <h2>Ingredients</h2>
-    <% session[:num_of_ingredients].times do |num| %>
-      <p>
-        <label >Ingredient <%= num + 1%>:
-          <input type="text" name="ingredient<%= num + 1%>"/>
-        </label>
-      </p>
-    <% end %>
-    <p><a href="/recipes/new/ingredients/add">Add</a></p>
-    <% if session[:num_of_ingredients] > 0 %>
-      <p><a href="/recipes/new/ingredients/delete">Delete</a></p>
-    <% end %>
-  </section>
-  <section>
-    <h2>Cooking steps</h2>
-    <% session[:num_of_steps].times do |num| %>
-      <p>
-        <label >Step <%= num + 1 %>:
-          <br>
-          <textarea name="step<%= num + 1%>" rows="3" cols="100"></textarea>
-        </label>
-      </p>
-    <% end %>
-    <p><a href="/recipes/new/steps/add">Add</a></p>
-    <% if session[:num_of_steps] > 0 %>
-      <p><a href="/recipes/new/steps/delete">Delete</a></p>
-    <% end %>
-  </section>
+  <div class="new_recipe">
 
-  <input type="submit" name="submit" value="Save recipe">
-</form>
+    <form action="/recipes/new" method="post" class="lets_add">
+
+      
+      <!-- box = hako - this is so 'box' doesn't conflict -->
+      <section>
+<!--         <p> -->
+          <label class="labels" for="name">Recipe name:</label>
+          <input class="hako" type="text" id="name" name="name" placeholder="Please enter a recipe name">
+<!--         </p> -->
+<!--         <p> -->
+          <%# Should cook_time be an integer? We could specify it must be minutes. %>
+          <label class="labels" for="cook_time">How long does this it take to prepare?</label>
+<!--           <br> -->
+          <input class="hako" type="text" id="cook_time" name="cook_time">
+<!--         </p> -->
+      </section>
+
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        <% session[:num_of_ingredients].times do |num| %>
+<!--           <p> -->
+            <label class="labels">Ingredient <%= num + 1%>: <!-- 
+               --><input class="hako" type="text" name="ingredient<%= num + 1%>"/>
+            </label>
+<!--           </p> -->
+        <% end %>
+        <div class="botangatte">
+          <a href="/recipes/new/ingredients/add">Add</a>
+        </div>
+        <% if session[:num_of_ingredients] > 0 %>
+         <div class="botangatte"><a href="/recipes/new/ingredients/delete">Delete</a></div>
+        <% end %>
+      </section>
+
+      <section>
+        <h2>Cooking steps</h2>
+        <% session[:num_of_steps].times do |num| %>
+          <p>
+            <label class="labels" >Step <%= num + 1 %>:
+              <br>
+              <textarea class="step_by_step" name="step<%= num + 1%>" rows="2" cols="55"></textarea>
+            </label>
+          </p>
+        <% end %>
+        <div class="botangatte"><a href="/recipes/new/steps/add">Add</a></div>
+        <% if session[:num_of_steps] > 0 %>
+          <div class="botangatte"><a href="/recipes/new/steps/delete">Delete</a></div>
+        <% end %>
+      </section>
+    <div class="save-button">
+      <input type="submit" name="submit" value="Save recipe" class="saves">
+    </div>
+    </form>
+  </div>

@@ -1,0 +1,26 @@
+<form action="/recipes/<%= @recipe.name %>/edit" method="post">
+  <fieldset>
+    <dl>
+      <dt><label for="name">Recipe Name</label></dt>
+      <dd><input type="text" name="name" id="name" value="<%= @recipe.name %>"></dd>
+
+      <dt><label for="time">Recipe Cook Time</label></dt>
+      <dd><input type="text" name="time" id="time" value="<%= @recipe.cook_time%>"</dd>
+
+      <dt><label for="ingredient">Ingredient</label></dt>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <dd><input class="ingredient" type="text" name="ingredient_<%= ingredient.id %>" value="<%= ingredient.name %>"></dd>
+        <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/ingredients/<%= ingredient.id %>/delete">Delete</a></dd>
+      <% end %>
+      <p><a href="/recipes/<%= @recipe.name %>/ingredients/add">Add</a></p>
+
+      <dt><label for="steps">Steps</label></dt>
+      <% @recipe.steps.each do |step| %>
+        <dd><input class="steps" type="text" name="step_<%= step.id %>" value="<%= step.name %>"></dd>
+        <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/steps/<%= step.id %>/delete">Delete</a></dd>
+      <% end %>
+      <p><a href="/recipes/<%= @recipe.name %>/steps/add">Add</a></p>
+    </dl>
+    <input type="submit" value="Save">
+  </fieldset>
+</form>
