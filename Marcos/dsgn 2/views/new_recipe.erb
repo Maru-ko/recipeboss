@@ -1,0 +1,55 @@
+<form action="/recipes" method="post">
+
+  <h1>Add a New Recipe</h1>
+  <!-- <p><%= session[:recipe_book].recipes %></p> -->
+
+  <section>
+    <p>
+      <label for="name">Recipe name:</label>
+      <input type="text" id="name" name="name">
+    </p>
+    <p>
+      <%# Should cook_time be an integer? We could specify it must be minutes. %>
+      <label for="cook_time">How long does this it take to prepare?</label>
+      <br>
+      <input type="text" id="cook_time" name="cook_time">
+    </p>
+  </section>
+
+  <section>
+    <h2>Ingredients</h2>
+    <p>
+      <label for="ingredient1">Ingredient 1:</label>
+      <input type="text" id="ingredient1" name="ingredient1">
+    </p>
+    <p>
+      <label for="ingredient2">Ingredient 2:</label>
+      <input type="text" id="ingredient2" name="ingredient2">
+    </p>
+    <p>
+      <label for="ingredient3">Ingredient 3:</label>
+      <input type="text" id="ingredient3" name="ingredient3">
+    </p>
+  </section>
+
+    <section>
+    <h2>Cooking steps</h2>
+    <p>
+      <label for="step1">Step 1</label>
+      <br>
+      <textarea id="step1" name="step1" rows=5 cols=35></textarea>
+    </p>
+    <p>
+      <label for="step2">Step 2</label>
+      <br>
+      <textarea id="step2" name="step2" rows=5 cols=35></textarea>
+    </p>
+    <p>
+      <label for="step3">Step 3</label>
+      <br>
+      <textarea id="step3" name="step3" rows=5 cols=35></textarea>
+    </p>
+  </section>
+
+  <input type="submit" name="submit" value="Save recipe">
+</form>

@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
@@ -10,10 +8,11 @@ require_relative 'data/recipe_book'
 configure do
   enable :sessions
   set :session_secret, 'chicken'
-  set :erb, escape_html: true
+  set :erb, :escape_html => true
 end
 
 helpers do
+
 end
 
 before do
@@ -24,7 +23,8 @@ def initialize_new_recipe
   session[:num_of_ingredients] ||= 3
   session[:num_of_steps] ||= 3
 end
-# addition july 5  \/
+#addition july 5  \/
+
 
 # Return the next id depending on the type of object
 # for use in saving the recipe or ingredient
@@ -52,17 +52,17 @@ def make_arr(object_type)
   step_id = Step.current_id + 1
 
   case object_type
-  when 'ingredient'
+  when "ingredient"
     session[:num_of_ingredients].times do |num|
-      current_object = params[(object_type + (num + 1).to_s).to_sym]
+      current_object = params[(object_type + (num+1).to_s).to_sym]
       current_object = current_object.empty? ? "You didn't put anything here" : current_object
       ingredient = Ingredient.new(ingredient_id, current_object, Recipe.current_id + 1)
       ingredient_id += 1
       result << ingredient
     end
-  when 'step'
+  when "step"
     session[:num_of_steps].times do |num|
-      current_object = params[(object_type + (num + 1).to_s).to_sym]
+      current_object = params[(object_type + (num+1).to_s).to_sym]
       current_object = current_object.empty? ? "You didn't put anything here" : current_object
       step = Step.new(step_id, current_object, Recipe.current_id + 1)
       step_id += 1
@@ -78,36 +78,36 @@ def clear_recipe_log
   session.delete(:num_of_ingredients)
 end
 
-get '/recipes/new' do
+get "/recipes/new" do
   initialize_new_recipe
   erb :new_recipe, layout: :layout
 end
 
-get '/recipes/new/ingredients/add' do
+get "/recipes/new/ingredients/add" do
   session[:num_of_ingredients] += 1
-  redirect '/recipes/new'
+  redirect "/recipes/new"
 end
 
-get '/recipes/new/ingredients/delete' do
+get "/recipes/new/ingredients/delete" do
   session[:num_of_ingredients] -= 1
-  redirect '/recipes/new'
+  redirect "/recipes/new"
 end
 
-get '/recipes/new/steps/add' do
+get "/recipes/new/steps/add" do
   session[:num_of_steps] += 1
-  redirect '/recipes/new'
+  redirect "/recipes/new"
 end
 
-get '/recipes/new/steps/delete' do
+get "/recipes/new/steps/delete" do
   session[:num_of_steps] -= 1
-  redirect '/recipes/new'
+  redirect "/recipes/new"
 end
 
 def recipe_name_validation(name)
-  name.empty? ? 'NoNameRecipe' : name
+  name.empty? ? "NoNameRecipe" : name
 end
 
-post '/recipes/new' do
+post "/recipes/new" do
   ingredients = make_arr(:ingredient)
   steps = make_arr(:step)
 
@@ -128,12 +128,12 @@ post '/recipes/new' do
 
   clear_recipe_log
   # binding.pry
-  session[:message] = 'Your new recipe has been added.'
+  session[:message] = "Your new recipe has been added."
 
-  redirect '/recipes'
+  redirect "/"
 end
 
-# addition july 5 /\
+#addition july 5 /\
 
 def update_recipe(recipe)
   @recipe_book.delete_recipe(recipe.name)
@@ -141,27 +141,28 @@ def update_recipe(recipe)
   @recipe_book.save_recipes
 end
 
-get '/' do
+get "/" do
   erb :index, layout: :layout
 end
 
-get '/recipes/:recipe_name' do
+get "/recipes/:recipe_name" do
   @recipe = @recipe_book.find_recipe(params[:recipe_name])
   erb :view_recipe, layout: :layout
 end
 # dynamic
-get '/recipes/:recipe_name/delete' do
+get "/recipes/:recipe_name/delete" do
   recipe_name = params[:recipe_name]
   @recipe_book.delete_recipe(recipe_name)
   @recipe_book.save_recipes
-  redirect '/recipes'
+  redirect "/"
 end
 # dyname
-get '/recipes/:recipe_name/edit' do
+get "/recipes/:recipe_name/edit" do
   @recipe = @recipe_book.find_recipe(params[:recipe_name])
   erb :edit
 end
-post '/recipes/:recipe_name/edit' do
+#
+post "/recipes/:recipe_name/edit" do
   recipe = @recipe_book.find_recipe(params[:recipe_name])
   recipe.name = params[:name].strip
   recipe.cook_time = params[:time].strip
@@ -179,7 +180,7 @@ post '/recipes/:recipe_name/edit' do
 end
 # dynamic
 # Delete an ingredient when editing recipes
-get '/recipes/:recipe_name/ingredients/:ingredient_id/delete' do
+get "/recipes/:recipe_name/ingredients/:ingredient_id/delete" do
   recipe_name = params[:recipe_name]
   ingredient_id = params[:ingredient_id].to_i
   recipe = @recipe_book.find_recipe(recipe_name)
@@ -191,7 +192,7 @@ get '/recipes/:recipe_name/ingredients/:ingredient_id/delete' do
 end
 
 # Delete a step when editing recipes
-get '/recipes/:recipe_name/steps/:step_id/delete' do
+get "/recipes/:recipe_name/steps/:step_id/delete" do
   recipe_name = params[:recipe_name]
   step_id = params[:step_id].to_i
   recipe = @recipe_book.find_recipe(recipe_name)
@@ -202,13 +203,13 @@ get '/recipes/:recipe_name/steps/:step_id/delete' do
   redirect "/recipes/#{recipe.name}/edit"
 end
 
-# dynami
+#dynami
 # Add an ingredient when editing recipes
-get '/recipes/:recipe_name/ingredients/add' do
+get "/recipes/:recipe_name/ingredients/add" do
   recipe_name = params[:recipe_name]
   recipe = @recipe_book.find_recipe(recipe_name)
   current_id = Ingredient.current_id
-  recipe.ingredients << Ingredient.new(current_id + 1, '', recipe.id)
+  recipe.ingredients << Ingredient.new(current_id + 1, "", recipe.id)
 
   update_recipe(recipe)
 
@@ -216,23 +217,24 @@ get '/recipes/:recipe_name/ingredients/add' do
 end
 
 # Add a step when editing recipes
-get '/recipes/:recipe_name/steps/add' do
+get "/recipes/:recipe_name/steps/add" do
   recipe_name = params[:recipe_name]
   recipe = @recipe_book.find_recipe(recipe_name)
   current_id = Step.current_id
-  recipe.steps << Step.new(current_id + 1, '', recipe.id)
+  recipe.steps << Step.new(current_id + 1, "", recipe.id)
 
   update_recipe(recipe)
 
   redirect "/recipes/#{recipe.name}/edit"
 end
 
-# fluffery
+#fluffery
 
-get '/recipes' do
+get "/recipes" do
   erb :all_recipes, layout: :layout
 end
 
-get '/about' do
+get "/about" do
   erb :about, layout: :layout
 end
+

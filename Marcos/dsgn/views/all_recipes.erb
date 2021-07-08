@@ -1,0 +1,15 @@
+<div class="everything_is_a_div">
+  <div class="space_heading">
+    <h1 class="heading">All Recipes</h1>
+  </div>
+  <div class="all_recipes">
+    <ul>
+      <% @recipe_book.recipes.sort_by{ |recipe| recipe.id}.each do |recipe| %>
+        <li>
+          <a href="recipes/<%= recipe.name %>"><%= recipe.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

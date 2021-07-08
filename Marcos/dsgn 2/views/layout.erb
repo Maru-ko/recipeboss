@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Recipe World</title>
+  <link href="/stylesheets/whitespace-reset.css" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/app.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Sofia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&family=Patua+One&family=Sofia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&family=Patua+One&family=Roboto:wght@100;300;400;500;900&family=Sofia&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+</head>
+<body>
+<div class="page-container">
+  <div class="header">
+    <div id="logo">
+    <a href="#">
+      <img class="bowl" src="/images/recipe_app.png">
+    </a>
+    <h1><a href="#">Recipe App</a></h1>
+  </div>
+
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Recipes</a></li>
+      <li><a href="#">Add Recipe</a></li>
+      <li><a href="#">Weekly List</a></li>
+    </ul> 
+
+  </div>
+
+
+
+<div id="page_content">
+  <%== yield %>
+</div>
+
+
+<footer id="twinkle-toes">
+  <div class="bottom">
+    <div class="logo-bottom">
+      <a href="#">
+        <img class="bowl" src="/images/recipe_app.png">
+      </a>
+      <h1 class="app_name"><a href="#">Recipe App</a></h1>
+    </div>
+  </div>
+
+  <div class="navi-bottom">
+      <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Recipes</a></li>
+      <li><a href="#">Add Recipe</a></li>
+      <li><a href="#">Weekly List</a></li>
+    </ul> 
+  </div>
+
+  <div class="github">
+    <div class="bot-header">
+      <h2><a href="https://github.com/Maru-ko/recipeboss" target="blank_">GitHub</a></h2>
+    </div>
+
+    <div class="drop-me">
+      <ul class="nav bott-nav">
+        <li><a href="https://github.com/anotherainaa" target="blank_">Ainaa</a></li>
+        <li><a href="https://github.com/Jooliashi" target="blank_">Julia</a></li>
+        <li><a href="https://github.com/918benjamin" target="blank_">Benjamin</a></li>
+        <li><a href="https://github.com/Maru-ko" target="blank_">Marcos</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</footer>
+</div>
+
+</body>
+</html>
