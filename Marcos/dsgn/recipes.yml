@@ -1,6 +1,7 @@
 ---
 - :id: 1
   :name: John Legend's Macaroni and Cheese
+  :cook_time: ''
   :ingredients:
   - :id: 1
     :name: 4 tablespoons (1/2 stick) unsalted butter, plus more for baking dish
@@ -56,6 +57,7 @@
     :origin_recipe_id: 1
 - :id: 2
   :name: Vegetarian Shepherd's Pie
+  :cook_time:
   :ingredients:
   - :id: 12
     :name: 2 tablespoons extra-virgin olive oil
@@ -126,6 +128,7 @@
     :origin_recipe_id: 2
 - :id: 3
   :name: Split-Pea Soup with Spinach and Barley
+  :cook_time:
   :ingredients:
   - :id: 27
     :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
@@ -173,6 +176,7 @@
     :origin_recipe_id: 3
 - :id: 4
   :name: Vegan Lentil Soup
+  :cook_time:
   :ingredients:
   - :id: 37
     :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
@@ -225,6 +229,7 @@
     :origin_recipe_id: 4
 - :id: 5
   :name: Brown-Butter Sweet-Potato Gnocchi with Seeds
+  :cook_time:
   :ingredients:
   - :id: 48
     :name: 1 pound sweet potatoes (2 to 3)
@@ -295,6 +300,7 @@
     :origin_recipe_id: 5
 - :id: 6
   :name: Quick Carrots and Snap Peas with Lemony Mustard Dressing
+  :cook_time:
   :ingredients:
   - :id: 58
     :name: 2 tablespoons Dijon mustard
@@ -337,6 +343,7 @@
     :origin_recipe_id: 6
 - :id: 7
   :name: Spaghetti with Tomato Saute
+  :cook_time:
   :ingredients:
   - :id: 65
     :name: 3 tablespoons extra-virgin olive oil, plus more for drizzling

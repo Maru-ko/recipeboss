@@ -17,7 +17,9 @@
       <dt><label for="steps">Steps</label></dt>
       <% @recipe.steps.each do |step| %>
         <dd><input class="steps" type="text" name="step_<%= step.id %>" value="<%= step.name %>"></dd>
+        <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/steps/<%= step.id %>/delete">Delete</a></dd>
       <% end %>
+      <p><a href="/recipes/<%= @recipe.name %>/steps/add">Add</a></p>
     </dl>
     <input type="submit" value="Save">
   </fieldset>
