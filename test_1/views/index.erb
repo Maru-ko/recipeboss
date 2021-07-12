@@ -1,28 +1,42 @@
-
+<!-- <div class="mstr"> -->
+<div class="idx-page">
 
 <div class="welcome">
+  <div class="surround">
   <div class="welcome-inner">
       <h1>Welcome To Recipe App!</h1>
-  <p>“Hello World” We are four individuals from around the globe currently studying at <a
+  <p><strong>“Hello World”</strong> We are four individuals from around the globe currently studying at <a
     href="https://launchschool.com/" target="blank_">Launch School</a>.  This here is a project we are working on to solidify what we are currently learning. We chose to work on a Recipe Application because food and meals are something that unites everyone. Now more than ever, we see that there is great importance in preparing meals for ourselves and others. Unfortunately, when gathering recipes and making weekly meal plans, one of the biggest hassles is figuring what and how much of something to buy. With this application, you’ll be able to save your favourite recipes and generate a weekly list of ingredients. To make grocery shopping even easier.</p>
-  <a href="/about" class="about-button">About us</a>
+  <div class="about-us-button">
+    <a href="/about" class="about-button">About us</a>
   </div>
+
+  </div>
+
+</div>
 </div>
 
 
+  <div class="pghdr"><h2>Check Out These Recipes!</h2>
+  </div>
+
 <div class="idx-recipes">
-  <h2>Check Out These Recipes!</h2>
-  <div class="sample-recipes">
-  <ul>
-    <% @recipe_book.recipes.shuffle.first(5).each do |recipe| %>
-      <li><a href="recipes/<%= recipe.name %>"><%= recipe.name %></a></li>
-    <% end %>
-  </ul>
+
+    <div class="sample-recipes">
+    <ul>
+      <% @recipe_book.recipes.shuffle.first(5).each do |recipe| %>
+        <li><a href="recipes/<%= recipe.name %>"><%= recipe.name %></a></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
 
 <!-- this will rotate b/w images in the mage folder -->
-<div class="bottom-pic">
-<!--   <img src="/images/shrimp_pasta.jpg"> -->
+<!-- <div class="bottom-pic">
+  <img src="/images/shrimp_pasta.jpg">
+</div> -->
+
+<!-- </div> -->
+
 </div>

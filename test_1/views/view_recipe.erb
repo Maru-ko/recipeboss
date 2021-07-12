@@ -1,21 +1,38 @@
-<header>
-  <h1><%= @recipe.name %></h1>
-  <p>Cook time: <%= @recipe.cook_time %></p>
-  <ul class= "edit-recipe">
-    <li><a href="/recipes/<%= @recipe.name %>/delete">Delete Recipe</a></li>
-    <li><a class ="edit" href="/recipes/<%= @recipe.name %>/edit">Edit Recipe</a></li>
-  </ul>
-</header>
+<div class="display-recipe">
+    <div class="recipe-name">
+      <h1><%= @recipe.name %></h1>
+    </div>
+  <div class="current-recipe">
+   <!--  <header> -->
 
-<h3>Ingredients</h3>
-<ul class="ingredient-list">
-  <% @recipe.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
-</ul>
-<h3>Directions</h3>
-<ol>
-  <% @recipe.steps.each do |step| %>
-    <li><%= step.name %></li>
-  <% end %>
-</ol>
+
+    <div class="recipe-information">
+      <!-- <p>Cook time: <= @recipe.cook_time %></p> -->
+      <label class="labels hey" for="name"><strong>Cook time: <%= @recipe.cook_time %></strong></label>
+      <div class="botangatte">
+      <ul class= "edit-recipe">
+        <li><a href="/recipes/<%= @recipe.name %>/delete">Delete Recipe</a></li>
+        <li><a class ="edit" href="/recipes/<%= @recipe.name %>/edit">Edit Recipe</a></li>
+      </ul>
+    </div>
+
+    <!-- </header> -->
+
+
+
+    <h3>Ingredients</h3>
+  
+    <ul class="ingredient-list">
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+      <% end %>
+    </ul>
+    <h3>Directions</h3>
+    <ol>
+      <% @recipe.steps.each do |step| %>
+        <li><%= step.name %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
+</div>

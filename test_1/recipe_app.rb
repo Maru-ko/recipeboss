@@ -24,7 +24,6 @@ def initialize_new_recipe
   session[:num_of_ingredients] ||= 3
   session[:num_of_steps] ||= 3
 end
-# addition july 5  \/
 
 # Return the next id depending on the type of object
 # for use in saving the recipe or ingredient
@@ -130,10 +129,8 @@ post '/recipes/new' do
   # binding.pry
   session[:message] = 'Your new recipe has been added.'
 
-  redirect '/recipes'
+  redirect '/all_recipes'
 end
-
-# addition july 5 /\
 
 def update_recipe(recipe)
   @recipe_book.delete_recipe(recipe.name)
@@ -154,7 +151,7 @@ get '/recipes/:recipe_name/delete' do
   recipe_name = params[:recipe_name]
   @recipe_book.delete_recipe(recipe_name)
   @recipe_book.save_recipes
-  redirect '/recipes'
+  redirect '/all_recipes'
 end
 # dyname
 get '/recipes/:recipe_name/edit' do
@@ -229,10 +226,25 @@ end
 
 # fluffery
 
-get '/recipes' do
+get '/all_recipes' do
   erb :all_recipes, layout: :layout
 end
 
 get '/about' do
   erb :about, layout: :layout
 end
+
+
+# res n dev
+
+# get '/new_layout' do
+#   erb :index, layout: :layout2
+# end
+
+# get '/tesuto' do
+#   erb :tesuto, layout: :layout4
+# end
+
+
+
+

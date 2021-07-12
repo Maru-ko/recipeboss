@@ -1,7 +1,11 @@
-<div class="everything_is_a_div">
+<div class="all_the_recipes_page">
+
   <div class="space_heading">
-    <h1 class="heading">All Recipes</h1>
+    <h1 class="all_rep_heading">All Recipes</h1>
   </div>
+
+  <div class="spacer"></div>
+
   <div class="all_recipes">
     <ul>
       <% @recipe_book.recipes.sort_by{ |recipe| recipe.id}.each do |recipe| %>
