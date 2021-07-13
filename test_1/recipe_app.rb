@@ -25,25 +25,6 @@ def initialize_new_recipe
   session[:num_of_steps] ||= 3
 end
 
-# Return the next id depending on the type of object
-# for use in saving the recipe or ingredient
-# def next_id(object_type)
-#   case object_type
-#   when :recipe
-#     @recipe_book.recipes.map { |recipe| recipe.id }.max + 1
-#   when :ingredient
-#     max_id = next_id(:recipe) - 1
-#     last_recipe = @recipe_book.recipes.select { |recipe| recipe.id == max_id }.first
-#     last_recipe.ingredients.map { |ingredient| ingredient.id }.max + 1
-#   when :step
-#     max_id = next_id(:recipe) - 1
-#     last_recipe = @recipe_book.recipes.select { |recipe| recipe.id == max_id }.first
-#     last_recipe.steps.map { |step| step.id }.max + 1
-#   end
-# end
-
-# Create an array of given object type
-# for turning a list of steps or ingredients into an array for saving
 def make_arr(object_type)
   object_type = object_type.to_s
   result = []
@@ -244,7 +225,3 @@ end
 # get '/tesuto' do
 #   erb :tesuto, layout: :layout4
 # end
-
-
-
-
