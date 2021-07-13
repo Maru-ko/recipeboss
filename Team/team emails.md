@@ -2,7 +2,7 @@
 
 Ainaa:
 
-Julia:
+Julia: julia.shi@nyu.edu
 
 Benjamin:
 
