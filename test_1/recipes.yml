@@ -72,7 +72,7 @@
     :origin_recipe_id: 2
 - :id: 3
   :name: Split-Pea Soup with Spinach and Barley
-  :cook_time:
+  :cook_time: ''
   :ingredients:
   - :id: 27
     :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
@@ -287,7 +287,7 @@
     :origin_recipe_id: 6
 - :id: 7
   :name: Spaghetti with Tomato Saute
-  :cook_time:
+  :cook_time: ''
   :ingredients:
   - :id: 65
     :name: 3 tablespoons extra-virgin olive oil, plus more for drizzling
@@ -413,3 +413,38 @@
   - :id: 96871
     :name: You didn't put anything here
     :origin_recipe_id: 28245
+- :id: 42852
+  :name: smiles
+  :cook_time: ''
+  :ingredients:
+  - :id: 377201
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 377202
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 377203
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 377204
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 377205
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 377206
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  :steps:
+  - :id: 147187
+    :name: fdsafdsaf
+    :origin_recipe_id: 42853
+  - :id: 147188
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 147189
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853
+  - :id: 147190
+    :name: You didn't put anything here
+    :origin_recipe_id: 42853

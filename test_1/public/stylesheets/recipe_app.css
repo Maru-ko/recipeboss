@@ -364,13 +364,15 @@ background: linear-gradient(90deg, rgba(109,156,172,1) 0%, rgba(65,101,114,1) 52
   justify-content: center;
 }
 
+e3d2c5  c9ae99
 
 
+e6dccf  e3d2c5
 /* color palettes 
-rgb(65, 101, 114) #416572
+greenish rgb(65, 101, 114) #416572  darker 36545f
 peach color #f3d3b8;
 
-peachy #e6dfd9
+peachy #e6dfd9;  -  darker #e69a59;
 
 
 rgb(109, 156, 172)

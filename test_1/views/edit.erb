@@ -1,3 +1,6 @@
+<div class="lets-edit">
+
+
 <form action="/recipes/<%= @recipe.name %>/edit" method="post">
   <fieldset>
     <dl>
@@ -5,22 +8,29 @@
       <dd><input type="text" name="name" id="name" value="<%= @recipe.name %>"></dd>
 
       <dt><label for="time">Recipe Cook Time</label></dt>
-      <dd><input type="text" name="time" id="time" value="<%= @recipe.cook_time%>"</dd>
+      <dd>
+        <input type="text" name="time" id="time" value="<%= @recipe.cook_time %>"></dd>
 
       <dt><label for="ingredient">Ingredient</label></dt>
       <% @recipe.ingredients.each do |ingredient| %>
         <dd><input class="ingredient" type="text" name="ingredient_<%= ingredient.id %>" value="<%= ingredient.name %>"></dd>
         <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/ingredients/<%= ingredient.id %>/delete">Delete</a></dd>
       <% end %>
-      <p><a href="/recipes/<%= @recipe.name %>/ingredients/add">Add</a></p>
+
+      <a class="addz" href="/recipes/<%= @recipe.name %>/ingredients/add">Add</a>
 
       <dt><label for="steps">Steps</label></dt>
       <% @recipe.steps.each do |step| %>
         <dd><input class="steps" type="text" name="step_<%= step.id %>" value="<%= step.name %>"></dd>
         <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.name %>/steps/<%= step.id %>/delete">Delete</a></dd>
       <% end %>
-      <p><a href="/recipes/<%= @recipe.name %>/steps/add">Add</a></p>
+      <div class="add-button"><a href="/recipes/<%= @recipe.name %>/steps/add">Add</a></div>
     </dl>
+    <div class="save-button">
     <input type="submit" value="Save">
+  </div>
   </fieldset>
 </form>
+
+
+</div>

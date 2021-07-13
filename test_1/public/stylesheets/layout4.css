@@ -304,7 +304,7 @@ footer a:hover {
   line-height: 1.8rem;
   font-size: 1.2rem;
   letter-spacing: 0.6px;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 .about-us-button {
   padding: 3px 20px 5px 0;
@@ -328,7 +328,7 @@ footer a:hover {
 
 .surround {
   content: "";
-  background-color: rgb(0, 0, 0, 0.35);
+  background-color: rgb(0, 0, 0, 0.4);
 }
 
 .pghdr,
@@ -377,7 +377,6 @@ main .idx-recipes {
   overflow: auto;
   display: flex;
   justify-content: center;
-
 }
 
 main .sample-recipes, .all_recipes {
@@ -489,8 +488,7 @@ main .sample-recipes a:hover,
   justify-content: center;
 }
 
-.new_recipe,
-.current-recipe {
+.new_recipe{
   background-color: inherit;
   display: flex;
   flex-direction: column;
@@ -498,7 +496,7 @@ main .sample-recipes a:hover,
 
 }
 
-.lets_add, .current-recipe {
+.lets_add {
   background: rgb(230,220,207);
   background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
 
@@ -519,7 +517,8 @@ main .sample-recipes a:hover,
   text-decoration: none;
 }
 
-.lets_add input, .lets_add text-area {
+.lets_add input, .lets_add text-area,
+.lets-edit input {
   border-radius: 7px;
   line-height: 2rem;
   border: 1px solid rgb(109,156,172);
@@ -528,7 +527,9 @@ main .sample-recipes a:hover,
   font-size: 1.1rem;
   color: #36545f;
 }
-.lets_add input:focus, .lets_add text-area:focus, textarea[class="step_by_step"]:focus {
+.lets_add input:focus, .lets_add text-area:focus,
+ textarea[class="step_by_step"]:focus, .lets-edit input:focus,
+ .lets-edit input[type="text-area"]:focus  {
     outline: none !important;
     border:1px solid red;
     box-shadow: 0 0 5px #e69a59;
@@ -576,7 +577,7 @@ main .sample-recipes a:hover,
   margin: 15px;
 }
 
-.botangatte a {
+.botangatte a, .to-edit a{
   padding: 5px 20px;
   width: 45%;
   margin: auto;
@@ -592,7 +593,7 @@ main .sample-recipes a:hover,
   justify-content: space-around;
   border: 1.5px solid #36545f;
 }
-.botangatte a:hover {
+.botangatte a:hover, .to-edit a:hover {
   background-color: #e69a59;
   transition: 0.4s;
   border-color: rgb(109,156,172);
@@ -627,36 +628,154 @@ main .sample-recipes a:hover,
 
 /* view recipe */
 
+.display-recipe {
 
-.edit-recipe {
-  display: flex;
-}
 
-.current-recipe h3, .recipe-information label {
-  font-family: Sofia;
-  font-size: 1.8rem;
-  padding: 20px 0;
 }
 
 .current-recipe {
-  max-width: 1000px;
+  padding: 30px 20px;
+  padding-bottom: 30px;
 }
 
-/*.display-recipe {
+.recipe-information, .lets-edit fieldset  {
+  background: rgb(230,220,207);
+  background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
+
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  max-width: 1000px;
+  color: #416572;
+  border-radius: 25px;
+  border: 2px solid #416572;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  font-family: Roboto, sans-serif;
+  padding-left: 30px;
+  margin: auto;
+
+  padding-bottom: 40px;
+
 }
 
-.current-recipe {
-
+.current-recipe h2, .current-recipe h1,
+.current-recipe strong {
+  font-family: Sofia, sans-serif;
+  font-size: 1.8rem;
+  padding: 1rem 0;
 }
 
-.recipe-information .botangatte ul {
+.to-edit ul {
   display: flex;
+  flex-direction: row-reverse;
+}
+
+.to-edit li {
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.to-edit {
+
+}
+
+.ingredient-list {
+  margin: auto auto auto 1.2rem;
+}
+
+.ingredient-list li {
+  padding: 3px 0;
+}
+
+.directions ol {
+  counter-reset: item;
+}
+
+.directions li {
+  counter-increment: item;
+    padding: 10px 0;
+}
+
+.directions li:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: #416572;
+  border-radius: 100%;
+  color: white;
+  width: 2rem;
+  text-align: center;
+  display: inline-block;
+}
+
+/* lets edit */
+
+.lets-edit {
+  display: flex;
+}
+
+.lets-edit form {
+  margin: 30px auto;
+  width: 600px;
+}
+
+.lets-edit fieldset {
+  padding: 30px;
   margin: auto;
 }
-*/
+
+.lets-edit form label {
+  font-family: Sofia, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.lets-edit input {
+  width: 100%;
+
+  margin: 0 0 10px 0;
+}
+
+.lets-edit fieldset dt {
+  padding: 10px 0;
+}
+
+.lets-edit fieldset .edit-delete {
+  padding: 5px 0 15px 0;
+}
+
+
+
+.lets-edit fieldset .edit-delete a,
+.lets-edit fieldset dl .add-button a,
+.lets-edit fieldset .addz {
+  padding: 2px 10px;
+  width: 20%;
+  margin: auto 0 auto auto;
+  background: rgb(109,156,172);
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  border-radius: 10px; 
+  font-family: Sofia;
+  font-weight: bold;
+  justify-content: space-around;
+  border: 1.5px solid #36545f;
+
+  display: flex;
+}
+
+.botangatte a:hover, .to-edit a:hover,
+.lets-edit fieldset .edit-delete a:hover,
+.lets-edit fieldset dl .add-button a:hover,
+.lets-edit fieldset .addz:hover {
+  background-color: #e69a59;
+  transition: 0.4s;
+  border-color: rgb(109,156,172);
+}
 
 
 
