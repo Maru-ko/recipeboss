@@ -395,8 +395,11 @@ background: rgb(212,198,186);
 background: linear-gradient(318deg, rgba(212,198,186,1) 0%, rgba(230,223,217,1) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
 */
 
-background: rgb(230,220,207);
+/*background: rgb(230,220,207);
 background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
+*/
+background: rgb(228,226,224);
+background: radial-gradient(circle, rgba(228,226,224,1) 0%, rgba(230,223,217,1) 58%);
 
 }
 
@@ -497,8 +500,10 @@ main .sample-recipes a:hover,
 }
 
 .lets_add {
-  background: rgb(230,220,207);
-  background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
+/*  background: rgb(230,220,207);
+  background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);*/
+  background: rgb(228,226,224);
+  background: radial-gradient(circle, rgba(228,226,224,1) 0%, rgba(230,223,217,1) 58%);
 
   display: flex;
   flex-direction: column;
@@ -639,8 +644,11 @@ main .sample-recipes a:hover,
 }
 
 .recipe-information, .lets-edit fieldset  {
-  background: rgb(230,220,207);
+/*  background: rgb(230,220,207);
   background: linear-gradient(168deg, rgba(230,220,207,1) 0%, rgba(227,210,197,0.7553396358543417) 100%, rgba(131,58,180,1) 109%, rgba(253,29,29,1) 172%);
+*/
+background: rgb(228,226,224);
+background: radial-gradient(circle, rgba(228,226,224,1) 0%, rgba(230,223,217,1) 58%);
 
   padding: 20px;
 
