@@ -215,7 +215,10 @@ get '/about' do
   erb :about, layout: :layout
 end
 
-
+get '/generate_weekly_menu' do
+  @weekly_recipes = @recipe_book.weekly_menu_generate('vegetarian')
+  erb :weekly_menu, layout: :layout
+end
 # res n dev
 
 # get '/new_layout' do

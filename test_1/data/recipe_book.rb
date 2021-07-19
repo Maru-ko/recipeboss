@@ -7,6 +7,8 @@ require_relative 'step'
 class RecipeBook
   attr_accessor :recipes
 
+  WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
   def initialize
     @recipes = []
     load_recipes
@@ -33,7 +35,8 @@ class RecipeBook
             step[:name],
             step[:origin_recipe_id]
             )
-        end
+        end,
+        recipe[:filters]
       )
       @recipes << recipe
     end
@@ -70,6 +73,8 @@ class RecipeBook
         }
       end
 
+      new_recipe[:filters] = recipe.filters 
+
       formatted_recipes << new_recipe
     end
 
@@ -103,8 +108,16 @@ class RecipeBook
     @recipes.reject! { |recipe| recipe.name == recipe_name}
   end
 
-# For testing
-  # def show_names
-  #   @recipes.map { |recipe| recipe.name }
-  # end
+  def weekly_menu_generate(filter)
+    other_recipes = @recipes.select{ |recipe| recipe.filters.include?(filter) && !recipe.filters.include?('breakfast') }.shuffle
+    breakfast_recipes = @recipes.select{ |recipe| recipe.filters.include?(filter) && recipe.filters.include?('breakfast') }.shuffle
+    weekly_recipes = {}
+    7.times do |num|
+      weekly_recipes[WEEKDAYS[num]] = [breakfast_recipes.delete_at(0)]
+      2.times do 
+        weekly_recipes[WEEKDAYS[num]] << other_recipes.delete_at(0)
+      end
+    end
+    weekly_recipes
+  end
 end
