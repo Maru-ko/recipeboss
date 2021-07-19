@@ -1,0 +1,1164 @@
+---
+- :id: 1
+  :name: John Legend's Macaroni and Cheese
+  :cook_time: 60
+  :ingredients:
+  - :id: 1
+    :name: 4 tablespoons (1/2 stick) unsalted butter, plus more for baking dish
+    :origin_recipe_id: 1
+  - :id: 2
+    :name: Coarse salt and freshly ground pepper
+    :origin_recipe_id: 1
+  - :id: 3
+    :name: 3 cups elbow macaroni
+    :origin_recipe_id: 1
+  - :id: 4
+    :name: 2 (12-ounce) cans evaporated milk
+    :origin_recipe_id: 1
+  - :id: 5
+    :name: 1/3 cup skim milk
+    :origin_recipe_id: 1
+  - :id: 6
+    :name: 2 large eggs
+    :origin_recipe_id: 1
+  - :id: 7
+    :name: 1/2 teaspoon seasoned salt
+    :origin_recipe_id: 1
+  - :id: 8
+    :name: 1/4 teaspoon garlic powder
+    :origin_recipe_id: 1
+  - :id: 9
+    :name: 2 (8-ounce) packages extra-sharp cheddar cheese, grated
+    :origin_recipe_id: 1
+  - :id: 10
+    :name: 1 (8-ounce) package Monterey Jack cheese, grated
+    :origin_recipe_id: 1
+  - :id: 11
+    :name: Paprika, for sprinkling
+    :origin_recipe_id: 1
+  :steps:
+  - :id: 1
+    :name: Preheat oven to 375 degrees. Generously butter a 13-by-9-inch glass baking
+      dish; set aside. Bring a large pot of water to a boil; add salt and macaroni.
+      Cook until al dente according to package directions. Drain, and return to pot.
+      Add butter, and toss until pasta is coated and butter has melted; set aside.
+    :origin_recipe_id: 1
+  - :id: 2
+    :name: In a medium bowl, whisk together evaporated milk, skim milk, and eggs.
+      Add seasoned salt, garlic powder, 1 teaspoon salt, and 1/2 teaspoon pepper;
+      set aside. In another medium bowl, combine cheeses; set aside.
+    :origin_recipe_id: 1
+  - :id: 3
+    :name: Place 1/3 macaroni in an even layer in the bottom of prepared baking dish;
+      cover evenly with 1/3 cheese. Repeat with remaining macaroni and cheese mixture.
+      Pour milk mixture evenly over contents of baking dish. Sprinkle with paprika.
+      Bake until top layer is lightly browned, 35 to 45 minutes. Let stand 10 to 15
+      minutes before serving.
+    :origin_recipe_id: 1
+  :filters:
+  - Vegetarian
+- :id: 2
+  :name: Vegetarian Shepherd's Pie
+  :cook_time: 60
+  :ingredients:
+  - :id: 12
+    :name: 2 tablespoons extra-virgin olive oil
+    :origin_recipe_id: 2
+  - :id: 13
+    :name: 1 large onion, finely diced
+    :origin_recipe_id: 2
+  - :id: 14
+    :name: 2 carrots, peeled and thinly sliced
+    :origin_recipe_id: 2
+  - :id: 15
+    :name: 2 celery stalks, thinly sliced
+    :origin_recipe_id: 2
+  - :id: 16
+    :name: 10 ounces cremini mushrooms, trimmed and sliced
+    :origin_recipe_id: 2
+  - :id: 17
+    :name: 1 tablespoon tomato paste
+    :origin_recipe_id: 2
+  - :id: 18
+    :name: 1 tablespoon vegetarian Worcestershire sauce, such as Annie's Naturals
+    :origin_recipe_id: 2
+  - :id: 19
+    :name: 1 dried bay leaf
+    :origin_recipe_id: 2
+  - :id: 20
+    :name: 1 cup French green lentils, picked over
+    :origin_recipe_id: 2
+  - :id: 21
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 2
+  - :id: 22
+    :name: 1 cup frozen peas
+    :origin_recipe_id: 2
+  - :id: 23
+    :name: 2 pounds Yukon Gold potatoes, scrubbed and cut into 1 1/2-inch pieces
+    :origin_recipe_id: 2
+  - :id: 24
+    :name: 4 cloves garlic
+    :origin_recipe_id: 2
+  - :id: 25
+    :name: 4 tablespoons unsalted butter
+    :origin_recipe_id: 2
+  - :id: 26
+    :name: 1/2 cup whole milk, warmed
+    :origin_recipe_id: 2
+  :steps:
+  - :id: 12
+    :name: Heat oil in a medium pot over medium. Add onion, carrots, and celery and
+      cook, stirring, until tender, 6 to 8 minutes. Add mushrooms and cook, stirring,
+      until tender, 8 to 10 minutes. Add tomato paste and cook, stirring, 1 minute.
+      Add Worcestershire, bay leaf, 4 cups water, and lentils; season with salt and
+      pepper. Bring to a boil, then reduce to a simmer and cook until lentils are
+      tender, 30 to 35 minutes. Stir in peas; remove from heat and season with salt
+      and pepper.
+    :origin_recipe_id: 2
+  - :id: 13
+    :name: Preheat oven to 400 degrees. Place potatoes and garlic in a medium saucepan;
+      cover with 2 inches of cold water. Season generously with salt; bring to a boil,
+      then reduce to a simmer and cook until a knife pierces potatoes easily, 10 to
+      12 minutes. Drain; return potatoes and garlic to pot. Add butter and milk; mash
+      with a fork or potato masher until smooth. Season with salt and pepper.
+    :origin_recipe_id: 2
+  - :id: 14
+    :name: Transfer lentil mixture to a 2-quart baking dish. Dollop with mashed potatoes;
+      spread evenly to edges. Transfer to a baking sheet; bake until golden and bubbling
+      around edges, about 15 minutes. Let stand 20 minutes; serve.
+    :origin_recipe_id: 2
+  :filters:
+  - Vegetarian
+- :id: 3
+  :name: Split-Pea Soup with Spinach and Barley
+  :cook_time: 60
+  :ingredients:
+  - :id: 27
+    :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 3
+  - :id: 28
+    :name: 3 leeks, white and light-green parts only, chopped and well washed
+    :origin_recipe_id: 3
+  - :id: 29
+    :name: 2 carrots, peeled and chopped
+    :origin_recipe_id: 3
+  - :id: 30
+    :name: 2 celery stalks, chopped
+    :origin_recipe_id: 3
+  - :id: 31
+    :name: 8 cups low-sodium chicken broth or water, or a combination
+    :origin_recipe_id: 3
+  - :id: 32
+    :name: 1 pound dried split peas, picked over
+    :origin_recipe_id: 3
+  - :id: 33
+    :name: 5 ounces baby spinach
+    :origin_recipe_id: 3
+  - :id: 34
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 3
+  - :id: 35
+    :name: 1/2 cup full-fat plain yogurt (not Greek), whisked, for serving
+    :origin_recipe_id: 3
+  - :id: 36
+    :name: 2 cups <a href="http://www.marthastewart.com/1527738/how-cook-barley">cooked
+      barley</a>, for serving
+    :origin_recipe_id: 3
+  :steps:
+  - :id: 27
+    :name: Heat oil in a large pot over medium. Add leeks, carrots, and celery; cook,
+      stirring, until tender, 6 to 8 minutes. Add broth and peas; bring to a boil,
+      then reduce to a simmer and cook, partially covered, until peas are creamy,
+      50 to 55 minutes. Stir in spinach; cook until just wilted, about 5 minutes.
+      Let cool slightly.
+    :origin_recipe_id: 3
+  - :id: 28
+    :name: Working in batches, puree soup in a blender until smooth. Return to pot;
+      season with salt and pepper. (If too thick, add water, 1 tablespoon at a time.)
+      Ladle soup into bowls, drizzle with yogurt and oil, top with barley, and serve.
+    :origin_recipe_id: 3
+  :filters:
+  - Vegetarian
+- :id: 4
+  :name: Vegan Lentil Soup
+  :cook_time: 60
+  :ingredients:
+  - :id: 37
+    :name: 2 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 4
+  - :id: 38
+    :name: 1/2 cup chopped shallot
+    :origin_recipe_id: 4
+  - :id: 39
+    :name: 1/2 cup chopped carrot
+    :origin_recipe_id: 4
+  - :id: 40
+    :name: 1/2 cup chopped celery
+    :origin_recipe_id: 4
+  - :id: 41
+    :name: 1/2 teaspoon ground cumin
+    :origin_recipe_id: 4
+  - :id: 42
+    :name: 1/2 teaspoon ground coriander
+    :origin_recipe_id: 4
+  - :id: 43
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 4
+  - :id: 44
+    :name: 1 cup dried French lentils
+    :origin_recipe_id: 4
+  - :id: 45
+    :name: 1 can (15 ounces) crushed tomatoes
+    :origin_recipe_id: 4
+  - :id: 46
+    :name: 4 cups chopped broccoli rabe
+    :origin_recipe_id: 4
+  - :id: 47
+    :name: 2 teaspoons red-wine vinegar
+    :origin_recipe_id: 4
+  :steps:
+  - :id: 37
+    :name: Heat oil in a pot over medium-high. Add shallot, carrot, celery, cumin,
+      coriander, and a pinch of salt. Cook, stirring, until vegetables have softened,
+      4 to 6 minutes.
+    :origin_recipe_id: 4
+  - :id: 38
+    :name: Stir in lentils, tomatoes, and 4 1/2 cups water. Season with salt and pepper.
+      Bring to a boil, then reduce heat to medium-low and simmer, partially covered,
+      until lentils are tender, 40 to 45 minutes.
+    :origin_recipe_id: 4
+  - :id: 39
+    :name: Stir in broccoli rabe (if soup is too thick, add up to 1/2 cup water);
+      cook until tender, about 3 minutes more. Stir in red-wine vinegar, season with
+      salt and pepper, and serve, with more pepper and a drizzle of oil.
+    :origin_recipe_id: 4
+  :filters:
+  - Vegetarian
+- :id: 5
+  :name: Brown-Butter Sweet-Potato Gnocchi with Seeds
+  :cook_time: 90
+  :ingredients:
+  - :id: 48
+    :name: 1 pound sweet potatoes (2 to 3)
+    :origin_recipe_id: 5
+  - :id: 49
+    :name: 1 1/2 cups unbleached all-purpose flour, plus more for dusting
+    :origin_recipe_id: 5
+  - :id: 50
+    :name: 1 large egg, room temperature, beaten
+    :origin_recipe_id: 5
+  - :id: 51
+    :name: 1 1/2 teaspoons kosher salt
+    :origin_recipe_id: 5
+  - :id: 52
+    :name: 3 tablespoons pepitas
+    :origin_recipe_id: 5
+  - :id: 53
+    :name: 1 tablespoon sesame seeds
+    :origin_recipe_id: 5
+  - :id: 54
+    :name: 2 teaspoons poppy seeds
+    :origin_recipe_id: 5
+  - :id: 55
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 5
+  - :id: 56
+    :name: 1 stick unsalted butter
+    :origin_recipe_id: 5
+  - :id: 57
+    :name: Handful of fresh sage leaves, sliced if large
+    :origin_recipe_id: 5
+  :steps:
+  - :id: 48
+    :name: 'Gnocchi: In a pot, cover potatoes with 2 inches of cold water. Bring to
+      a boil and cook until easily pierced with the tip of a knife, 20 to 25 minutes.
+      Drain and let sit until cool enough to handle. Peel and quarter potatoes and
+      let cool completely.'
+    :origin_recipe_id: 5
+  - :id: 49
+    :name: Using a ricer or colander, press potatoes into a large bowl. Add flour,
+      egg, and salt to bowl and gently stir until a ragged dough forms, being careful
+      not to overwork. Transfer dough to a floured work surface and gently knead until
+      dough just becomes uniform in color (sprinkling surface and hands with more
+      flour as needed to prevent sticking).
+    :origin_recipe_id: 5
+  - :id: 50
+    :name: Divide dough into 6 pieces; roll one out to an approximately 3/4-inch-diameter
+      rope. Using a bench scraper or knife, cut crosswise into 1/2-inch-thick "pillows."
+      Transfer in a single layer to a rimmed baking sheet generously dusted with flour.
+      Repeat with remaining dough.
+    :origin_recipe_id: 5
+  - :id: 51
+    :name: 'Sauce: Heat a large skillet over medium. Add pepitas and sesame and poppy
+      seeds; cook, shaking frequently, until pepitas puff slightly and begin to pop,
+      about 2 minutes. Transfer to a plate and season with salt and pepper.'
+    :origin_recipe_id: 5
+  - :id: 52
+    :name: Melt butter in skillet over medium heat, swirling occasionally, until dark
+      golden brown, 8 to 10 minutes. Add sage leaves to brown butter and cook until
+      darkened slightly, about 45 seconds. Remove skillet from heat. Using a fork,
+      transfer sage to plate with seeds.
+    :origin_recipe_id: 5
+  - :id: 53
+    :name: Meanwhile, cook gnocchi in a large pot of generously salted boiling water
+      until they float and are al dente, 3 to 4 minutes; drain. Add to skillet with
+      brown butter and return to medium heat. Cook, stirring occasionally, until gnocchi
+      begin to crisp at edges, 3 to 4 minutes. Serve topped with seeds and sage.
+    :origin_recipe_id: 5
+  :filters:
+  - Vegetarian
+- :id: 6
+  :name: Quick Carrots and Snap Peas with Lemony Mustard Dressing
+  :cook_time: 30
+  :ingredients:
+  - :id: 58
+    :name: 2 tablespoons Dijon mustard
+    :origin_recipe_id: 6
+  - :id: 59
+    :name: 1 teaspoon finely grated lemon zest, plus 3 tablespoons fresh juice
+    :origin_recipe_id: 6
+  - :id: 60
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 6
+  - :id: 61
+    :name: 1/3 cup extra-virgin olive oil
+    :origin_recipe_id: 6
+  - :id: 62
+    :name: 1 1/2 pounds carrots, peeled and cut on the bias into 1/4-inch-thick slices
+      (4 1/2 cups)
+    :origin_recipe_id: 6
+  - :id: 63
+    :name: 3 tablespoons unsalted butter
+    :origin_recipe_id: 6
+  - :id: 64
+    :name: 12 ounces sugar snap peas, trimmed if stringy, halved on the bias
+    :origin_recipe_id: 6
+  :steps:
+  - :id: 58
+    :name: Whisk together mustard and lemon zest and juice. Season generously with
+      salt and pepper and slowly whisk in oil.
+    :origin_recipe_id: 6
+  - :id: 59
+    :name: Combine carrots, butter, 1/2 cup water, and 1 1/2 teaspoons salt in a large
+      straight-sided skillet or wide, shallow pot. Bring to a boil, then cover, reduce
+      heat to medium, and simmer 5 minutes. Uncover and cook, stirring occasionally,
+      until carrots are just tender but holding their shape, 5 to 7 minutes more.
+    :origin_recipe_id: 6
+  - :id: 60
+    :name: Stir in snap peas and continue cooking just until peas have turned crisp-tender
+      and bright green, about 2 minutes. Remove from heat and carefully drain any
+      liquid remaining in skillet; toss with half of mustard dressing and season to
+      taste. Serve, with remaining dressing on the side.
+    :origin_recipe_id: 6
+  :filters:
+  - Vegetarian
+- :id: 7
+  :name: Spaghetti with Tomato Saute
+  :cook_time: 120
+  :ingredients:
+  - :id: 65
+    :name: 3 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 7
+  - :id: 66
+    :name: 3 pints red, orange, and yellow pear or cherry tomatoes (about 2 pounds),
+      halved if large; plus a few more, still on the vine (optional)
+    :origin_recipe_id: 7
+  - :id: 67
+    :name: Kosher salt
+    :origin_recipe_id: 7
+  - :id: 68
+    :name: 2 cloves garlic, minced
+    :origin_recipe_id: 7
+  - :id: 69
+    :name: Large pinch of red-pepper flakes, plus more for serving
+    :origin_recipe_id: 7
+  - :id: 70
+    :name: 12 ounces spaghetti or bucatini
+    :origin_recipe_id: 7
+  - :id: 71
+    :name: 2 ounces Parmigiano-Reggiano, finely grated (1/2 cup)
+    :origin_recipe_id: 7
+  - :id: 72
+    :name: 1/2 cup fresh ricotta cheese
+    :origin_recipe_id: 7
+  - :id: 73
+    :name: Small fresh basil leaves, for serving
+    :origin_recipe_id: 7
+  :steps:
+  - :id: 65
+    :name: If you aren't using any tomatoes on vine, skip to step 2. Otherwise, heat
+      1 tablespoon oil in a large skillet over medium. Add tomatoes on vine, season
+      with salt, and cook, gently stirring, until skins begin to pucker, about 3 minutes,
+      depending on size. Transfer to a plate.
+    :origin_recipe_id: 7
+  - :id: 66
+    :name: Heat remaining 2 tablespoons oil in skillet over medium-high. Add garlic
+      and remaining tomatoes and cook, stirring occasionally, until tomatoes are just
+      beginning to break down, 3 to 5 minutes. Add red-pepper flakes and season with
+      salt. Remove from heat.
+    :origin_recipe_id: 7
+  - :id: 67
+    :name: Meanwhile, cook pasta in a large pot of salted boiling water 1 minute less
+      than package directions. Reserve 1 cup pasta water, then drain pasta and return
+      to pot. Add 1/3 cup pasta water, tomato mixture, and Parmigiano.
+    :origin_recipe_id: 7
+  - :id: 68
+    :name: Cook over medium heat, tossing, until pasta is evenly coated, about 2 minutes,
+      adding more pasta water as needed. To serve, top pasta with ricotta and sautéed
+      tomatoes on the vine (if using); drizzle pasta with oil, then sprinkle with
+      more red-pepper flakes and basil.
+    :origin_recipe_id: 7
+  :filters:
+  - Vegetarian
+- :id: 8
+  :name: Breakfast Burrito
+  :cook_time: 60
+  :ingredients:
+  - :id: 74
+    :name: <a href="https://www.marthastewart.com/255832/saras-herb-cream-cheese">Sara's
+      Herb Cream Cheese</a>
+    :origin_recipe_id: 8
+  - :id: 75
+    :name: <a href="https://www.marthastewart.com/343697/saras-roasted-plum-tomatoes">Sara's
+      Roasted Plum Tomatoes</a>
+    :origin_recipe_id: 8
+  - :id: 76
+    :name: <a href="https://www.marthastewart.com/344222/saras-salad-greens-mixture">Sara's
+      Salad Greens Mixture</a>
+    :origin_recipe_id: 8
+  - :id: 77
+    :name: <a href="https://www.marthastewart.com/255365/saras-scrambled-eggs">Sara's
+      Scrambled Eggs</a>
+    :origin_recipe_id: 8
+  - :id: 78
+    :name: 4 twelve-inch spinach tortillas
+    :origin_recipe_id: 8
+  - :id: 79
+    :name: Extra-virgin olive oil
+    :origin_recipe_id: 8
+  - :id: 80
+    :name: 8 ounces smoked salmon
+    :origin_recipe_id: 8
+  - :id: 81
+    :name: 8 tablespoons alfalfa sprouts
+    :origin_recipe_id: 8
+  - :id: 82
+    :name: 1 small bunch basil, minced, for garnish
+    :origin_recipe_id: 8
+  - :id: 83
+    :name: 4 scallions, white part only, julienned, for garnish
+    :origin_recipe_id: 8
+  - :id: 84
+    :name: 1/2 small red onion, thinly sliced, for garnish
+    :origin_recipe_id: 8
+  :steps:
+  - :id: 74
+    :name: Prepare the herb cream cheese, roasted plum tomatoes, and salad-greens
+      mixture. Prepare the scrambled eggs, and keep them warm.
+    :origin_recipe_id: 8
+  - :id: 75
+    :name: Heat a grill pan over medium-high heat on the stove. Using a pastry brush,
+      brush tortillas with olive oil. Grill each tortilla lightly on one side for
+      no longer than 1 minute (the tortillas should be soft and easy to roll). Transfer
+      tortillas, grilled side down, to work surface.
+    :origin_recipe_id: 8
+  - :id: 76
+    :name: Divide herb cream cheese among the tortillas, spreading evenly and leaving
+      a 1-inch border.
+    :origin_recipe_id: 8
+  - :id: 77
+    :name: Divide the smoked salmon, scrambled eggs, and salad-green mixture evenly
+      among tortillas. Top with alfalfa sprouts.
+    :origin_recipe_id: 8
+  - :id: 78
+    :name: Fold in opposite sides of one tortilla, and roll it up; repeat with remaining
+      tortillas. Slice each burrito in half diagonally, transfer to a platter, and
+      garnish with roasted plum tomatoes, basil, scallions, and red onion.
+    :origin_recipe_id: 8
+  :filters:
+  - Breakfast
+- :id: 9
+  :name: Breakfast Vegetable-Miso Soup with Chickpeas
+  :cook_time: 60
+  :ingredients:
+  - :id: 85
+    :name: 2 tablespoon olive oil
+    :origin_recipe_id: 9
+  - :id: 86
+    :name: 1/2 yellow onion, chopped
+    :origin_recipe_id: 9
+  - :id: 87
+    :name: 2 garlic cloves, minced
+    :origin_recipe_id: 9
+  - :id: 88
+    :name: 2 celery stalks, diced
+    :origin_recipe_id: 9
+  - :id: 89
+    :name: 2 carrots, peeled and diced
+    :origin_recipe_id: 9
+  - :id: 90
+    :name: 1 cup chopped broccoli
+    :origin_recipe_id: 9
+  - :id: 91
+    :name: 1 cup cooked chickpeas
+    :origin_recipe_id: 9
+  - :id: 92
+    :name: 2 tablespoons white miso
+    :origin_recipe_id: 9
+  - :id: 93
+    :name: Coarse salt
+    :origin_recipe_id: 9
+  :steps:
+  - :id: 85
+    :name: Heat olive oil in a pot over medium heat. Cook onion, garlic, celery, and
+      carrots until tender, 6 to 8 minutes.
+    :origin_recipe_id: 9
+  - :id: 86
+    :name: Stir in broccoli and chickpeas; cook about 2 minutes.
+    :origin_recipe_id: 9
+  - :id: 87
+    :name: Add 4 cups water. Bring to a boil; reduce heat and simmer until vegetables
+      are tender, about 10 minutes. Remove from heat. Dissolve miso in 2 tablespoons
+      cool water and stir into soup. Season with salt.
+    :origin_recipe_id: 9
+  :filters:
+  - Breakfast
+- :id: 10
+  :name: Southwestern Breakfast Hash
+  :cook_time: 90
+  :ingredients:
+  - :id: 94
+    :name: 2 medium red potatoes, scrubbed and cut into 1-inch pieces
+    :origin_recipe_id: 10
+  - :id: 95
+    :name: 3 tablespoons canola oil
+    :origin_recipe_id: 10
+  - :id: 96
+    :name: 1/2 teaspoon ground cumin
+    :origin_recipe_id: 10
+  - :id: 97
+    :name: 1 jalapeno, seeded and finely diced
+    :origin_recipe_id: 10
+  - :id: 98
+    :name: 3 scallions, cut into 1/4-inch slices (reserve 1 for garnish)
+    :origin_recipe_id: 10
+  - :id: 99
+    :name: 8 ounces cherry tomatoes, halved
+    :origin_recipe_id: 10
+  - :id: 100
+    :name: 1 can (15 ounces) black beans, drained and rinsed
+    :origin_recipe_id: 10
+  - :id: 101
+    :name: 2 teaspoons nutritional yeast seasoning
+    :origin_recipe_id: 10
+  - :id: 102
+    :name: 1 package (8 ounces) plain, pasteurized organic tempeh, crumbled
+    :origin_recipe_id: 10
+  - :id: 103
+    :name: 1 medium avocado, coarsely chopped
+    :origin_recipe_id: 10
+  - :id: 104
+    :name: Coarse salt and freshly ground black pepper
+    :origin_recipe_id: 10
+  :steps:
+  - :id: 94
+    :name: Bring potatoes to a boil in a pot of salted water. Cook until knife-tender,
+      about 6 minutes. Drain and set aside.
+    :origin_recipe_id: 10
+  - :id: 95
+    :name: Heat 2 tablespoons oil in a large saucepan over medium-high heat. Add cumin
+      and cook until fragrant, about 30 seconds. Add potatoes and cook, stirring occasionally,
+      until golden, 5 to 7 minutes. Transfer to a bowl; set aside.
+    :origin_recipe_id: 10
+  - :id: 96
+    :name: Heat remaining oil over medium heat. Cook jalapeno, scallions, tomatoes,
+      beans, yeast, and tempeh, stirring, until tomatoes begin to break down, 5 to
+      7 minutes. Add potatoes and cook until heatedthrough. Remove pan from heat and
+      gently stir in avocado. Season with salt and pepper. Garnish with reserved scallion.
+    :origin_recipe_id: 10
+  :filters:
+  - Breakfast
+- :id: 11
+  :name: Savory Breakfast Bowl
+  :cook_time: 120
+  :ingredients:
+  - :id: 105
+    :name: 8 ounces cherry tomatoes (1 1/4 cups)
+    :origin_recipe_id: 11
+  - :id: 106
+    :name: 3 tablespoons extra-virgin olive oil, plus more for drizzling
+    :origin_recipe_id: 11
+  - :id: 107
+    :name: Coarse salt and freshly ground pepper
+    :origin_recipe_id: 11
+  - :id: 108
+    :name: 4 packed cups finely shredded stemmed kale (from 1 bunch)
+    :origin_recipe_id: 11
+  - :id: 109
+    :name: 2 tablespoons minced garlic (from 2 cloves)
+    :origin_recipe_id: 11
+  - :id: 110
+    :name: 3 cups <a href="https://www.marthastewart.com/1132756/cooked-hulled-barley">Cooked
+      Hulled Barley</a>, such as Hayden Flour Mills Purple-and-Bronze
+    :origin_recipe_id: 11
+  - :id: 111
+    :name: 4 large eggs
+    :origin_recipe_id: 11
+  - :id: 112
+    :name: 2 ripe but firm small avocados, halved, pitted, and scooped from skins
+    :origin_recipe_id: 11
+  - :id: 113
+    :name: 1/2 cup diced English cucumber
+    :origin_recipe_id: 11
+  - :id: 114
+    :name: Plain Greek yogurt, for serving
+    :origin_recipe_id: 11
+  :steps:
+  - :id: 105
+    :name: Heat broiler, with rack 5 inches from heat source. Drizzle tomatoes with
+      oil in a large ovenproof skillet; toss with salt and pepper. Broil until charred
+      and softened, 4 to 5 minutes. Transfer to a plate.
+    :origin_recipe_id: 11
+  - :id: 106
+    :name: Place skillet over medium-high. Add 1 tablespoon oil, kale, and 3 tablespoons
+      water. Cover and cook, stirring once, until wilted, 2 to 3 minutes. Season with
+      salt and pepper; transfer to plate. Add 2 tablespoons oil and garlic to pan;
+      cook, stirring frequently, until fragrant, about 30 seconds. Stir in barley;
+      heat through. Season with salt and pepper.
+    :origin_recipe_id: 11
+  - :id: 107
+    :name: Meanwhile, bring a small pot of water to a boil. Carefully add eggs, return
+      to a boil, and cook 30 seconds. Turn off heat, cover, and let stand 6 minutes.
+      Drain; run eggs under cold water until cool. Peel.
+    :origin_recipe_id: 11
+  - :id: 108
+    :name: Divide barley, kale, eggs, tomatoes, avocados, and cucumber evenly among
+      bowls. Dollop with yogurt, drizzle with oil, and season with salt and pepper;
+      serve.
+    :origin_recipe_id: 11
+  :filters:
+  - Breakfast
+- :id: 12
+  :name: Breakfast Quinoa
+  :cook_time: 30
+  :ingredients:
+  - :id: 115
+    :name: 2 cups whole or low-fat milk, plus more for serving
+    :origin_recipe_id: 12
+  - :id: 116
+    :name: 1 cup quinoa, rinsed
+    :origin_recipe_id: 12
+  - :id: 117
+    :name: 3 tablespoons light-brown sugar, plus more for serving
+    :origin_recipe_id: 12
+  - :id: 118
+    :name: 1/8 teaspoon ground cinnamon, plus more for serving
+    :origin_recipe_id: 12
+  - :id: 119
+    :name: 1 cup (1/2 pint) fresh blueberries, plus more for serving
+    :origin_recipe_id: 12
+  :steps:
+  - :id: 115
+    :name: Bring milk to a boil in a small saucepan. Add quinoa, and return to a boil.
+      Reduce heat to low, and simmer, covered, until three-quarters of the milk has
+      been absorbed, about 15 minutes.
+    :origin_recipe_id: 12
+  - :id: 116
+    :name: Stir in sugar and cinnamon. Cook, covered, until almost all the milk has
+      been absorbed, about 8 minutes. Stir in blueberries, and cook for 30 seconds.
+      Serve with additional milk, sugar, cinnamon, and blueberries.
+    :origin_recipe_id: 12
+  :filters:
+  - Breakfast
+- :id: 13
+  :name: Breakfast Sausage Patties with Fried Eggs
+  :cook_time: 120
+  :ingredients:
+  - :id: 120
+    :name: <a href="https://www.marthastewart.com/856106/sausage-logs">1 frozen sausage
+      log</a>
+    :origin_recipe_id: 13
+  - :id: 121
+    :name: 2 large eggs
+    :origin_recipe_id: 13
+  - :id: 122
+    :name: Unsalted butter, if needed
+    :origin_recipe_id: 13
+  :steps:
+  - :id: 120
+    :name: Let frozen sausage log stand at room temperature for 20 minutes. Unwrap
+      sausage, andslice crosswise into 1/2-inch-thick rounds using a serrated knife.
+      Cook a few patties in a large heavy skillet, preferably cast iron, over medium-high
+      heat until browned and cooked through, 3 to 5 minutes per side. Push patties
+      to 1 side of skillet and cook eggs as desired, adding unsalted butter if needed.
+    :origin_recipe_id: 13
+  :filters:
+  - Breakfast
+- :id: 14
+  :name: Egg-and-Tomato Breakfast Sandwich To Go
+  :cook_time: 120
+  :ingredients:
+  - :id: 123
+    :name: 1 piece (6 inches long) baguette
+    :origin_recipe_id: 14
+  - :id: 124
+    :name: 2 slices cheddar cheese
+    :origin_recipe_id: 14
+  - :id: 125
+    :name: 2 large eggs
+    :origin_recipe_id: 14
+  - :id: 126
+    :name: 1 teaspoon butter
+    :origin_recipe_id: 14
+  - :id: 127
+    :name: Coarse salt and freshly ground pepper
+    :origin_recipe_id: 14
+  - :id: 128
+    :name: 2 large tomato slices
+    :origin_recipe_id: 14
+  - :id: 129
+    :name: 1/4 cup fresh basil leaves
+    :origin_recipe_id: 14
+  :steps:
+  - :id: 123
+    :name: Preheat oven to 350 degrees. Cut bread horizontally. Lightly toast in oven,
+      cut sides up. Top with cheese (1 slice on each side), and continue to cook in
+      oven until cheese melts, 1 to 2 minutes. Meanwhile, fry eggs in butter; season
+      with salt and pepper.
+    :origin_recipe_id: 14
+  - :id: 124
+    :name: Place eggs on bottom half of bread. Top with tomatoes and basil. Sandwich
+      with top bread half, and press down slightly. Wrap tightly in parchment.
+    :origin_recipe_id: 14
+  :filters:
+  - Breakfast
+- :id: 15
+  :name: Coconut-Raspberry Breakfast Pudding
+  :cook_time: 90
+  :ingredients:
+  - :id: 130
+    :name: 1/2 cup uncooked rice blend (such as Rice Select Royal Blend, with quinoa
+      and freekeh)
+    :origin_recipe_id: 15
+  - :id: 131
+    :name: One 15-ounce can unsweetened coconut milk
+    :origin_recipe_id: 15
+  - :id: 132
+    :name: 2 tablespoons pure maple syrup, plus more for serving
+    :origin_recipe_id: 15
+  - :id: 133
+    :name: 1/8 teaspoon ground cinnamon
+    :origin_recipe_id: 15
+  - :id: 134
+    :name: Kosher salt
+    :origin_recipe_id: 15
+  - :id: 135
+    :name: 1 cup frozen raspberries
+    :origin_recipe_id: 15
+  - :id: 136
+    :name: Fresh raspberries and toasted unsweetened coconut flakes, for serving
+    :origin_recipe_id: 15
+  :steps:
+  - :id: 130
+    :name: Bring uncooked rice blend and 1 cup water to a boil in a small saucepan.
+      Reduce heat, cover, and simmer until tender and water is absorbed, about 18
+      minutes. Remove from heat; let stand, covered, 10 minutes. Fluff with a fork.
+    :origin_recipe_id: 15
+  - :id: 131
+    :name: Add coconut milk, maple syrup, and 1/2 cup water; stir to combine. Stir
+      in cinnamon and a pinch of kosher salt. Return to low heat and simmer until
+      slightly thickened, about 5 minutes. Remove from heat; fold in frozen raspberries.
+      Transfer mixture to a bowl set in an ice-water bath; stir occasionally until
+      chilled. Serve with more maple syrup, fresh raspberries, and toasted unsweetened
+      coconut flakes, if desired.
+    :origin_recipe_id: 15
+  :filters:
+  - Breakfast
+- :id: 16
+  :name: Ham-and-Potato Bake
+  :cook_time: 30
+  :ingredients:
+  - :id: 137
+    :name: Butter, for pan
+    :origin_recipe_id: 16
+  - :id: 138
+    :name: 6 large eggs
+    :origin_recipe_id: 16
+  - :id: 139
+    :name: 1 1/2 cups heavy cream
+    :origin_recipe_id: 16
+  - :id: 140
+    :name: 2 teaspoons coarse salt
+    :origin_recipe_id: 16
+  - :id: 141
+    :name: 1/2 teaspoon ground pepper
+    :origin_recipe_id: 16
+  - :id: 142
+    :name: 2 baking potatoes (about 1 1/4 pounds), peeled
+    :origin_recipe_id: 16
+  - :id: 143
+    :name: 10 ounces sugar-baked ham, thinly sliced (less than 1/4 inch thick)
+    :origin_recipe_id: 16
+  - :id: 144
+    :name: 1 package (10 ounces) frozen broccoli, thawed and squeezed dry with paper
+      towels
+    :origin_recipe_id: 16
+  - :id: 145
+    :name: 1/2 cup grated cheddar cheese (2 ounces)
+    :origin_recipe_id: 16
+  :steps:
+  - :id: 137
+    :name: Preheat oven to 350 degrees. Butter a 9-inch-round cake pan (at least 2
+      inches deep). Line bottom of pan with a parchment-paper round.
+    :origin_recipe_id: 16
+  - :id: 138
+    :name: In a large bowl, whisk together eggs and cream; season with salt and pepper.
+      Thinly slice potatoes (less than 1/4 inch thick); drop into egg mixture.
+    :origin_recipe_id: 16
+  - :id: 139
+    :name: Lifting potatoes out of egg mixture, arrange half the potatoes in pan.
+      Layer with ham, broccoli, cheese, and remaining potatoes. Pour egg mixture over
+      top. Press down firmly so that potatoes are fully submerged in egg mixture.
+    :origin_recipe_id: 16
+  - :id: 140
+    :name: Cover with foil; bake until potatoes are tender, about 1 hour. Uncover;
+      continue baking until golden and set, 30 to 45 minutes more.
+    :origin_recipe_id: 16
+  - :id: 141
+    :name: Cool 15 to 20 minutes in pan. Run a knife around edge, and carefully invert
+      onto a plate. Peel off parchment. Reinvert, top side up. Slice with a serrated
+      knife.
+    :origin_recipe_id: 16
+  :filters:
+  - Breakfast
+- :id: 17
+  :name: Strawberry-Rhubarb Crisp
+  :cook_time: 30
+  :ingredients:
+  - :id: 146
+    :name: 8 ounces strawberries, hulled and halved (quartered if large)
+    :origin_recipe_id: 17
+  - :id: 147
+    :name: 8 ounces rhubarb, trimmed, cut into 1/2-inch pieces
+    :origin_recipe_id: 17
+  - :id: 148
+    :name: 1/2 cup raw sugar
+    :origin_recipe_id: 17
+  - :id: 149
+    :name: 1 tablespoon cornstarch
+    :origin_recipe_id: 17
+  - :id: 150
+    :name: 1/4 teaspoon coarse salt
+    :origin_recipe_id: 17
+  - :id: 151
+    :name: 1 cup rolled oats
+    :origin_recipe_id: 17
+  - :id: 152
+    :name: 1/4 cup all-purpose flour
+    :origin_recipe_id: 17
+  - :id: 153
+    :name: 1/4 cup unsalted butter (1/2 stick), melted
+    :origin_recipe_id: 17
+  - :id: 154
+    :name: 1/4 cup brown sugar
+    :origin_recipe_id: 17
+  - :id: 155
+    :name: 1/8 teaspoon coarse salt
+    :origin_recipe_id: 17
+  - :id: 156
+    :name: Fresh basil leaves, torn if large
+    :origin_recipe_id: 17
+  :steps:
+  - :id: 146
+    :name: Preheat oven to 375 degrees. In a large bowl, combine strawberries, rhubarb,
+      raw sugar, cornstarch, and salt. Transfer to an 8-inch baking dish.
+    :origin_recipe_id: 17
+  - :id: 147
+    :name: In a medium bowl, combine oats, flour, butter, brown sugar, and salt. Stir
+      until combined and slightly clumpy. Sprinkle over fruit.
+    :origin_recipe_id: 17
+  - :id: 148
+    :name: Bake until juices are bubbling in the center and topping is golden brown,
+      about 45 minutes. Let cool slightly. Garnish with basil.
+    :origin_recipe_id: 17
+  :filters:
+  - Breakfast
+- :id: 18
+  :name: A Good Easy Garlic Chicken
+  :cook_time: 45
+  :ingredients:
+  - :id: 157
+    :name: 3 tablespoons butter
+    :origin_recipe_id: 18
+  - :id: 158
+    :name: 4 skinless, boneless chicken breast halves
+    :origin_recipe_id: 18
+  - :id: 159
+    :name: 2 teaspoons garlic powder
+    :origin_recipe_id: 18
+  - :id: 160
+    :name: 1 teaspoon seasoning salt
+    :origin_recipe_id: 18
+  - :id: 161
+    :name: 1 teaspoon onion powder
+    :origin_recipe_id: 18
+  :steps:
+  - :id: 157
+    :name: Melt butter in a large skillet over medium high heat. Add chicken and sprinkle
+      with garlic powder, seasoning salt and onion powder. Saute about 10 to 15 minutes
+      on each side, or until chicken is cooked through and juices run clear.
+    :origin_recipe_id: 18
+  :filters:
+  - Quick & Easy
+- :id: 19
+  :name: Linguine with Lemon-Cream Sauce
+  :cook_time: 30
+  :ingredients:
+  - :id: 162
+    :name: Coarse salt and ground pepper
+    :origin_recipe_id: 19
+  - :id: 163
+    :name: 1 pound linguine
+    :origin_recipe_id: 19
+  - :id: 164
+    :name: 1 teaspoon extra-virgin olive oil
+    :origin_recipe_id: 19
+  - :id: 165
+    :name: 2 shallots, minced
+    :origin_recipe_id: 19
+  - :id: 166
+    :name: 1 cup heavy cream
+    :origin_recipe_id: 19
+  - :id: 167
+    :name: 1 teaspoon grated lemon zest, plus 2 tablespoons lemon juice (from 1 lemon)
+    :origin_recipe_id: 19
+  :steps:
+  - :id: 162
+    :name: In a large pot of boiling salted water, cook pasta according to package
+      instructions. Reserve 1 cup pasta water; drain pasta and return to pot. Meanwhile,
+      in a small pot, heat oil over medium. Add shallots, season with salt and pepper,
+      and cook, stirring, until tender, 4 minutes. Add cream and lemon zest. Bring
+      to a boil and cook until slightly thickened, 8 minutes. Add lemon juice and
+      season to taste with salt and pepper. Pour cream sauce over pasta and toss,
+      adding enough pasta water to create a thin sauce that coats pasta.
+    :origin_recipe_id: 19
+  :filters:
+  - Quick & Easy
+- :id: 20
+  :name: Linguine with Shrimp and White Wine
+  :cook_time: 30
+  :ingredients:
+  - :id: 168
+    :name: Coarse salt and ground pepper
+    :origin_recipe_id: 20
+  - :id: 169
+    :name: 2 ounces linguine (about a 1/2-inch-wide handful)
+    :origin_recipe_id: 20
+  - :id: 170
+    :name: 1 tablespoon cold butter, cut into pieces
+    :origin_recipe_id: 20
+  - :id: 171
+    :name: 1 garlic clove, minced
+    :origin_recipe_id: 20
+  - :id: 172
+    :name: Red-pepper flakes
+    :origin_recipe_id: 20
+  - :id: 173
+    :name: 1/3 cup dry white wine
+    :origin_recipe_id: 20
+  - :id: 174
+    :name: 1/4 pound large shrimp, peeled and deveined
+    :origin_recipe_id: 20
+  - :id: 175
+    :name: 1/2 teaspoon fresh lemon juice
+    :origin_recipe_id: 20
+  - :id: 176
+    :name: Fresh parsley leaves, for garnish
+    :origin_recipe_id: 20
+  :steps:
+  - :id: 168
+    :name: In a large saucepan of boiling salted water, cook pasta until al dente.
+    :origin_recipe_id: 20
+  - :id: 169
+    :name: Meanwhile, in a small nonstick skillet, melt half the butter over medium.
+      Add garlic and pinch of red-pepper flakes; cook until fragrant, 1 minute. Raise
+      heat to medium-high; add wine. Cook until reduced by 1/3, about 1 minute. Add
+      shrimp and season with salt and pepper; cook until opaque throughout, 1 to 2
+      minutes. Remove skillet from heat; swirl in lemon juice and remaining butter.
+      Add pasta and toss to combine. Serve topped with parsley.
+    :origin_recipe_id: 20
+  :filters:
+  - Quick & Easy
+- :id: 21
+  :name: One-Pan Pasta
+  :cook_time: 45
+  :ingredients:
+  - :id: 177
+    :name: 12 ounces linguine
+    :origin_recipe_id: 21
+  - :id: 178
+    :name: 12 ounces cherry or grape tomatoes, halved or quartered if large
+    :origin_recipe_id: 21
+  - :id: 179
+    :name: 1 onion, thinly sliced (about 2 cups)
+    :origin_recipe_id: 21
+  - :id: 180
+    :name: 4 cloves garlic, thinly sliced
+    :origin_recipe_id: 21
+  - :id: 181
+    :name: 1/2 teaspoon red-pepper flakes
+    :origin_recipe_id: 21
+  - :id: 182
+    :name: 2 sprigs basil, plus torn leaves for garnish
+    :origin_recipe_id: 21
+  - :id: 183
+    :name: 2 tablespoons extra-virgin olive oil, plus more for serving
+    :origin_recipe_id: 21
+  - :id: 184
+    :name: Coarse salt and freshly ground pepper
+    :origin_recipe_id: 21
+  - :id: 185
+    :name: 4 1/2 cups water
+    :origin_recipe_id: 21
+  - :id: 186
+    :name: Freshly grated Parmesan cheese, for serving
+    :origin_recipe_id: 21
+  :steps:
+  - :id: 177
+    :name: Combine pasta, tomatoes, onion, garlic, red-pepper flakes, basil, oil,
+      2 teaspoons salt, 1/4 teaspoon pepper, and water in a large straight-sided skillet.
+      Bring to a boil over high heat. Boil mixture, stirring and turning pasta frequently
+      with tongs, until pasta is al dente and water has nearly evaporated, about 9
+      minutes.
+    :origin_recipe_id: 21
+  - :id: 178
+    :name: Season to taste with salt and pepper, divide among 4 bowls, and garnish
+      with basil. Serve with oil and Parmesan.
+    :origin_recipe_id: 21
+  :filters:
+  - Quick & Easy
+- :id: 22
+  :name: Salmon with Brown Sugar and Mustard Glaze
+  :cook_time: 45
+  :ingredients:
+  - :id: 187
+    :name: 1 tablespoon extra-virgin olive oil
+    :origin_recipe_id: 22
+  - :id: 188
+    :name: 1 large shallot, minced
+    :origin_recipe_id: 22
+  - :id: 189
+    :name: 1/4 cup red-wine vinegar
+    :origin_recipe_id: 22
+  - :id: 190
+    :name: 1/4 cup whole-grain mustard
+    :origin_recipe_id: 22
+  - :id: 191
+    :name: 1/4 cup packed dark-brown sugar
+    :origin_recipe_id: 22
+  - :id: 192
+    :name: Coarse salt and ground pepper
+    :origin_recipe_id: 22
+  - :id: 193
+    :name: 1 side salmon (about 3 pounds), skin removed, cut into 8 fillets
+    :origin_recipe_id: 22
+  - :id: 194
+    :name: 1 bunch watercress (about 3/4 pound), thick stems trimmed
+    :origin_recipe_id: 22
+  - :id: 195
+    :name: 1 lemon, cut into wedges, for serving
+    :origin_recipe_id: 22
+  :steps:
+  - :id: 187
+    :name: Heat broiler, with rack in top position. In a small saucepan, heat oil
+      over medium-high. Add shallot and cook, stirring often until softened, 3 minutes.
+      Add vinegar and cook until slightly evaporated, 1 minute. Add mustard and brown
+      sugar; stir until warm and combined, 1 minute. Season with salt and pepper and
+      remove from heat. (To store, refrigerate cooled glaze in an airtight container,
+      up to 1 day.)
+    :origin_recipe_id: 22
+  - :id: 188
+    :name: Place salmon fillets on a foil-lined rimmed baking sheet and season with
+      salt and pepper. Transfer 1/2 cup glaze to a small dish and brush on top of
+      salmon. Broil salmon until glaze is bubbling and fish is opaque throughout,
+      5 to 10 minutes, depending on thickness; brush remaining glaze over fillets.
+      Serve salmon along with watercress and lemon wedges.
+    :origin_recipe_id: 22
+  :filters:
+  - Quick & Easy
+- :id: 23
+  :name: Shaved Radish, Fennel, and Parmesan Salad
+  :cook_time: 45
+  :ingredients:
+  - :id: 196
+    :name: 2 tablespoons extra-virgin olive oil
+    :origin_recipe_id: 23
+  - :id: 197
+    :name: 1 tablespoon fresh lemon juice
+    :origin_recipe_id: 23
+  - :id: 198
+    :name: 2 teaspoons whole-grain mustard
+    :origin_recipe_id: 23
+  - :id: 199
+    :name: Coarse salt and ground black pepper
+    :origin_recipe_id: 23
+  - :id: 200
+    :name: 1 bulb fennel, cored and thinly sliced, plus 1/4 cup fronds
+    :origin_recipe_id: 23
+  - :id: 201
+    :name: 5 radishes, thinly sliced
+    :origin_recipe_id: 23
+  - :id: 202
+    :name: 3 tablespoons freshly shaved Parmesan
+    :origin_recipe_id: 23
+  :steps:
+  - :id: 196
+    :name: Whisk together oil, lemon juice, and mustard and season with salt and pepper.
+    :origin_recipe_id: 23
+  - :id: 197
+    :name: Toss dressing with fennel bulb and radishes and adjust seasoning if necessary.
+      Top with Parmesan and fennel fronds.
+    :origin_recipe_id: 23
+  :filters:
+  - Quick & Easy
+- :id: 24
+  :name: Eggs Goldenrod
+  :cook_time: 30
+  :ingredients:
+  - :id: 203
+    :name: 4 tablespoons unsalted butter, plus more for toast
+    :origin_recipe_id: 24
+  - :id: 204
+    :name: 1/4 cup unbleached all-purpose flour
+    :origin_recipe_id: 24
+  - :id: 205
+    :name: 3 cups whole milk
+    :origin_recipe_id: 24
+  - :id: 206
+    :name: Kosher salt and freshly ground pepper
+    :origin_recipe_id: 24
+  - :id: 207
+    :name: 6 peeled hard-boiled eggs
+    :origin_recipe_id: 24
+  - :id: 208
+    :name: 6 slices white sandwich bread
+    :origin_recipe_id: 24
+  - :id: 209
+    :name: Chopped chives and smoked paprika, for serving
+    :origin_recipe_id: 24
+  :steps:
+  - :id: 203
+    :name: Melt butter in a medium saucepan over medium-high heat. Add flour; whisk
+      until nutty and golden, 1 to 2 minutes. Whisk in milk; bring to a gentle boil,
+      whisking constantly, until mixture thickens to consistency of gravy, 4 to 5
+      minutes. Remove from heat, season with salt and pepper, and cover to keep warm.
+    :origin_recipe_id: 24
+  - :id: 204
+    :name: Cut eggs in half. Remove yolks and press through a medium-mesh sieve, or
+      mince them. Chop whites; stir into bechamel. Toast and butter bread. Divide
+      bechamel mixture evenly among toasts; sprinkle evenly with yolks. Top with chives,
+      paprika, and pepper. Serve immediately.
+    :origin_recipe_id: 24
+  :filters:
+  - Quick & Easy
