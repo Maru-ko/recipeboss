@@ -2,10 +2,10 @@ require 'nokogiri'
 require 'open-uri'
 
 
-require_relative 'recipe_book'
-require_relative 'recipe'
-require_relative 'ingredient'
-require_relative 'step'
+require_relative './data/recipe_book'
+require_relative './data/recipe'
+require_relative './data/ingredient'
+require_relative './data/step'
 require 'yaml'
 
 
@@ -97,13 +97,7 @@ end
 # ]
 
 urls = [
-  "https://www.allrecipes.com/recipe/23998/a-good-easy-garlic-chicken/",
-  "https://www.marthastewart.com/329027/linguine-with-lemon-cream-sauce",
-  "https://www.marthastewart.com/312760/linguine-with-shrimp-and-white-wine",
-  "https://www.marthastewart.com/978784/one-pan-pasta",
-  "https://www.marthastewart.com/344987/salmon-with-brown-sugar-and-mustard-glaz",
-  "https://www.marthastewart.com/1050623/shaved-radish-fennel-and-parmesan-salad",
-  "https://www.marthastewart.com/1514636/eggs-goldenrod"
+  "https://www.allrecipes.com/recipe/23998/a-good-easy-garlic-chicken/"
 ]
 
 
