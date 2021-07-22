@@ -139,27 +139,32 @@ get '/recipes/:recipe_name/delete' do
   @recipe_book.save_recipes
   redirect '/all_recipes'
 end
+
 # dyname
-get '/recipes/:recipe_name/edit' do
-  @recipe = @recipe_book.find_recipe(params[:recipe_name])
+get '/recipes/:recipe_id/edit' do
+  @recipe = RecipeBook.find(params[:recipe_id])
   erb :edit
 end
-post '/recipes/:recipe_name/edit' do
-  recipe = @recipe_book.find_recipe(params[:recipe_name])
+
+post '/recipes/:recipe_id/edit' do
+  recipe = RecipeBook.find(params[:recipe_id])
   recipe.name = params[:name].strip
   recipe.cook_time = params[:time].strip
   recipe.ingredients.each do |ingredient|
-    ingredient.name = params["ingredient_#{ingredient.id}"].strip
+    ingredient.name = params[ingredient.id].strip
     ingredient.name = "You didn't put anything here" if ingredient.name.empty?
+    ingredient.save
   end
   recipe.steps.each do |step|
-    step.name = params["step_#{step.id}"].strip
+    step.name = params[step.id].strip
     step.name = "You didn't put anything here" if step.name.empty?
+    step.save
   end
 
-  update_recipe(recipe)
-  redirect "/recipes/#{recipe.name}"
+  recipe.save
+  redirect "/recipes/#{recipe.id}"
 end
+
 # dynamic
 # Delete an ingredient when editing recipes
 get '/recipes/:recipe_name/ingredients/:ingredient_id/delete' do
@@ -224,6 +229,7 @@ get '/generate_weekly_menu' do
   @weekly_recipes = @recipe_book.weekly_menu_generate('vegetarian')
   erb :weekly_menu, layout: :layout
 end
+
 # res n dev
 
 # get '/new_layout' do

@@ -11,8 +11,16 @@ class RecipeBook < Airrecord::Table
     self["name"]
   end
 
+  def name=(new_name)
+    self["name"] = new_name
+  end
+
   def cook_time
-    self["cook_time"]
+    self["cook time"]
+  end
+
+  def cook_time=(new_cook_time)
+    self["cook time"] = new_cook_time
   end
 
   def ingredients
@@ -37,6 +45,10 @@ class Ingredient < Airrecord::Table
   def name
     self["name"]
   end
+
+  def name=(new_name)
+    self["name"] = new_name
+  end
 end
 
 class Step < Airrecord::Table
@@ -47,6 +59,10 @@ class Step < Airrecord::Table
 
   def name
     self["name"]
+  end
+
+  def name=(new_name)
+    self["name"] = new_name
   end
 end
 
