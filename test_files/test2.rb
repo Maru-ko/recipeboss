@@ -1,2 +1,0 @@
-require 'prime'
-require 'flavor'

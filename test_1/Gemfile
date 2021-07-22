@@ -1,7 +1,13 @@
 source "https://rubygems.org"
 
-gem 'sinatra'
-gem 'sinatra-contrib'
-gem 'erubis'
+ruby "2.7.3"
 
-ruby '2.7.3'
+gem "dotenv"
+gem "sinatra", "~>1.4.7"
+gem "sinatra-contrib"
+gem "erubis"
+gem "airrecord"
+
+group :production do
+  gem "puma"
+end

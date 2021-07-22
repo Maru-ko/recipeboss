@@ -1,23 +1,27 @@
-# frozen_string_literal: false
-
+require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
-# require 'pry'
+require 'airrecord'
+require 'pry'
+require 'pry-byebug'
 
-require_relative 'data/recipe_book'
+require_relative './data/recipe_book'
 
 configure do
   enable :sessions
   set :session_secret, 'chicken'
-  set :erb, escape_html: true
+  set :erb, :escape_html => true
 end
 
 helpers do
+  def random_recipes(n)
+    @recipe_book.shuffle.first(n)
+  end
 end
 
 before do
-  @recipe_book = RecipeBook.new
+  @recipe_book = RecipeBook.all
 end
 
 def initialize_new_recipe
@@ -56,6 +60,10 @@ end
 def clear_recipe_log
   session.delete(:num_of_steps)
   session.delete(:num_of_ingredients)
+end
+
+get '/' do
+  erb :index, layout: :layout
 end
 
 get '/recipes/new' do
@@ -119,14 +127,11 @@ def update_recipe(recipe)
   @recipe_book.save_recipes
 end
 
-get '/' do
-  erb :index, layout: :layout
-end
-
-get '/recipes/:recipe_name' do
-  @recipe = @recipe_book.find_recipe(params[:recipe_name])
+get '/recipes/:recipe_id' do
+  @recipe = RecipeBook.find(params[:recipe_id])
   erb :view_recipe, layout: :layout
 end
+
 # dynamic
 get '/recipes/:recipe_name/delete' do
   recipe_name = params[:recipe_name]

@@ -1,6 +1,6 @@
 <div class="display-recipe">
     <div class="recipe-name">
-      <h1><%= @recipe.name %></h1>
+      <h1><%= @recipe["name"] %></h1>
     </div>
 
    <!--  <header> -->
@@ -12,8 +12,8 @@
     <div class="to-edit">
 
       <ul>
-        <li><a href="/recipes/<%= @recipe.name %>/delete">Delete Recipe</a></li>
-        <li><a href="/recipes/<%= @recipe.name %>/edit">Edit Recipe</a></li>
+        <li><a href="/recipes/<%= @recipe.id %>/delete">Delete Recipe</a></li>
+        <li><a href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a></li>
       </ul>
     <% if @recipe.cook_time %>
       <p><strong>Cook time:</strong> <%= @recipe.cook_time %></p>
