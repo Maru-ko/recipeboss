@@ -32,25 +32,21 @@ end
 def make_arr(object_type)
   object_type = object_type.to_s
   result = []
-  ingredient_id = Ingredient.current_id + 1
-  step_id = Step.current_id + 1
 
   case object_type
   when 'ingredient'
     session[:num_of_ingredients].times do |num|
-      current_object = params[(object_type + (num + 1).to_s).to_sym]
-      current_object = current_object.empty? ? "You didn't put anything here" : current_object
-      ingredient = Ingredient.new(ingredient_id, current_object, Recipe.current_id + 1)
-      ingredient_id += 1
-      result << ingredient
+      new_ingredient_name = params["ingredient#{num + 1}"]
+      next if new_ingredient_name.empty?
+      ingredient = Ingredient.create("name" => new_ingredient_name)
+      result << ingredient.id
     end
   when 'step'
     session[:num_of_steps].times do |num|
-      current_object = params[(object_type + (num + 1).to_s).to_sym]
-      current_object = current_object.empty? ? "You didn't put anything here" : current_object
-      step = Step.new(step_id, current_object, Recipe.current_id + 1)
-      step_id += 1
-      result << step
+      new_step_name = params["step#{num + 1}"]
+      next if new_step_name.empty?
+      step = Step.create("name" => new_step_name)
+      result << step.id
     end
   end
 
@@ -95,27 +91,30 @@ def recipe_name_validation(name)
   name.empty? ? 'NoNameRecipe' : name
 end
 
+def cook_time_validation(cook_time)
+  if cook_time.class == String && !cook_time.empty?
+    cook_time
+  else
+    "Invalid time entered"
+  end
+end
+
 post '/recipes/new' do
   ingredients = make_arr(:ingredient)
   steps = make_arr(:step)
 
   name = recipe_name_validation(params[:name])
+  cook_time = cook_time_validation(params[:cook_time])
 
-  new_recipe = Recipe.new(
-    Recipe.current_id,
-    name,
-    params[:cook_time],
-    ingredients,
-    steps
+  new_recipe = RecipeBook.create(
+    "name" => name,
+    "cook time" => cook_time,
+    "ingredients" => ingredients,
+    "steps" => steps
   )
 
-  # TODO: Any validation needed here?
-  @recipe_book << new_recipe
-
-  @recipe_book.save_recipes
-
   clear_recipe_log
-  # binding.pry
+
   session[:message] = 'Your new recipe has been added.'
 
   redirect '/all_recipes'

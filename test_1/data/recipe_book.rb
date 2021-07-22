@@ -1,3 +1,8 @@
+# require "dotenv/load"
+# require "pry"
+# require "pry-byebug"
+# require "airrecord"
+
 Airrecord.api_key = ENV['AIRTABLE_API_KEY']
 
 class RecipeBook < Airrecord::Table
@@ -65,6 +70,10 @@ class Step < Airrecord::Table
     self["name"] = new_name
   end
 end
+
+# binding.pry
+# recipes = RecipeBook.all
+
 
 # recipe_book = RecipeBook.all
 # p recipe_book
