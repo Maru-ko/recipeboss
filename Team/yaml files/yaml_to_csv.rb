@@ -13,30 +13,78 @@ require 'yaml'
 require 'csv'
 
 
-yaml_txt = File.read('recipes.yml')
+yaml_txt = File.read('new_backup_recipes.yml')
 yaml_data = YAML.load(yaml_txt)
 
-csv_table = [["name", "cook_time", "ingredients", "steps"]]
+# recipes
+csv_table = [["name", "cook_time"]]
 
 yaml_data.each do |recipe|
   formatted = []
-  recipe.each do |key, value|
-    case key
-    when :name, :cook_time
-      formatted << value
-    when :ingredients, :steps
-      inner_formatted = []
-      value.each do |hsh|
-        inner_formatted << hsh[:name]
-      end
-      formatted << inner_formatted.join(", ")
-    end
-  end
+  formatted << "#{recipe[:name]}" << recipe[:cook_time]
   csv_table << formatted
 end
 
-File.open('output.csv', 'w') do |f|
+File.open('recipes.csv', 'w') do |f|
     f.puts( csv_table.map do |row|
         CSV.generate_line(row, col_sep: ",")
     end.join "" )
 end
+
+# ingredients
+csv_table = [["name", "recipes"]]
+
+yaml_data.each do |recipe|
+  name = recipe[:name]
+  recipe[:ingredients].each do |ingredient|
+    formatted = []
+    formatted << "#{ingredient[:name]}" << "#{name}"
+    csv_table << formatted
+  end
+end
+
+File.open('ingredients.csv', 'w') do |f|
+    f.puts( csv_table.map do |row|
+        CSV.generate_line(row, col_sep: ",")
+    end.join "" )
+end
+
+# steps
+csv_table = [["name", "recipes"]]
+
+yaml_data.each do |recipe|
+  name = recipe[:name]
+  recipe[:steps].each do |step|
+    formatted = []
+    formatted << step[:name] << "#{name}"
+    csv_table << formatted
+  end
+end
+
+File.open('steps.csv', 'w') do |f|
+    f.puts( csv_table.map do |row|
+        CSV.generate_line(row, col_sep: ",")
+    end.join "" )
+end
+# yaml_data.each do |recipe|
+#   formatted = []
+#   recipe.each do |key, value|
+#     case key
+#     when :name, :cook_time
+#       formatted << value
+#     when :ingredients, :steps
+#       inner_formatted = []
+#       value.each do |hsh|
+#         inner_formatted << hsh[:name]
+#       end
+#       formatted << inner_formatted.join(", ")
+#     end
+#   end
+#   csv_table << formatted
+# end
+
+# File.open('recipes.csv', 'w') do |f|
+#     f.puts( csv_table.map do |row|
+#         CSV.generate_line(row, col_sep: ",")
+#     end.join "" )
+# end

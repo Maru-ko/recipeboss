@@ -27,18 +27,6 @@ class RecipeBook < Airrecord::Table
   def cook_time=(new_cook_time)
     self["cook time"] = new_cook_time
   end
-
-  def ingredients
-    self["ingredients"].map do |id|
-      Ingredient.find(id)
-    end
-  end
-
-  def steps
-    self["steps"].map do |id|
-      Step.find(id)
-    end
-  end
 end
 
 class Ingredient < Airrecord::Table
@@ -147,7 +135,7 @@ end
   #       }
   #     end
 
-  #     new_recipe[:filters] = recipe.filters 
+  #     new_recipe[:filters] = recipe.filters
 
   #     formatted_recipes << new_recipe
   #   end
@@ -188,7 +176,7 @@ end
 #     weekly_recipes = {}
 #     7.times do |num|
 #       weekly_recipes[WEEKDAYS[num]] = [breakfast_recipes.delete_at(0)]
-#       2.times do 
+#       2.times do
 #         weekly_recipes[WEEKDAYS[num]] << other_recipes.delete_at(0)
 #       end
 #     end

@@ -25,7 +25,7 @@
     <div class="sample-recipes">
     <ul>
       <% random_recipes(5).each do |recipe| %>
-        <li><a href="recipes/<%= recipe.id %>"><%= recipe["name"] %></a></li>
+        <li><a href="recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
       <% end %>
     </ul>
   </div>

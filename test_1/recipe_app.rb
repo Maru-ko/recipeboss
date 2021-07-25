@@ -16,13 +16,14 @@ end
 
 helpers do
   def random_recipes(n)
-    @recipe_book.shuffle.first(n)
+    recipe_book = RecipeBook.all(view: "Recipes_Names_Only")
+    recipe_book.shuffle.first(n)
   end
 end
 
-before do
-  @recipe_book = RecipeBook.all
-end
+# before do
+#   @recipe_book = RecipeBook.all
+# end
 
 def initialize_new_recipe
   session[:num_of_ingredients] ||= 3
@@ -58,10 +59,18 @@ def clear_recipe_log
   session.delete(:num_of_ingredients)
 end
 
+# Main Page
 get '/' do
   erb :index, layout: :layout
 end
 
+# Show all recipes
+get '/all_recipes' do
+  @recipe_book = RecipeBook.all(view: "Recipes_Names_Only", sort: {"name" => "asc"})
+  erb :all_recipes, layout: :layout
+end
+
+# -----------------------------Create new recipe--------------------------------
 get '/recipes/new' do
   initialize_new_recipe
   erb :new_recipe, layout: :layout
@@ -120,26 +129,20 @@ post '/recipes/new' do
   redirect '/all_recipes'
 end
 
-def update_recipe(recipe)
-  @recipe_book.delete_recipe(recipe.name)
-  @recipe_book << recipe
-  @recipe_book.save_recipes
-end
-
+# -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id' do
   @recipe = RecipeBook.find(params[:recipe_id])
   erb :view_recipe, layout: :layout
 end
 
-# dynamic
-get '/recipes/:recipe_name/delete' do
-  recipe_name = params[:recipe_name]
-  @recipe_book.delete_recipe(recipe_name)
-  @recipe_book.save_recipes
+# -------------------------------------View Recipe----------------------------
+get '/recipes/:recipe_id/delete' do
+  recipe = RecipeBook.find(params[:recipe_id])
+  recipe.destroy
   redirect '/all_recipes'
 end
 
-# dyname
+# ----------------------------------------Edit Recipe---------------------------
 get '/recipes/:recipe_id/edit' do
   @recipe = RecipeBook.find(params[:recipe_id])
   erb :edit
@@ -164,66 +167,43 @@ post '/recipes/:recipe_id/edit' do
   redirect "/recipes/#{recipe.id}"
 end
 
-# dynamic
 # Delete an ingredient when editing recipes
-get '/recipes/:recipe_name/ingredients/:ingredient_id/delete' do
-  recipe_name = params[:recipe_name]
-  ingredient_id = params[:ingredient_id].to_i
-  recipe = @recipe_book.find_recipe(recipe_name)
-  recipe.delete_ingredient(ingredient_id)
-
-  update_recipe(recipe)
-
-  redirect "/recipes/#{recipe.name}/edit"
+get '/recipes/:recipe_id/ingredients/:ingredient_id/delete' do
+  recipe_id = params[:recipe_id]
+  Ingredient.find(params[:ingredient_id]).destroy
+  redirect "/recipes/#{recipe_id}/edit"
 end
 
 # Delete a step when editing recipes
-get '/recipes/:recipe_name/steps/:step_id/delete' do
-  recipe_name = params[:recipe_name]
-  step_id = params[:step_id].to_i
-  recipe = @recipe_book.find_recipe(recipe_name)
-  recipe.delete_step(step_id)
-
-  update_recipe(recipe)
-
-  redirect "/recipes/#{recipe.name}/edit"
+get '/recipes/:recipe_id/steps/:step_id/delete' do
+  recipe_id = params[:recipe_id]
+  Step.find(params[:step_id]).destroy
+  redirect "/recipes/#{recipe_id}/edit"
 end
 
-# dynamic
 # Add an ingredient when editing recipes
-get '/recipes/:recipe_name/ingredients/add' do
-  recipe_name = params[:recipe_name]
-  recipe = @recipe_book.find_recipe(recipe_name)
-  current_id = Ingredient.current_id
-  recipe.ingredients << Ingredient.new(current_id + 1, '', recipe.id)
-
-  update_recipe(recipe)
-
-  redirect "/recipes/#{recipe.name}/edit"
+get '/recipes/:recipe_id/ingredients/add' do
+  recipe = RecipeBook.find(params[:recipe_id])
+  ingredient = Ingredient.new("name" => "new ingredient name", "recipes" => [recipe.id])
+  ingredient.create
+  redirect "/recipes/#{params[:recipe_id]}/edit"
 end
 
 # Add a step when editing recipes
-get '/recipes/:recipe_name/steps/add' do
-  recipe_name = params[:recipe_name]
-  recipe = @recipe_book.find_recipe(recipe_name)
-  current_id = Step.current_id
-  recipe.steps << Step.new(current_id + 1, '', recipe.id)
-
-  update_recipe(recipe)
-
-  redirect "/recipes/#{recipe.name}/edit"
+get '/recipes/:recipe_id/steps/add' do
+  recipe = RecipeBook.find(params[:recipe_id])
+  step = Step.new("name" => "new step detail", "recipes" => [recipe.id])
+  step.create
+  redirect "/recipes/#{params[:recipe_id]}/edit"
 end
 
-# fluffery
-
-get '/all_recipes' do
-  erb :all_recipes, layout: :layout
-end
+# ----------------------------------------About-------------------------------
 
 get '/about' do
   erb :about, layout: :layout
 end
 
+# ----------------------------------------Generate Weekly Menu------------------
 get '/generate_weekly_menu' do
   @weekly_recipes = @recipe_book.weekly_menu_generate('vegetarian')
   erb :weekly_menu, layout: :layout

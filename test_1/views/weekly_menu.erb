@@ -1,0 +1,12 @@
+<% @weekly_recipes.each do |day, recipes|%>
+    <% test = recipes.reject { |recipe| recipe == nil } %>
+    <p><%= day%></p>
+  <ul>
+    <% test.each do |recipe|%>
+    <li>
+      <%= recipe.name%>
+    </li>
+  
+  <% end %>
+  </ul>
+  <% end %>

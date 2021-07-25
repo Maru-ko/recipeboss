@@ -8,7 +8,7 @@
 
   <div class="all_recipes">
     <ul>
-      <% @recipe_book.sort_by{ |recipe| recipe.id}.each do |recipe| %>
+      <% @recipe_book.each do |recipe| %>
         <li>
           <a href="recipes/<%= recipe.id %>"><%= recipe.name %></a>
         </li>
