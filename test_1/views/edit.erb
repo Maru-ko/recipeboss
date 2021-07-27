@@ -12,7 +12,7 @@
         <input type="text" name="time" id="time" value="<%= @recipe.cook_time %>"></dd>
 
       <dt><label for="ingredient">Ingredients</label></dt>
-      <% @recipe.ingredients.each do |ingredient| %>
+      <% @recipe.ingredients.reverse.each do |ingredient| %>
         <dd><input class="ingredient" type="text" name="<%= ingredient.id %>" value="<%= ingredient.name %>"></dd>
         <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.id %>/ingredients/<%= ingredient.id %>/delete">Delete</a></dd>
       <% end %>
@@ -21,7 +21,7 @@
       <a class="addz" href="/recipes/<%= @recipe.id %>/ingredients/add">Add</a>
 
       <dt><label for="steps">Steps</label></dt>
-      <% @recipe.steps.each do |step| %>
+      <% @recipe.steps.reverse.each do |step| %>
         <dd><input class="steps" type="text" name="<%= step.id %>" value="<%= step.name %>"></dd>
         <dd class="ingredient edit-delete" ><a href="/recipes/<%= @recipe.id %>/steps/<%= step.id %>/delete">Delete</a></dd>
       <% end %>
