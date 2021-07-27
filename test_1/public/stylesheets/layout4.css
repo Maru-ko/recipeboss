@@ -364,7 +364,7 @@ footer a:hover {
 }*/
 
 main .idx-page {
-  background-color: #edf2f4ff;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: stretch;
