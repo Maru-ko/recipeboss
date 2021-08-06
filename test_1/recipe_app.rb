@@ -16,14 +16,13 @@ end
 
 helpers do
   def random_recipes(n)
-    recipe_book = RecipeBook.all(view: "Recipes_Names_Only")
-    recipe_book.shuffle.first(n)
+    @recipe_book.all.shuffle.first(n)
   end
 end
 
-# before do
-#   @recipe_book = RecipeBook.all
-# end
+before do
+  @recipe_book = RecipeBook.new
+end
 
 def initialize_new_recipe
   session[:num_of_ingredients] ||= 3
@@ -66,7 +65,7 @@ end
 
 # Show all recipes
 get '/all_recipes' do
-  @recipe_book = RecipeBook.all(view: "Recipes_Names_Only", sort: {"name" => "asc"})
+  # @recipe_book = RecipeBook.all
   erb :all_recipes, layout: :layout
 end
 
@@ -131,25 +130,24 @@ end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id' do
-  @recipe = RecipeBook.find(params[:recipe_id])
+  @recipe = @recipe_book.find(params[:recipe_id])
   erb :view_recipe, layout: :layout
 end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id/delete' do
-  recipe = RecipeBook.find(params[:recipe_id])
-  recipe.destroy
+  @recipe_book.delete(params[:recipe_id])
   redirect '/all_recipes'
 end
 
 # ----------------------------------------Edit Recipe---------------------------
 get '/recipes/:recipe_id/edit' do
-  @recipe = RecipeBook.find(params[:recipe_id])
+  @recipe = @recipe_book.find(params[:recipe_id])
   erb :edit
 end
 
 post '/recipes/:recipe_id/edit' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = @recipe_book.find(params[:recipe_id])
   recipe.name = params[:name].strip
   recipe.cook_time = params[:time].strip
   recipe.ingredients.each do |ingredient|
