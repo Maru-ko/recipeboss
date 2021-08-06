@@ -6,7 +6,7 @@ class Recipe
 
   @@current_id = 0
 
-  def initialize(id, name, cook_time, ingredients, steps)
+  def initialize(id, name, cook_time, ingredients = nil, steps = nil)
     @id = id
     @name = name
     @cook_time = cook_time
@@ -22,11 +22,7 @@ class Recipe
     @steps.reject! {|i| i.id == step_id}
   end
 
-  def self.current_id
-    @@current_id
-  end
-
-  def Recipe.all
+  def self.all
     all_recipes = []
 
     recipe_sql = "SELECT * FROM recipes"
@@ -36,29 +32,16 @@ class Recipe
       ingredients_sql = "SELECT * FROM ingredients WHERE recipe_id = $1"
       ingredients = DB.query(ingredients_sql, recipe["id"])
       ingredients = ingredients.map do |tuple|
-        Ingredient.new(
-          tuple["id"],
-          tuple["name"],
-          tuple["recipe_id"],
-        )
+        Ingredient.tuple_to_ingredient_instance(tuple)
       end
 
       steps_sql = "SELECT * FROM steps WHERE recipe_id = $1"
       steps = DB.query(steps_sql, recipe["id"])
       steps = steps.map do |tuple|
-        Step.new(
-          tuple["id"],
-          tuple["name"],
-          tuple["recipe_id"],
-        )
+        Step.tuple_to_step_instance(tuple)
       end
 
-      recipe =  Recipe.new(
-        recipe["id"],
-        recipe["name"],
-        recipe["cook_time"],
-        ingredients,
-        steps)
+      recipe =  tuple_to_recipe_instance(recipe, ingredients, steps)
 
     all_recipes << recipe
     end
@@ -75,31 +58,40 @@ class Recipe
       ingredients_sql = "SELECT * FROM ingredients WHERE recipe_id = $1"
       ingredients = DB.query(ingredients_sql, recipe["id"])
       ingredients = ingredients.map do |tuple|
-        Ingredient.new(
-          tuple["id"],
-          tuple["name"],
-          tuple["recipe_id"],
-        )
+        Ingredient.tuple_to_ingredient_instance(tuple)
       end
 
       steps_sql = "SELECT * FROM steps WHERE recipe_id = $1"
       steps = DB.query(steps_sql, recipe["id"])
       steps = steps.map do |tuple|
-        Step.new(
-          tuple["id"],
-          tuple["name"],
-          tuple["recipe_id"],
-        )
+        Step.tuple_to_step_instance(tuple)
       end
 
-      new_recipe = Recipe.new(
-        recipe["id"],
-        recipe["name"],
-        recipe["cook_time"],
-        ingredients,
-        steps)
-
+      new_recipe = tuple_to_recipe_instance(recipe, ingredients, steps)
     end
     new_recipe
   end
+
+  def self.tuple_to_recipe_instance(tuple, ingredients, steps)
+    Recipe.new(
+      tuple["id"],
+      tuple["name"],
+      tuple["cook_time"],
+      ingredients,
+      steps)
+  end
+
+  def self.create(attributes)
+    recipe = Recipe.new(
+      attributes["id"],
+      attributes["name"],
+      attributes["cook_time"]
+    )
+
+    sql = "INSERT INTO recipes (name, cook_time) VALUES($1, $2) RETURNING id"
+    result = DB.query(sql, recipe.name, recipe.cook_time)
+    recipe.id = result.first["id"].to_i
+    recipe
+  end
 end
+

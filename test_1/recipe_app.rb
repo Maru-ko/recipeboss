@@ -2,22 +2,26 @@ require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
-require 'airrecord'
+# require 'airrecord'
 require 'pry'
 require 'pry-byebug'
 
-require_relative './data/recipe_book'
+require_relative './data/database_persistance'
 
+# Note: Where does logger come from???
+# Can I insert logger into database without using before...
+# Ruby throws a warning because this is re-assigning a value to a constant each time a page reloads.
 
 before do
   DB = DatabasePersistance.new(logger)
   @recipe_book = Recipe.all
 end
 
+# This makes the DB constant available in all the relavant classes that need to query the database.
+
 require_relative './data/recipe'
 require_relative './data/ingredient'
 require_relative './data/step'
-
 
 configure do
   enable :sessions
@@ -48,29 +52,31 @@ def initialize_new_recipe
   session[:num_of_steps] ||= 3
 end
 
-def make_arr(object_type)
-  object_type = object_type.to_s
-  result = []
+# Note: Not necessary to create an array anymore because we are directly inserting into database.
 
-  case object_type
-  when 'ingredient'
-    session[:num_of_ingredients].times do |num|
-      new_ingredient_name = params["ingredient#{num + 1}"]
-      next if new_ingredient_name.empty?
-      ingredient = Ingredient.create("name" => new_ingredient_name)
-      result << ingredient.id
-    end
-  when 'step'
-    session[:num_of_steps].times do |num|
-      new_step_name = params["step#{num + 1}"]
-      next if new_step_name.empty?
-      step = Step.create("name" => new_step_name)
-      result << step.id
-    end
-  end
+# def make_arr(object_type)
+#   object_type = object_type.to_s
+#   result = []
 
-  result
-end
+#   case object_type
+#   when 'ingredient'
+#     session[:num_of_ingredients].times do |num|
+#       new_ingredient_name = params["ingredient#{num + 1}"]
+#       next if new_ingredient_name.empty?
+#       ingredient = Ingredient.create("name" => new_ingredient_name)
+#       result << ingredient.id
+#     end
+#   when 'step'
+#     session[:num_of_steps].times do |num|
+#       new_step_name = params["step#{num + 1}"]
+#       next if new_step_name.empty?
+#       step = Step.create("name" => new_step_name)
+#       result << step.id
+#     end
+#   end
+
+#   result
+# end
 
 def clear_recipe_log
   session.delete(:num_of_steps)
@@ -127,18 +133,28 @@ def cook_time_validation(cook_time)
 end
 
 post '/recipes/new' do
-  ingredients = make_arr(:ingredient)
-  steps = make_arr(:step)
+  # ingredients = make_arr(:ingredient)
+  # steps = make_arr(:step)
 
   name = recipe_name_validation(params[:name])
   cook_time = cook_time_validation(params[:cook_time])
 
-  new_recipe = RecipeBook.create(
+  new_recipe = Recipe.create(
     "name" => name,
-    "cook time" => cook_time,
-    "ingredients" => ingredients,
-    "steps" => steps
+    "cook_time" => cook_time
   )
+
+  session[:num_of_ingredients].times do |num|
+    new_ingredient_name = params["ingredient#{num + 1}"]
+    next if new_ingredient_name.empty?
+    ingredient = Ingredient.create("name" => new_ingredient_name, "recipe_id" => new_recipe.id)
+  end
+
+  session[:num_of_steps].times do |num|
+    new_step_name = params["step#{num + 1}"]
+    next if new_step_name.empty?
+    step = Step.create("name" => new_step_name, "recipe_id" => new_recipe.id)
+  end
 
   clear_recipe_log
 
@@ -161,12 +177,12 @@ end
 
 # ----------------------------------------Edit Recipe---------------------------
 get '/recipes/:recipe_id/edit' do
-  @recipe = @recipe_book.find(params[:recipe_id])
+  @recipe = Recipe.find(params[:recipe_id])
   erb :edit
 end
 
 post '/recipes/:recipe_id/edit' do
-  recipe = @recipe_book.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   recipe.name = params[:name].strip
   recipe.cook_time = params[:time].strip
   recipe.ingredients.each do |ingredient|
@@ -200,7 +216,7 @@ end
 
 # Add an ingredient when editing recipes
 get '/recipes/:recipe_id/ingredients/add' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   ingredient = Ingredient.new("name" => "new ingredient name", "recipes" => [recipe.id])
   ingredient.create
   redirect "/recipes/#{params[:recipe_id]}/edit"
@@ -208,7 +224,7 @@ end
 
 # Add a step when editing recipes
 get '/recipes/:recipe_id/steps/add' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   step = Step.new("name" => "new step detail", "recipes" => [recipe.id])
   step.create
   redirect "/recipes/#{params[:recipe_id]}/edit"

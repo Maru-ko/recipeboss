@@ -6,5 +6,20 @@ class Ingredient
     @name = name
     @recipe_id = recipe_id
   end
+
+  def self.create(attributes)
+    name = attributes["name"]
+    recipe_id = attributes["recipe_id"]
+
+    sql = "INSERT INTO ingredients (name, recipe_id) VALUES ($1, $2)"
+    DB.query(sql, name, recipe_id)
+  end
+
+  def self.tuple_to_ingredient_instance(tuple)
+    Ingredient.new(
+      tuple["id"],
+      tuple["name"],
+      tuple["recipe_id"])
+  end
 end
 
