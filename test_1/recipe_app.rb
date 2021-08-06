@@ -8,20 +8,39 @@ require 'pry-byebug'
 
 require_relative './data/recipe_book'
 
+
+before do
+  DB = DatabasePersistance.new(logger)
+  @recipe_book = Recipe.all
+end
+
+require_relative './data/recipe'
+require_relative './data/ingredient'
+require_relative './data/step'
+
+
 configure do
   enable :sessions
   set :session_secret, 'chicken'
   set :erb, :escape_html => true
 end
 
+configure(:development) do
+  require "sinatra/reloader"
+  also_reload "data/recipe_book.rb"
+  also_reload "data/recipe.rb"
+  also_reload "data/ingredient.rb"
+  also_reload "data/step.rb"
+end
+
 helpers do
   def random_recipes(n)
-    @recipe_book.all.shuffle.first(n)
+    @recipe_book.shuffle.first(n)
   end
 end
 
-before do
-  @recipe_book = RecipeBook.new
+after do
+  DB.disconnect
 end
 
 def initialize_new_recipe
@@ -130,7 +149,7 @@ end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id' do
-  @recipe = @recipe_book.find(params[:recipe_id])
+  @recipe = Recipe.find(params[:recipe_id])
   erb :view_recipe, layout: :layout
 end
 
