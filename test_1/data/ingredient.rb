@@ -1,4 +1,5 @@
 class Ingredient
+  attr_reader :id
   attr_accessor :name
 
   def initialize(id, name, recipe_id)

@@ -2,7 +2,8 @@ require_relative 'ingredient'
 require_relative 'step'
 
 class Recipe
-  attr_accessor :id, :name, :cook_time, :ingredients, :steps, :filters
+  attr_reader :id
+  attr_accessor :name, :cook_time, :ingredients, :steps
 
   @@current_id = 0
 

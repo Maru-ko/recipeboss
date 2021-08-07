@@ -52,31 +52,27 @@ def initialize_new_recipe
   session[:num_of_steps] ||= 3
 end
 
-# Note: Not necessary to create an array anymore because we are directly inserting into database.
+# Refactor ingredients and steps to two methods for separation of concerns.
+# Ideally, they should continue to work even if using Airtable.
+# Because both data in PSQL anad Airtable are organized using Relational Database style.
 
-# def make_arr(object_type)
-#   object_type = object_type.to_s
-#   result = []
+def create_ingredients(recipe_id)
+    session[:num_of_ingredients].times do |num|
+      new_ingredient_name = params["ingredient#{num + 1}"]
+      next if new_ingredient_name.empty?
+      ingredient = Ingredient.create(
+        "name" => new_ingredient_name,
+        "recipe_id" => recipe_id)
+  end
+end
 
-#   case object_type
-#   when 'ingredient'
-#     session[:num_of_ingredients].times do |num|
-#       new_ingredient_name = params["ingredient#{num + 1}"]
-#       next if new_ingredient_name.empty?
-#       ingredient = Ingredient.create("name" => new_ingredient_name)
-#       result << ingredient.id
-#     end
-#   when 'step'
-#     session[:num_of_steps].times do |num|
-#       new_step_name = params["step#{num + 1}"]
-#       next if new_step_name.empty?
-#       step = Step.create("name" => new_step_name)
-#       result << step.id
-#     end
-#   end
-
-#   result
-# end
+def create_steps(recipe_id)
+  session[:num_of_steps].times do |num|
+    new_step_name = params["step#{num + 1}"]
+    next if new_step_name.empty?
+    step = Step.create("name" => new_step_name, "recipe_id" => recipe_id)
+  end
+end
 
 def clear_recipe_log
   session.delete(:num_of_steps)
@@ -133,32 +129,20 @@ def cook_time_validation(cook_time)
 end
 
 post '/recipes/new' do
-  # ingredients = make_arr(:ingredient)
-  # steps = make_arr(:step)
-
   name = recipe_name_validation(params[:name])
   cook_time = cook_time_validation(params[:cook_time])
 
-  new_recipe = Recipe.create(
+  recipe = Recipe.create(
     "name" => name,
     "cook_time" => cook_time
   )
 
-  session[:num_of_ingredients].times do |num|
-    new_ingredient_name = params["ingredient#{num + 1}"]
-    next if new_ingredient_name.empty?
-    ingredient = Ingredient.create("name" => new_ingredient_name, "recipe_id" => new_recipe.id)
-  end
-
-  session[:num_of_steps].times do |num|
-    new_step_name = params["step#{num + 1}"]
-    next if new_step_name.empty?
-    step = Step.create("name" => new_step_name, "recipe_id" => new_recipe.id)
-  end
+  create_ingredients(recipe.id)
+  create_steps(recipe.id)
 
   clear_recipe_log
 
-  session[:message] = 'Your new recipe has been added.'
+  session[:message] = "Your new recipe #{recipe.name} has been added."
 
   redirect '/all_recipes'
 end
