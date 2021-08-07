@@ -21,4 +21,12 @@ class Step
       tuple["name"],
       tuple["recipe_id"])
   end
+
+  def self.find(id)
+  end
+
+  def destroy
+  end
+
+  def save
 end

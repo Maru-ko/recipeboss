@@ -155,7 +155,7 @@ end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id/delete' do
-  @recipe_book.delete(params[:recipe_id])
+  Recipe.find(params[:recipe_id]).destroy
   redirect '/all_recipes'
 end
 

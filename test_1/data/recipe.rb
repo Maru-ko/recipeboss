@@ -94,5 +94,11 @@ class Recipe
     recipe.id = result.first["id"].to_i
     recipe
   end
+
+  def destroy
+  end
+
+  def save
+  end
 end
 
