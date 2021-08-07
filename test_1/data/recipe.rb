@@ -5,9 +5,7 @@ class Recipe
   attr_reader :id
   attr_accessor :name, :cook_time, :ingredients, :steps
 
-  @@current_id = 0
-
-  def initialize(id, name, cook_time, ingredients = nil, steps = nil)
+  def initialize(id, name, cook_time, ingredients = [], steps = [])
     @id = id
     @name = name
     @cook_time = cook_time

@@ -39,7 +39,7 @@ end
 
 helpers do
   def random_recipes(n)
-    @recipe_book.shuffle.first(n)
+    Recipe.all.shuffle.first(n)
   end
 end
 
@@ -53,8 +53,9 @@ def initialize_new_recipe
 end
 
 # Refactor ingredients and steps to two methods for separation of concerns.
-# Ideally, they should continue to work even if using Airtable.
-# Because both data in PSQL anad Airtable are organized using Relational Database style.
+# If I change any logic about Ingredients, that shouldn't impact Steps and vice versa
+# Ideally, these methods should continue to work even if using Airtable.
+# Because both data in PSQL and Airtable are organized using Relational Database style.
 
 def create_ingredients(recipe_id)
     session[:num_of_ingredients].times do |num|
