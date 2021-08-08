@@ -1,5 +1,5 @@
+.DS_Store
 .env
 # Ignore all sqlite databases
-db/*.sqlite3
-.DS_Store
-.ruby-version
+#db/*.sqlite3
+#.ruby-version
