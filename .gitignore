@@ -1,5 +1,27 @@
 .env
-# Ignore all sqlite databases
-# db/*.sqlite3
-# .DS_Store
-# .ruby-version
+
+Ignore all sqlite databases
+db/*.sqlite3
+.DS_Store
+.ruby-version
+./**/desktop.ini
+.class
+.DS_Store
+.idea
+.idea/workspace.xml
+*.iml
+._*
+.log
+.lock
+.npm-debug.log
+.sass-cache
+.Spotlight-V100
+Thumbs.db 
+.tmp 
+.Trashes
+*.tmlanguage.cache
+*.tmPreferences.cache
+.sftp-config.json
+*.stTheme.cache
+*.sublime-workspace
+*.updog
