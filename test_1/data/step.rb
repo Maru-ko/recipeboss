@@ -1,25 +1,33 @@
-Airrecord.api_key = ENV['AIRTABLE_API_KEY']
+class Step
+  attr_accessor :id, :name, :recipe_id
 
-class Step < Airrecord.table
-  self.base_key = ENV['AIRTABLE_BASE_ID']
-  self.table_name = "steps"
+  def initialize(id, name, recipe_id)
+    @id = id
+    @name = name
+    @recipe_id = recipe_id
+  end
 
-  belongs_to :recipe_book, class: "RecipeBook", column: "recipes"
+  def self.create(attributes)
+    name = attributes["name"]
+    recipe_id = attributes["recipe_id"]
+
+    sql = "INSERT INTO steps (name, recipe_id) VALUES ($1, $2)"
+    DB.query(sql, name, recipe_id)
+  end
+
+  def self.tuple_to_step_instance(tuple)
+    Step.new(
+      tuple["id"],
+      tuple["name"],
+      tuple["recipe_id"])
+  end
+
+  def self.find(id)
+  end
+
+  def destroy
+  end
+
+  def save
+  end
 end
-
-
-#   attr_accessor :id, :name, :origin_recipe_id
-
-#   @@current_id = 0
-
-#   def initialize(id, name, origin_recipe_id)
-#     @id = id
-#     @name = name
-#     @origin_recipe_id = origin_recipe_id
-#     @@current_id += 1
-#   end
-
-#   def self.current_id
-#     @@current_id += 1
-#   end
-# end

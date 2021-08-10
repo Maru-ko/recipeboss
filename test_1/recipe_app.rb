@@ -2,11 +2,26 @@ require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
-require 'airrecord'
+# require 'airrecord'
 require 'pry'
 require 'pry-byebug'
 
-require_relative './data/recipe_book'
+require_relative './data/database_persistance'
+
+# Note: Where does logger come from???
+# Can I insert logger into database without using before...
+# Ruby throws a warning because this is re-assigning a value to a constant each time a page reloads.
+
+before do
+  DB = DatabasePersistance.new(logger)
+  @recipe_book = Recipe.all
+end
+
+# This makes the DB constant available in all the relavant classes that need to query the database.
+
+require_relative './data/recipe'
+require_relative './data/ingredient'
+require_relative './data/step'
 
 configure do
   enable :sessions
@@ -14,44 +29,50 @@ configure do
   set :erb, :escape_html => true
 end
 
+configure(:development) do
+  require "sinatra/reloader"
+  also_reload "data/recipe_book.rb"
+  also_reload "data/recipe.rb"
+  also_reload "data/ingredient.rb"
+  also_reload "data/step.rb"
+end
+
 helpers do
   def random_recipes(n)
-    recipe_book = RecipeBook.all(view: "Recipes_Names_Only")
-    recipe_book.shuffle.first(n)
+    Recipe.all.shuffle.first(n)
   end
 end
 
-# before do
-#   @recipe_book = RecipeBook.all
-# end
+after do
+  DB.disconnect
+end
 
 def initialize_new_recipe
   session[:num_of_ingredients] ||= 3
   session[:num_of_steps] ||= 3
 end
 
-def make_arr(object_type)
-  object_type = object_type.to_s
-  result = []
+# Refactor ingredients and steps to two methods for separation of concerns.
+# If I change any logic about Ingredients, that shouldn't impact Steps and vice versa
+# Ideally, these methods should continue to work even if using Airtable.
+# Because both data in PSQL and Airtable are organized using Relational Database style.
 
-  case object_type
-  when 'ingredient'
+def create_ingredients(recipe_id)
     session[:num_of_ingredients].times do |num|
       new_ingredient_name = params["ingredient#{num + 1}"]
       next if new_ingredient_name.empty?
-      ingredient = Ingredient.create("name" => new_ingredient_name)
-      result << ingredient.id
-    end
-  when 'step'
-    session[:num_of_steps].times do |num|
-      new_step_name = params["step#{num + 1}"]
-      next if new_step_name.empty?
-      step = Step.create("name" => new_step_name)
-      result << step.id
-    end
+      ingredient = Ingredient.create(
+        "name" => new_ingredient_name,
+        "recipe_id" => recipe_id)
   end
+end
 
-  result
+def create_steps(recipe_id)
+  session[:num_of_steps].times do |num|
+    new_step_name = params["step#{num + 1}"]
+    next if new_step_name.empty?
+    step = Step.create("name" => new_step_name, "recipe_id" => recipe_id)
+  end
 end
 
 def clear_recipe_log
@@ -66,7 +87,7 @@ end
 
 # Show all recipes
 get '/all_recipes' do
-  @recipe_book = RecipeBook.all(view: "Recipes_Names_Only", sort: {"name" => "asc"})
+  # @recipe_book = RecipeBook.all
   erb :all_recipes, layout: :layout
 end
 
@@ -109,47 +130,44 @@ def cook_time_validation(cook_time)
 end
 
 post '/recipes/new' do
-  ingredients = make_arr(:ingredient)
-  steps = make_arr(:step)
-
   name = recipe_name_validation(params[:name])
   cook_time = cook_time_validation(params[:cook_time])
 
-  new_recipe = RecipeBook.create(
+  recipe = Recipe.create(
     "name" => name,
-    "cook time" => cook_time,
-    "ingredients" => ingredients,
-    "steps" => steps
+    "cook_time" => cook_time
   )
+
+  create_ingredients(recipe.id)
+  create_steps(recipe.id)
 
   clear_recipe_log
 
-  session[:message] = 'Your new recipe has been added.'
+  session[:message] = "Your new recipe #{recipe.name} has been added."
 
   redirect '/all_recipes'
 end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id' do
-  @recipe = RecipeBook.find(params[:recipe_id])
+  @recipe = Recipe.find(params[:recipe_id])
   erb :view_recipe, layout: :layout
 end
 
 # -------------------------------------View Recipe----------------------------
 get '/recipes/:recipe_id/delete' do
-  recipe = RecipeBook.find(params[:recipe_id])
-  recipe.destroy
+  Recipe.find(params[:recipe_id]).destroy
   redirect '/all_recipes'
 end
 
 # ----------------------------------------Edit Recipe---------------------------
 get '/recipes/:recipe_id/edit' do
-  @recipe = RecipeBook.find(params[:recipe_id])
+  @recipe = Recipe.find(params[:recipe_id])
   erb :edit
 end
 
 post '/recipes/:recipe_id/edit' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   recipe.name = params[:name].strip
   recipe.cook_time = params[:time].strip
   recipe.ingredients.each do |ingredient|
@@ -183,7 +201,7 @@ end
 
 # Add an ingredient when editing recipes
 get '/recipes/:recipe_id/ingredients/add' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   ingredient = Ingredient.new("name" => "new ingredient name", "recipes" => [recipe.id])
   ingredient.create
   redirect "/recipes/#{params[:recipe_id]}/edit"
@@ -191,7 +209,7 @@ end
 
 # Add a step when editing recipes
 get '/recipes/:recipe_id/steps/add' do
-  recipe = RecipeBook.find(params[:recipe_id])
+  recipe = Recipe.find(params[:recipe_id])
   step = Step.new("name" => "new step detail", "recipes" => [recipe.id])
   step.create
   redirect "/recipes/#{params[:recipe_id]}/edit"
