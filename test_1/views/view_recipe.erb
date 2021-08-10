@@ -26,7 +26,14 @@
     <h2>Ingredients</h2>
     <ul class="ingredient-list">
       <% @recipe.ingredients.each do |ingredient| %>
+        <% testing = ingredient.name %>
+      <% if testing.start_with?('<a') %>
+        <% noo_link = testing.scan(/\".+\"/i)[0][1..-2] %>
+      <% remove_link = testing.scan(/>{1}[a-z '"]+/i)[0][1..-1] %>
+        <li><a href="<%= noo_link %>" target="_blank"><%= remove_link %></a></li>
+      <% else %>
         <li><%= ingredient.name %></li>
+        <% end %>
       <% end %>
     </ul>
     <div class="directions">
