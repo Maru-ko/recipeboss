@@ -2,8 +2,7 @@ require_relative 'ingredient'
 require_relative 'step'
 
 class Recipe
-  attr_reader :id
-  attr_accessor :name, :cook_time, :ingredients, :steps
+  attr_accessor :name, :cook_time, :ingredients, :steps, :id
 
   def initialize(id, name, cook_time, ingredients = [], steps = [])
     @id = id
@@ -94,9 +93,13 @@ class Recipe
   end
 
   def destroy
+    sql = "DELETE FROM recipes WHERE id = $1"
+    DB.query(sql, @id)
   end
 
   def save
+    sql = "UPDATE recipes SET name = $1, cook_time = $2 WHERE id = $3"
+    DB.query(sql, @name, @cook_time, @id)
   end
 end
 

@@ -202,16 +202,14 @@ end
 # Add an ingredient when editing recipes
 get '/recipes/:recipe_id/ingredients/add' do
   recipe = Recipe.find(params[:recipe_id])
-  ingredient = Ingredient.new("name" => "new ingredient name", "recipes" => [recipe.id])
-  ingredient.create
+  ingredient = Ingredient.create("name" => "new ingredient name", "recipe_id" => recipe.id)
   redirect "/recipes/#{params[:recipe_id]}/edit"
 end
 
 # Add a step when editing recipes
 get '/recipes/:recipe_id/steps/add' do
   recipe = Recipe.find(params[:recipe_id])
-  step = Step.new("name" => "new step detail", "recipes" => [recipe.id])
-  step.create
+  step = Step.create("name" => "new step detail", "recipe_id" => recipe.id)
   redirect "/recipes/#{params[:recipe_id]}/edit"
 end
 

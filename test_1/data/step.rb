@@ -8,11 +8,17 @@ class Step
   end
 
   def self.create(attributes)
-    name = attributes["name"]
-    recipe_id = attributes["recipe_id"]
+    step = Step.new(
+      attributes["id"],
+      attributes["name"],
+      attributes["recipe_id"]
+    )
 
-    sql = "INSERT INTO steps (name, recipe_id) VALUES ($1, $2)"
-    DB.query(sql, name, recipe_id)
+
+    sql = "INSERT INTO steps (name, recipe_id) VALUES ($1, $2) RETURNING id"
+    result = DB.query(sql, step.name, step.recipe_id).first
+    step.id = result["id"].to_i
+    step
   end
 
   def self.tuple_to_step_instance(tuple)
@@ -23,11 +29,19 @@ class Step
   end
 
   def self.find(id)
+    sql = "SELECT * FROM steps WHERE id = $1"
+    result = DB.query(sql, id).first
+
+    Step.tuple_to_step_instance(result)
   end
 
   def destroy
+    sql = "DELETE FROM steps WHERE id = $1"
+    DB.query(sql, @id)
   end
 
   def save
+    sql = "UPDATE steps SET name = $1 WHERE id = $2"
+    DB.query(sql, @name, @id)
   end
 end
