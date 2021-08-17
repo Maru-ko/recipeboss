@@ -1,3 +1,4 @@
+$VERBOSE = nil
 require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
