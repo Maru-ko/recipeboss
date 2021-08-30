@@ -18,6 +18,10 @@
     <% unless @recipe.cook_time =~ /invalid/i || @recipe.cook_time.nil? %>
       <p><strong>Cook time:</strong> <%= @recipe.cook_time %></p>
     <% end %>
+    <% unless @recipe.filters == [] %>
+      <p><strong>Meal Type</strong> <%= @recipe.filters.join(', ') %></p>
+    <% end %>
+
     </div>
 
     <!-- </header> -->

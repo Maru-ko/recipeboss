@@ -75,6 +75,12 @@ def create_steps(recipe_id)
   end
 end
 
+def create_filters(recipe_id)
+  params[:filters].each do |filter|
+    Filters.set_recipe_filter(recipe_id, filter)
+  end
+end
+
 def clear_recipe_log
   session.delete(:num_of_steps)
   session.delete(:num_of_ingredients)
@@ -94,6 +100,7 @@ end
 # -----------------------------Create new recipe--------------------------------
 get '/recipes/new' do
   initialize_new_recipe
+  @filters = Filters.names
   erb :new_recipe, layout: :layout
 end
 
@@ -135,17 +142,19 @@ post '/recipes/new' do
 
   recipe = Recipe.create(
     "name" => name,
-    "cook_time" => cook_time
+    "cook_time" => cook_time,
   )
 
   create_ingredients(recipe.id)
   create_steps(recipe.id)
+  create_filters(recipe.id)
 
   clear_recipe_log
 
   session[:message] = "Your new recipe #{recipe.name} has been added."
 
   redirect '/all_recipes'
+  # erb :test
 end
 
 # -------------------------------------View Recipe----------------------------
@@ -163,6 +172,7 @@ end
 # ----------------------------------------Edit Recipe---------------------------
 get '/recipes/:recipe_id/edit' do
   @recipe = Recipe.find(params[:recipe_id])
+  @filters = Filters.names
   erb :edit
 end
 
@@ -180,6 +190,8 @@ post '/recipes/:recipe_id/edit' do
     step.name = "You didn't put anything here" if step.name.empty?
     step.save
   end
+
+  Filters.update_recipe_filter(recipe.id, params[:filters])
 
   recipe.save
   redirect "/recipes/#{recipe.id}"
