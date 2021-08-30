@@ -3,6 +3,9 @@ require "minitest/reporters"
 require "rack/test"
 Minitest::Reporters.use!
 
+require 'simplecov'
+SimpleCov.start
+
 require_relative "../recipe_app.rb"
 
 class RecipeAppTest < Minitest::Test

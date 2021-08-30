@@ -16,6 +16,7 @@ gem 'pg'
 gem "minitest"
 gem "minitest-reporters"
 gem "rack-test"
+gem "simplecov"
 
 group :production do
   gem 'puma'
