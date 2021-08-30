@@ -1,5 +1,7 @@
 require "minitest/autorun"
+require "minitest/reporters"
 require "rack/test"
+Minitest::Reporters.use!
 
 require_relative "../data/recipe.rb"
 
