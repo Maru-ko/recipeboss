@@ -21,6 +21,25 @@
 <!--           <br> -->
           <input class="hako" type="text" id="cook_time" name="cook_time">
 <!--         </p> -->
+          <strong>What type of meal is this?</strong>
+<!--           <br> -->
+          <% @filters.each do |tuple|%>
+            <label>
+              <input type="checkbox" name="filters[]" value=<%= tuple["name"] %> />
+              <%= tuple["name"]%>
+            </label>
+          <%end%>
+<%#           
+          <label>
+            <input type="checkbox" name="filters[]" value="pescatarian" />
+            Pescatarian
+          </label>
+
+          <label>
+            <input type="checkbox" name="filters[]" value="vegan" />
+            Vegan
+          </label> %> 
+<!--         </p> -->
       </section>
 
       <section class="ingredients">

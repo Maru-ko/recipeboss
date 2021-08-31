@@ -11,6 +11,17 @@
       <dd>
         <input type="text" name="time" id="time" value="<%= @recipe.cook_time %>"></dd>
 
+      <dt><label for="filters[]"> Meal Type</label></dt>
+        <% @filters.each do |tuple|%>
+          <% if @recipe.filters.include?(tuple["name"])%>
+            <dd><input type="checkbox" name="filters[]" value=<%= tuple["name"] %> checked/>
+            <%= tuple["name"]%></dd>
+          <% else %>
+            <dd><input type="checkbox" name="filters[]" value=<%= tuple["name"] %> />
+            <%= tuple["name"]%></dd>
+          <% end %>
+        <%end %>
+
       <dt><label for="ingredient">Ingredients</label></dt>
       <% @recipe.ingredients.each do |ingredient| %>
         <dd><input class="ingredient" type="text" name="<%= ingredient.id %>" value="<%= ingredient.name %>"></dd>
