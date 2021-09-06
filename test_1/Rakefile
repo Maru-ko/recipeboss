@@ -1,0 +1,4 @@
+desc 'Run tests'
+task :test do
+  sh 'ruby ./test/recipe_test.rb'
+end

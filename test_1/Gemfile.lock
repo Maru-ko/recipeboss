@@ -58,6 +58,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rake (13.0.6)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     simplecov (0.21.2)
@@ -93,6 +94,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rack-test
+  rake
   simplecov
   sinatra (~> 1.4.7)
   sinatra-contrib
