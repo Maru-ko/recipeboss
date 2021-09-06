@@ -1,3 +1,8 @@
+require 'sinatra'
+require_relative '../data/database_persistance.rb'
+
+DB = DatabasePersistance.new
+
 require "minitest/autorun"
 require "minitest/reporters"
 
@@ -13,5 +18,12 @@ class RecipeTest < Minitest::Test
     recipe = Recipe.new(nil, "name", "30 min")
 
     assert(recipe.is_a?(Recipe))
+  end
+
+  def test_find_recipe_at_id
+    recipe = Recipe.find(1);
+
+    assert_equal("pasta", recipe.name)
+    assert_equal(1, recipe.id)
   end
 end

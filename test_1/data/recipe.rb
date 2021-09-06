@@ -111,7 +111,7 @@ class Recipe
 
   def self.tuple_to_recipe_instance(tuple, ingredients, steps, filters)
     Recipe.new(
-      tuple["id"],
+      tuple["id"].to_i,
       tuple["name"],
       tuple["cook_time"],
       ingredients,

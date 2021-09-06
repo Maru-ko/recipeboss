@@ -3,7 +3,7 @@ require "pg"
 class DatabasePersistance
   attr_accessor :recipes
 
-  def initialize(logger)
+  def initialize(logger = nil)
     @db = if Sinatra::Base.production?
             PG.connect(ENV['DATABASE_URL'])
           else
@@ -17,7 +17,7 @@ class DatabasePersistance
   end
 
   def query(statement, *params)
-    @logger.info "#{statement}: #{params}"
+    @logger.info "#{statement}: #{params}" unless @logger.nil?
     @db.exec_params(statement, params)
   end
 end
