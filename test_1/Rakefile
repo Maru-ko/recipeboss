@@ -1,4 +1,25 @@
 desc 'Run tests'
-task :test do
+task 'test' do
   sh 'ruby ./test/recipe_test.rb'
+end
+
+desc 'Create development environment database'
+task 'db:create' do
+  sh 'createdb test_db1'
+end
+
+desc 'Load schema into development environment database'
+task 'db:schema:load' do
+  sh "psql -d test_db1 < #{File.expand_path("./schema.sql")}"
+end
+
+desc 'Seed development environment database'
+task 'db:seed' do
+  sh "psql -d test_db1 < #{File.expand_path("./seed.sql")}"
+  # sh "psql -c \"\\copy bidders FROM #{File.expand_path("./seed.csv") WITH HEADER CSV;\""
+end
+
+desc 'Drop development environment database'
+task 'db:drop' do
+  sh 'dropdb test_db1'
 end
