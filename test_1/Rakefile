@@ -1,7 +1,6 @@
-desc 'Run tests'
-task 'test' do
-  sh 'ruby ./test/recipe_test.rb'
-end
+require "rake/testtask"
+
+# Database creation
 
 desc 'Create development environment database'
 task 'db:create' do
@@ -23,3 +22,15 @@ desc 'Drop development environment database'
 task 'db:drop' do
   sh 'dropdb test_db1'
 end
+
+# Running tests on the app
+
+desc 'Run tests'
+task :default => :test
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList['test/*_test.rb']
+end
+
