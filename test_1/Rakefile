@@ -4,23 +4,25 @@ require "rake/testtask"
 
 desc 'Create development environment database'
 task 'db:create' do
-  sh 'createdb test_db1'
+  sh 'createdb recipe_boss'
 end
 
 desc 'Load schema into development environment database'
 task 'db:schema:load' do
-  sh "psql -d test_db1 < #{File.expand_path("./schema.sql")}"
+  sh "psql -d recipe_boss < #{File.expand_path("./schema.sql")}"
 end
 
 desc 'Seed development environment database'
 task 'db:seed' do
-  sh "psql -d test_db1 < #{File.expand_path("./seed.sql")}"
-  # sh "psql -c \"\\copy bidders FROM #{File.expand_path("./seed.csv") WITH HEADER CSV;\""
+  # sh "psql -d recipe_boss < #{File.expand_path("./seed.sql")}"
+  sh "psql -d recipe_boss -c \"\\copy recipes FROM #{File.expand_path("./db_csv/recipes.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy ingredients FROM #{File.expand_path("./db_csv/ingredients.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy steps FROM #{File.expand_path("./db_csv/steps.csv")} WITH HEADER CSV;\""
 end
 
 desc 'Drop development environment database'
 task 'db:drop' do
-  sh 'dropdb test_db1'
+  sh 'dropdb recipe_boss'
 end
 
 # Databse creation for test environment
