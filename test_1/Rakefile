@@ -1,6 +1,6 @@
 require "rake/testtask"
 
-# Database creation
+# Database creation for development environment
 
 desc 'Create development environment database'
 task 'db:create' do
@@ -21,6 +21,29 @@ end
 desc 'Drop development environment database'
 task 'db:drop' do
   sh 'dropdb test_db1'
+end
+
+# Databse creation for test environment
+
+desc 'Create test environment database'
+task 'db:test:create' do
+  sh 'createdb recipe_boss_test'
+end
+
+desc 'Load schema into test environment database'
+task 'db:test:schema:load' do
+  sh "psql -d recipe_boss_test < #{File.expand_path("./schema.sql")}"
+end
+
+desc 'Seed test environment database'
+task 'db:test:seed' do
+  sh "psql -d recipe_boss_test < #{File.expand_path("./seed.sql")}"
+  # sh "psql -c \"\\copy bidders FROM #{File.expand_path("./seed.csv") WITH HEADER CSV;\""
+end
+
+desc 'Drop test environment database'
+task 'db:test:drop' do
+  sh 'dropdb recipe_boss_test'
 end
 
 # Running tests on the app
