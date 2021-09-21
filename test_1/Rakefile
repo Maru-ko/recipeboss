@@ -1,0 +1,61 @@
+require "rake/testtask"
+
+# Database creation for development environment
+
+desc 'Create development environment database'
+task 'db:create' do
+  sh 'createdb recipe_boss'
+end
+
+desc 'Load schema into development environment database'
+task 'db:schema:load' do
+  sh "psql -d recipe_boss < #{File.expand_path("./schema.sql")}"
+end
+
+desc 'Seed development environment database'
+task 'db:seed' do
+  sh "psql -d recipe_boss -c \"\\copy recipes FROM #{File.expand_path("./db_csv/recipes.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy ingredients FROM #{File.expand_path("./db_csv/ingredients.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy steps FROM #{File.expand_path("./db_csv/steps.csv")} WITH HEADER CSV;\""
+end
+
+desc 'Drop development environment database'
+task 'db:drop' do
+  sh 'dropdb recipe_boss'
+end
+
+# Databse creation for test environment
+
+desc 'Create test environment database'
+task 'db:test:create' do
+  sh 'createdb recipe_boss_test'
+end
+
+desc 'Load schema into test environment database'
+task 'db:test:schema:load' do
+  sh "psql -d recipe_boss_test < #{File.expand_path("./schema.sql")}"
+end
+
+desc 'Seed test environment database'
+task 'db:test:seed' do
+  sh "psql -d recipe_boss_test -c \"\\copy recipes FROM #{File.expand_path("./db_csv/recipes.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss_test -c \"\\copy ingredients FROM #{File.expand_path("./db_csv/ingredients.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss_test -c \"\\copy steps FROM #{File.expand_path("./db_csv/steps.csv")} WITH HEADER CSV;\""
+end
+
+desc 'Drop test environment database'
+task 'db:test:drop' do
+  sh 'dropdb recipe_boss_test'
+end
+
+# Running tests on the app
+
+desc 'Run tests'
+task :default => :test
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList['test/*_test.rb']
+end
+
