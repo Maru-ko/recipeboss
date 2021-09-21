@@ -14,9 +14,10 @@ end
 
 desc 'Seed development environment database'
 task 'db:seed' do
-  sh "psql -d recipe_boss -c \"\\copy recipes FROM #{File.expand_path("./db_csv/recipes.csv")} WITH HEADER CSV;\""
-  sh "psql -d recipe_boss -c \"\\copy ingredients FROM #{File.expand_path("./db_csv/ingredients.csv")} WITH HEADER CSV;\""
-  sh "psql -d recipe_boss -c \"\\copy steps FROM #{File.expand_path("./db_csv/steps.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy recipes(name, cook_time) FROM #{File.expand_path("./db_seed/recipes.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy ingredients(name, recipe_id) FROM #{File.expand_path("./db_seed/ingredients.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy steps(name, recipe_id) FROM #{File.expand_path("./db_seed/steps.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss < #{File.expand_path("./db_seed/filters.sql")}"
 end
 
 desc 'Drop development environment database'
@@ -38,9 +39,10 @@ end
 
 desc 'Seed test environment database'
 task 'db:test:seed' do
-  sh "psql -d recipe_boss_test -c \"\\copy recipes FROM #{File.expand_path("./db_csv/recipes.csv")} WITH HEADER CSV;\""
-  sh "psql -d recipe_boss_test -c \"\\copy ingredients FROM #{File.expand_path("./db_csv/ingredients.csv")} WITH HEADER CSV;\""
-  sh "psql -d recipe_boss_test -c \"\\copy steps FROM #{File.expand_path("./db_csv/steps.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy recipes(name, cook_time) FROM #{File.expand_path("./db_seed/recipes.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy ingredients(name, recipe_id) FROM #{File.expand_path("./db_seed/ingredients.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss -c \"\\copy steps(name, recipe_id) FROM #{File.expand_path("./db_seed/steps.csv")} WITH HEADER CSV;\""
+  sh "psql -d recipe_boss < #{File.expand_path("./db_seed/filters.sql")}"
 end
 
 desc 'Drop test environment database'
