@@ -5,10 +5,10 @@
 <form action="/recipes/new/links/inputs" method="get">
   <dl>
     <dt>
-      <label for="recipe_link">Link:</label>
+      <label for="recipe_link">Link: </label>
     </dt>
     <dd>
-      <input name="recipe_link" placeholder="Recipe Link" type= "text">
+      <input name="recipe_link" placeholder='<%= session.delete(:message) %>' type= "text">
     </dd>
   </dl>
     <fieldset class="actions">

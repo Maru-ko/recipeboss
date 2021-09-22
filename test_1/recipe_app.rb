@@ -72,8 +72,10 @@ def create_steps(recipe_id)
 end
 
 def create_filters(recipe_id)
-  params[:filters].each do |filter|
-    Filters.set_recipe_filter(recipe_id, filter)
+  unless params[:filter].nil?
+    params[:filters].each do |filter|
+      Filters.set_recipe_filter(recipe_id, filter)
+    end
   end
 end
 
@@ -119,7 +121,6 @@ end
 
 # Show all recipes
 get '/all_recipes' do
-  # @recipe_book = RecipeBook.all
   erb :all_recipes, layout: :layout
 end
 
@@ -136,17 +137,23 @@ end
 
 get '/recipes/new/links/inputs' do
   link = params[:recipe_link]
-  url = URI.open("https://plainoldrecipe.com/recipe?url=#{link}")
-  html = Nokogiri::HTML(url)
-  @recipe_name = get_recipe_name_from_link(html)
-  @ingredients = get_ingredients_from_link(html)
-  @steps = get_steps_from_link(html)
-  @filters = Filters.names
+  begin
+    url = URI.open("https://plainoldrecipe.com/recipe?url=#{link}")
+  rescue
+    session[:message] = 'The link was invalid'
+    redirect '/recipes/new/links'
+  else
+    html = Nokogiri::HTML(url)
+    @recipe_name = get_recipe_name_from_link(html)
+    @ingredients = get_ingredients_from_link(html)
+    @steps = get_steps_from_link(html)
+    @filters = Filters.names
 
-  session[:num_of_ingredients] ||= @ingredients.length
-  session[:num_of_steps] ||= @steps.length
-
-  erb :new_recipe_links_inputs, layout: :layout
+    session[:num_of_ingredients] ||= @ingredients.length
+    session[:num_of_steps] ||= @steps.length
+    
+    erb :new_recipe_links_inputs, layout: :layout
+  end
 end
 
 get '/recipes/new/links' do
