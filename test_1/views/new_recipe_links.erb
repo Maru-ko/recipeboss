@@ -1,0 +1,370 @@
+<div class="new_recipe_header">
+      <h1>Please enter the recipe link: </h1>
+</div>
+
+<form action="/recipes/new/links/inputs" method="get">
+  <dl>
+    <dt>
+      <label for="recipe_link">Link: </label>
+    </dt>
+    <dd>
+      <input name="recipe_link" placeholder='<%= session.delete(:message) %>' type= "text">
+    </dd>
+  </dl>
+    <fieldset class="actions">
+      <input type="submit" value="Input">
+    </fieldset>
+</form>
+
+<h3>Supported Websites: </h3>
+
+<ul style="columns: 2">
+  
+  <li>101cookbooks.com</li>
+  
+  <li>750g.com</li>
+  
+  <li>acouplecooks.com</li>
+  
+  <li>afghankitchenrecipes.com</li>
+  
+  <li>akispetretzikis.com</li>
+  
+  <li>allrecipes.com</li>
+  
+  <li>alltommat.se</li>
+  
+  <li>amazingribs.com</li>
+  
+  <li>ambitiouskitchen.com</li>
+  
+  <li>archanaskitchen.com</li>
+  
+  <li>atelierdeschefs.fr</li>
+  
+  <li>averiecooks.com</li>
+  
+  <li>baking-sense.com</li>
+  
+  <li>bakingmischief.com</li>
+  
+  <li>bbc.co.uk</li>
+  
+  <li>bbc.com</li>
+  
+  <li>bbcgoodfood.com</li>
+  
+  <li>bettycrocker.com</li>
+  
+  <li>bigoven.com</li>
+  
+  <li>blueapron.com</li>
+  
+  <li>bonappetit.com</li>
+  
+  <li>bowlofdelicious.com</li>
+  
+  <li>budgetbytes.com</li>
+  
+  <li>castironketo.net</li>
+  
+  <li>cdkitchen.com</li>
+  
+  <li>chefkoch.de</li>
+  
+  <li>claudia.abril.com.br</li>
+  
+  <li>closetcooking.com</li>
+  
+  <li>cookeatshare.com</li>
+  
+  <li>cookieandkate.com</li>
+  
+  <li>cooking.nytimes.com</li>
+  
+  <li>cookinglight.com</li>
+  
+  <li>cookpad.com</li>
+  
+  <li>cookstr.com</li>
+  
+  <li>copykat.com</li>
+  
+  <li>countryliving.com</li>
+  
+  <li>cucchiaio.it</li>
+  
+  <li>cuisineaz.com</li>
+  
+  <li>cybercook.com.br</li>
+  
+  <li>delish.com</li>
+  
+  <li>dinneratthezoo.com</li>
+  
+  <li>domesticate-me.com</li>
+  
+  <li>downshiftology.com</li>
+  
+  <li>dr.dk</li>
+  
+  <li>eatingbirdfood.com</li>
+  
+  <li>eatsmarter.com</li>
+  
+  <li>eatsmarter.de</li>
+  
+  <li>eatwhattonight.com</li>
+  
+  <li>en.wikibooks.org</li>
+  
+  <li>epicurious.com</li>
+  
+  <li>essen-und-trinken.de</li>
+  
+  <li>fattoincasadabenedetta.it</li>
+  
+  <li>fifteenspatulas.com</li>
+  
+  <li>finedininglovers.com</li>
+  
+  <li>fitmencook.com</li>
+  
+  <li>food.com</li>
+  
+  <li>food52.com</li>
+  
+  <li>foodandwine.com</li>
+  
+  <li>foodnetwork.com</li>
+  
+  <li>foodrepublic.com</li>
+  
+  <li>forksoverknives.com</li>
+  
+  <li>geniuskitchen.com</li>
+  
+  <li>gimmesomeoven.com</li>
+  
+  <li>glebekitchen.com</li>
+  
+  <li>gonnawantseconds.com</li>
+  
+  <li>gousto.co.uk</li>
+  
+  <li>greatbritishchefs.com</li>
+  
+  <li>halfbakedharvest.com</li>
+  
+  <li>hassanchef.com</li>
+  
+  <li>healthyeating.nhlbi.nih.gov</li>
+  
+  <li>heb.com</li>
+  
+  <li>heinzbrasil.com.br</li>
+  
+  <li>hellofresh.co.uk</li>
+  
+  <li>hellofresh.com</li>
+  
+  <li>hellofresh.de</li>
+  
+  <li>hellofresh.fr</li>
+  
+  <li>hervecuisine.com</li>
+  
+  <li>hostthetoast.com</li>
+  
+  <li>indianhealthyrecipes.com</li>
+  
+  <li>innit.com</li>
+  
+  <li>inspiralized.com</li>
+  
+  <li>jamieoliver.com</li>
+  
+  <li>jimcooksfoodgood.com</li>
+  
+  <li>joyfoodsunshine.com</li>
+  
+  <li>justbento.com</li>
+  
+  <li>kennymcgovern.com</li>
+  
+  <li>kingarthurbaking.com</li>
+  
+  <li>kochbar.de</li>
+  
+  <li>kuchnia-domowa.pl</li>
+  
+  <li>kuechengoetter.de</li>
+  
+  <li>lecker.de</li>
+  
+  <li>lecremedelacrumb.com</li>
+  
+  <li>letsdishrecipes.com</li>
+  
+  <li>littlespicejar.com</li>
+  
+  <li>livelytable.com</li>
+  
+  <li>lovingitvegan.com</li>
+  
+  <li>marmiton.org</li>
+  
+  <li>marthastewart.com</li>
+  
+  <li>matprat.no</li>
+  
+  <li>melskitchencafe.com</li>
+  
+  <li>minimalistbaker.com</li>
+  
+  <li>misya.info</li>
+  
+  <li>momswithcrockpots.com</li>
+  
+  <li>motherthyme.com</li>
+  
+  <li>mybakingaddiction.com</li>
+  
+  <li>mykitchen101.com</li>
+  
+  <li>mykitchen101en.com</li>
+  
+  <li>myplate.gov</li>
+  
+  <li>myrecipes.com</li>
+  
+  <li>nourishedbynutrition.com</li>
+  
+  <li>nutritionbynathalie.com</li>
+  
+  <li>ohsheglows.com</li>
+  
+  <li>paleorunningmomma.com</li>
+  
+  <li>panelinha.com.br</li>
+  
+  <li>paninihappy.com</li>
+  
+  <li>pickledplum.com</li>
+  
+  <li>popsugar.com</li>
+  
+  <li>primaledgehealth.com</li>
+  
+  <li>przepisy.pl</li>
+  
+  <li>purelypope.com</li>
+  
+  <li>purplecarrot.com</li>
+  
+  <li>rachlmansfield.com</li>
+  
+  <li>rainbowplantlife.com</li>
+  
+  <li>realsimple.com</li>
+  
+  <li>receitas.globo.com</li>
+  
+  <li>receitas.ig.com.br</li>
+  
+  <li>recipes.farmhousedelivery.com</li>
+  
+  <li>recipes.timesofindia.com</li>
+  
+  <li>recipietineats.com</li>
+  
+  <li>redhousespice.com</li>
+  
+  <li>reishunger.de</li>
+  
+  <li>ricette.giallozafferano.it</li>
+  
+  <li>sallysbakingaddiction.com</li>
+  
+  <li>saveur.com</li>
+  
+  <li>seriouseats.com</li>
+  
+  <li>simplyquinoa.com</li>
+  
+  <li>simplyrecipes.com</li>
+  
+  <li>simplywhisked.com</li>
+  
+  <li>skinnytaste.com</li>
+  
+  <li>smittenkitchen.com</li>
+  
+  <li>southernliving.com</li>
+  
+  <li>spendwithpennies.com</li>
+  
+  <li>steamykitchen.com</li>
+  
+  <li>streetkitchen.hu</li>
+  
+  <li>sunbasket.com</li>
+  
+  <li>sweetcsdesigns.com</li>
+  
+  <li>sweetpeasandsaffron.com</li>
+  
+  <li>tasteofhome.com</li>
+  
+  <li>tastesoflizzyt.com</li>
+  
+  <li>tasty.co</li>
+  
+  <li>tastykitchen.com</li>
+  
+  <li>thatlowcarblife.com</li>
+  
+  <li>theclevercarrot.com</li>
+  
+  <li>thehappyfoodie.co.uk</li>
+  
+  <li>thekitchenmagpie.com</li>
+  
+  <li>thekitchn.com</li>
+  
+  <li>thenutritiouskitchen.co</li>
+  
+  <li>thepioneerwoman.com</li>
+  
+  <li>thespruceeats.com</li>
+  
+  <li>thevintagemixer.com</li>
+  
+  <li>thewoksoflife.com</li>
+  
+  <li>tine.no</li>
+  
+  <li>tudogostoso.com.br</li>
+  
+  <li>twopeasandtheirpod.com</li>
+  
+  <li>vanillaandbean.com</li>
+  
+  <li>vegolosi.it</li>
+  
+  <li>vegrecipesofindia.com</li>
+  
+  <li>watchwhatueat.com</li>
+  
+  <li>whatsgabycooking.com</li>
+  
+  <li>wholefoodsmarket.co.uk</li>
+  
+  <li>wholefoodsmarket.com</li>
+  
+  <li>www.mindmegette.hu</li>
+  
+  <li>yemek.com</li>
+  
+  <li>yummly.com</li>
+</ul>

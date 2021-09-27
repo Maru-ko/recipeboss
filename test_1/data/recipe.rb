@@ -48,7 +48,7 @@ class Recipe
   def self.all
     all_recipes = []
 
-    recipe_sql = "SELECT * FROM recipes"
+    recipe_sql = "SELECT * FROM recipes ORDER BY name"
     recipes = DB.query(recipe_sql)
 
     recipes.each do |recipe|

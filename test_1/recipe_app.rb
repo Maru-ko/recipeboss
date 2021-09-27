@@ -2,9 +2,10 @@ require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'tilt/erubis'
-# require 'airrecord'
 require 'pry'
 require 'pry-byebug'
+require 'nokogiri'
+require 'open-uri'
 
 require_relative './data/database_persistance'
 
@@ -52,11 +53,6 @@ def initialize_new_recipe
   session[:num_of_steps] ||= 3
 end
 
-# Refactor ingredients and steps to two methods for separation of concerns.
-# If I change any logic about Ingredients, that shouldn't impact Steps and vice versa
-# Ideally, these methods should continue to work even if using Airtable.
-# Because both data in PSQL and Airtable are organized using Relational Database style.
-
 def create_ingredients(recipe_id)
     session[:num_of_ingredients].times do |num|
       new_ingredient_name = params["ingredient#{num + 1}"]
@@ -76,14 +72,46 @@ def create_steps(recipe_id)
 end
 
 def create_filters(recipe_id)
-  params[:filters].each do |filter|
-    Filters.set_recipe_filter(recipe_id, filter)
+  unless params[:filter].nil?
+    params[:filters].each do |filter|
+      Filters.set_recipe_filter(recipe_id, filter)
+    end
   end
 end
 
 def clear_recipe_log
   session.delete(:num_of_steps)
   session.delete(:num_of_ingredients)
+end
+
+def get_ingredients_from_link(html)
+  ingredients = []
+  
+  html.search("ul.ingredients-list").each do |thing|
+    thing.css("li").each do |ingredient|
+      ingredients << ingredient.content
+    end
+  end
+  ingredients
+end
+
+def get_recipe_name_from_link(html)
+  name = ""
+  html.search("h1").each do |thing|
+    name << thing.content
+  end
+  name
+end
+
+def get_steps_from_link(html)
+  steps = []
+
+  html.search("ol").each do |thing|
+    thing.css("li").each do |description|
+      steps << description.content
+    end
+  end
+  steps
 end
 
 # Main Page
@@ -93,35 +121,63 @@ end
 
 # Show all recipes
 get '/all_recipes' do
-  # @recipe_book = RecipeBook.all
   erb :all_recipes, layout: :layout
 end
 
 # -----------------------------Create new recipe--------------------------------
 get '/recipes/new' do
+  erb :new_recipe, layout: :layout
+end
+
+get '/recipes/new/manual' do
   initialize_new_recipe
   @filters = Filters.names
-  erb :new_recipe, layout: :layout
+  erb :new_recipe_manual, layout: :layout
+end
+
+get '/recipes/new/links/inputs' do
+  link = params[:recipe_link]
+  begin
+    url = URI.open("https://plainoldrecipe.com/recipe?url=#{link}")
+  rescue
+    session[:message] = 'The link was invalid'
+    redirect '/recipes/new/links'
+  else
+    html = Nokogiri::HTML(url)
+    @recipe_name = get_recipe_name_from_link(html)
+    @ingredients = get_ingredients_from_link(html)
+    @steps = get_steps_from_link(html)
+    @filters = Filters.names
+
+    session[:num_of_ingredients] ||= @ingredients.length
+    session[:num_of_steps] ||= @steps.length
+    
+    erb :new_recipe_links_inputs, layout: :layout
+  end
+end
+
+get '/recipes/new/links' do
+  erb :new_recipe_links, layout: :layout
 end
 
 get '/recipes/new/ingredients/add' do
   session[:num_of_ingredients] += 1
-  redirect '/recipes/new'
+  redirect '/recipes/new/manual'
 end
 
 get '/recipes/new/ingredients/delete' do
   session[:num_of_ingredients] -= 1
-  redirect '/recipes/new'
+  redirect '/recipes/new/manual'
 end
 
 get '/recipes/new/steps/add' do
   session[:num_of_steps] += 1
-  redirect '/recipes/new'
+  redirect '/recipes/new/manual'
 end
 
 get '/recipes/new/steps/delete' do
   session[:num_of_steps] -= 1
-  redirect '/recipes/new'
+  redirect '/recipes/new/manual'
 end
 
 def recipe_name_validation(name)
