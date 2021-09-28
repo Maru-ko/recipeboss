@@ -20,7 +20,7 @@ class RecipeTest < Minitest::Test
     DB.query("DROP SCHEMA IF EXISTS public CASCADE;")
     DB.query("CREATE SCHEMA public;")
 
-    file_path = File.expand_path("../test/schema.sql", __FILE__)
+    file_path = File.expand_path("../../schema.sql", __FILE__)
     sql = File.open(file_path, 'rb') { |file| file.read }
     DB.execute(sql)
   end
@@ -37,10 +37,39 @@ class RecipeTest < Minitest::Test
     sql = "INSERT INTO recipes (name, cook_time)  VALUES ('pasta', '30')"
     DB.query(sql)
 
-    recipe = Recipe.find(1);
+    recipe = Recipe.find(1)
 
-    assert_equal("wrong name", recipe.name)
+    assert_equal("pasta", recipe.name)
     assert_equal(1, recipe.id)
+  end
+
+  def test_create_recipe_on_database
+    recipe = {
+    "name" => "Test Recipe",
+    "cook_time" => 45,
+    }
+
+    saved_recipe = Recipe.create(recipe)
+    assert(saved_recipe.is_a?(Recipe))
+    assert_equal("Test Recipe", saved_recipe.name)
+    assert_equal(45, saved_recipe.cook_time)
+    assert_equal(1, saved_recipe.id)
+  end
+
+  def test_delete_recipe_from_database
+    sql = "INSERT INTO recipes (name, cook_time)  VALUES ('pasta', '30')"
+    DB.query(sql)
+
+    sql = "INSERT INTO recipes (name, cook_time)  VALUES ('pasta', '30')"
+    DB.query(sql)
+
+    recipe = Recipe.find(1)
+    recipe.destroy
+
+    deleted = Recipe.find(1)
+
+    assert_equal("", deleted)
+    assert_equal(1, Recipe.all.size)
   end
 
   def teardown
