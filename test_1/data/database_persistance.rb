@@ -1,15 +1,21 @@
 require "pg"
 
 class DatabasePersistance
-  attr_accessor :recipes
+  attr_accessor :db
 
   def initialize(logger = nil)
     @db = if Sinatra::Base.production?
             PG.connect(ENV['DATABASE_URL'])
+          elsif ENV["RACK_ENV"] == "test"
+            PG.connect(dbname: "recipe_boss_test")
           else
             PG.connect(dbname: "recipe_boss")
           end
-   @logger = logger
+    @logger = logger
+  end
+
+  def execute(sql)
+    @db.exec(sql)
   end
 
   def disconnect
