@@ -72,7 +72,7 @@ def create_steps(recipe_id)
 end
 
 def create_filters(recipe_id)
-  unless params[:filter].nil?
+  unless params[:filters].nil?
     params[:filters].each do |filter|
       Filters.set_recipe_filter(recipe_id, filter)
     end
@@ -288,8 +288,22 @@ get '/about' do
 end
 
 # ----------------------------------------Generate Weekly Menu------------------
+def generate_weekly_by_filter(filter)
+  @meal = case filter
+  when 'Vegetarian' then Recipe.generate_vegetarian_plan
+  when 'Quick and Easy' then Recipe.generate_quick_and_easy_plan
+  else Recipe.generate_normal_plan
+  end 
+end
+
+get '/weekly_options' do
+  erb :weekly_options, layout: :layout
+end
+
 get '/generate_weekly_menu' do
-  @weekly_recipes = @recipe_book.weekly_menu_generate('vegetarian')
+  @selection = params[:selection]
+  @menu = generate_weekly_by_filter(@selection)
+  @days = Recipe.menu_days
   erb :weekly_menu, layout: :layout
 end
 

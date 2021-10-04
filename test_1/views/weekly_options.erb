@@ -1,11 +1,19 @@
-<form method="get" action="/weekly/vegetarian">
-    <button type="submit">Vegetarian</button>
-</form>
+<form action="/generate_weekly_menu" method="get">
+  <p>Which meal plan would you like to have?</p>
+  <div>
+    <input type="radio" id="vegetarian"
+     name="selection" value="Vegetarian">
+    <label for="vegetarian">Vegetarian</label>
 
-<form method="get" action="/weekly/normal">
-    <button type="submit">Normal Diet</button>
-</form>
+    <input type="radio" id="normal"
+     name="selection" value="normal">
+    <label for="normal">Normal Diet</label>
 
-<form method="get" action="/weekly/quickandeasy">
-    <button type="submit">Quick and Easy</button>
+    <input type="radio" id="quickandeasy"
+     name="selection" value="Quick and Easy">
+    <label for="quickandeasy">Quick and Easy</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
 </form>
