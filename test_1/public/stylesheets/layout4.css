@@ -156,8 +156,10 @@ header {
 /* Footerz */
 
 footer {
-  background: linear-gradient(to right bottom, rgb(109, 156, 172) 0%,
-  rgb(65, 101, 114) 100%) 100% center no-repeat;
+background: rgb(109,156,172);
+background: radial-gradient(circle, rgba(109,156,172,1) 0%, rgba(65,101,114,1) 100%);
+/*  background: linear-gradient(to right bottom, rgb(109, 156, 172) 0%,
+  rgb(65, 101, 114) 100%) 100% center no-repeat;*/
   color: #edf2f4ff;
   border-top: 3px solid  #f3d3b8;
 
@@ -167,11 +169,11 @@ footer {
   grid-template-areas: 
     'appname'
     'bott-nav'
-    'git-link' 
+    'git-link';
     'copyright'; 
   place-items: center;
   box-sizing: border-box;
-  padding: 10px 0 30px;
+  padding: 10px 0 15px;
 }
 
 .logo-footer {
@@ -182,7 +184,7 @@ footer {
 }
 
 .logo-footer img {
-  height: 42px;
+  height: 40px;
 }
 
 .logo-footer h1 {
@@ -232,7 +234,7 @@ footer a:hover {
 .github h2 {
   margin: auto;
   padding-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .git-links ul {
@@ -243,7 +245,6 @@ footer a:hover {
 .git-links li {
   padding: 0 5px;
 }
-
 
 
 .copyright {
@@ -331,12 +332,17 @@ footer a:hover {
   background-color: rgb(0, 0, 0, 0.4);
 }
 
+/*green gradient white font*/
 .pghdr,
 .all_rep_heading,
 .new_recipe_header,
-.display-recipe .recipe-name {
+.display-recipe .recipe-name,
+.choose-pill, .choose-pill-2 {
   background: rgb(109,156,172);
-  background: linear-gradient(90deg, rgba(109,156,172,1) 0%, rgba(65,101,114,1) 52%, rgba(106,152,168,1) 100%);
+background: radial-gradient(circle, rgba(109,156,172,1) 0%, rgba(65,101,114,1) 100%);
+
+/*  background: rgb(109,156,172);
+  background: linear-gradient(90deg, rgba(109,156,172,1) 0%, rgba(65,101,114,1) 52%, rgba(106,152,168,1) 100%);*/
   color: white;
   font-family: Sofia;
   min-height: 65px;
@@ -349,7 +355,8 @@ footer a:hover {
 .pghdr h2,
 .all_rep_heading,
 .new_recipe_header,
-.display-recipe .recipe-name {
+.display-recipe .recipe-name,
+.choose-pill, .choose-pill-2 {
   font-size: 1.9rem;
   letter-spacing: 1.6px;
   display: flex;
@@ -379,7 +386,8 @@ main .idx-recipes {
   justify-content: center;
 }
 
-main .sample-recipes, .all_recipes {
+main .sample-recipes, .all_recipes,
+.choose-pill, .choose-pill-2 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -404,12 +412,14 @@ background: radial-gradient(circle, rgba(228,226,224,1) 0%, rgba(230,223,217,1) 
 }
 
 .sample-recipes ul,
-.all_recipes {
+.all_recipes,
+.choose-pill, .choose-pill-2 {
   padding: 30px;
 }
 
 main .sample-recipes li,
-.all_recipes li {
+.all_recipes li,
+.choose-pill li, .choose-pill-2 li {
   padding: 15px 0;
   list-style-image: ;
  /* list-style: url(/images/recipe_app.png);*/
@@ -429,21 +439,24 @@ main .sample-recipes li:before {
 
 
 main .sample-recipes a,
-.all_recipes a {
+.all_recipes a,
+.choose-pill a, .choose-pill-2 a {
   color: rgb(65, 101, 114);
   font-family: Roboto;
   font-weight: 500;
 }
 
 main .sample-recipes a:hover,
-.all_recipes a:hover {
+.all_recipes a:hover,
+.choose-pill a:hover, .choose-pill-2 a:hover {
   color: #e69a59;
   transition: 0.6s;
 }
 
 /* all the recipes page */
 
-.all_the_recipes_page {
+.all_the_recipes_page,
+.choose-pill, .choose-pill-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -455,17 +468,20 @@ main .sample-recipes a:hover,
 }
 
 
-.all_recipes {
+.all_recipes,
+.choose-pill, .choose-pill-2 {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
 
-.all_recipes ul {
+.all_recipes ul,
+.choose-pill ul, .choose-pill-2 ul {
   list-style: none;
   text-decoration: none;
 }
 
+/*this adds a recipe icon to the left*/
 .all_recipes li:before {
   content: '';
   display: inline-block;
@@ -478,20 +494,23 @@ main .sample-recipes a:hover,
   text-decoration: none;
 }
 
-.all_recipes li a {
+.all_recipes li a,
+.choose-pill li a, .choose-pill-2 a {
   text-decoration: none;
 }
 
 
 /*  Let's add new recipes, cmon! */
 
-.add-recipe-page, .display-recipe {
+.add-recipe-page, .display-recipe,
+.choose-pill, .choose-pill-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.new_recipe{
+.new_recipe,
+.choose-pill, .choose-pill-2 {
   background-color: inherit;
   display: flex;
   flex-direction: column;
@@ -541,7 +560,8 @@ main .sample-recipes a:hover,
 }
 
 .ingredients,
-.recipe-name-time {
+.recipe-name-time,
+.choose-pill, .choose-pill-2 {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
@@ -582,7 +602,7 @@ main .sample-recipes a:hover,
   margin: 15px;
 }
 
-.botangatte a, .to-edit a{
+.botangatte a, .to-edit a {
   padding: 5px 20px;
   width: 45%;
   margin: auto;
@@ -793,5 +813,25 @@ background: radial-gradient(circle, rgba(228,226,224,1) 0%, rgba(230,223,217,1) 
 .addz {
 
 }
+
+
+.choose-pill {
+  align-items: center;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+
+.choose-pill2 .widthz {
+  align-items: center;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 600px;
+
+}
+
+
+
 
 
