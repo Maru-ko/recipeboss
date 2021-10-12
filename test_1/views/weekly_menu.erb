@@ -1,12 +1,16 @@
-<% @weekly_recipes.each do |day, recipes|%>
-    <% test = recipes.reject { |recipe| recipe == nil } %>
-    <p><%= day%></p>
-  <ul>
-    <% test.each do |recipe|%>
-    <li>
-      <%= recipe.name%>
-    </li>
+<% @days.each do |day| %>
+  <% current_day = @menu[day]%>
+  <div>
+    <dl>
+      <h1><%= day%></h1>
+      <dt>Breakfast</dt>
+      <dd><%= current_day['Breakfast']%></dd>
+      <dt>Lunch</dt>
+      <dd><%= current_day['Lunch']%></dd>
+      <dt>Dinner</dt>
+      <dd><%= current_day['Dinner']%></dd>
+    </dl>
+  </div>
+<%end%>
+
   
-  <% end %>
-  </ul>
-  <% end %>

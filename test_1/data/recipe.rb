@@ -28,6 +28,8 @@ end
 class Recipe
   attr_accessor :name, :cook_time, :ingredients, :steps, :id, :filters
 
+  WEEKDAY = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+
   def initialize(id, name, cook_time, ingredients = [], steps = [], filters = [])
     @id = id
     @name = name
@@ -35,6 +37,10 @@ class Recipe
     @ingredients = ingredients
     @steps = steps
     @filters = filters
+  end
+
+  def self.menu_days
+    WEEKDAY
   end
 
   def delete_ingredient(ingredient_id)
@@ -141,5 +147,60 @@ class Recipe
     sql = "UPDATE recipes SET name = $1, cook_time = $2 WHERE id = $3"
     DB.query(sql, @name, @cook_time, @id)
   end
+
+  def self.meals_by_two_filters(filter1, filter2)
+    sql = <<~FILTER
+    SELECT recipes.name FROM recipes
+    JOIN filters_recipes ON filters_recipes.recipe_id = recipes.id
+    JOIN filters ON filters.id = filters_recipes.filter_id
+    WHERE filters.name = $1 OR filters.name = $2
+    GROUP BY recipes.name
+    HAVING COUNT(recipes.name) = 2;
+  FILTER
+
+    DB.query(sql, filter1, filter2).values.map { |meal| meal[0] }.shuffle
+  end
+
+  def self.meals_by_one_filter(filter)
+    sql = <<~FILTER
+    SELECT recipes.name FROM recipes
+    JOIN filters_recipes ON filters_recipes.recipe_id = recipes.id
+    JOIN filters ON filters.id = filters_recipes.filter_id
+    WHERE filters.name = $1
+  FILTER
+
+    DB.query(sql, filter).values.map { |meal| meal[0] }
+  end
+
+  def self.generate_day_plan(breakfast, non_breakfast)
+    plan = {}
+    WEEKDAY.length.times do |i|
+      day = WEEKDAY[i]
+      plan[day] = {}
+      plan[day]['Breakfast'] = breakfast.pop || "You need more recipes"
+      plan[day]['Lunch'] = non_breakfast.pop || "You need more recipes"
+      plan[day]['Dinner'] = non_breakfast.pop || "You need more recipes"
+    end
+    plan
+  end 
+
+  def self.generate_vegetarian_plan
+    breakfast = meals_by_two_filters('Vegetarian', 'Breakfast')
+    non_breakfast = (meals_by_one_filter('Vegetarian') - breakfast).shuffle
+    generate_day_plan(breakfast, non_breakfast)
+  end
+
+  def self.generate_quick_and_easy_plan
+    breakfast = meals_by_two_filters('Quick and Easy', 'Breakfast')
+    non_breakfast = (meals_by_one_filter('Quick and Easy') - breakfast).shuffle
+    generate_day_plan(breakfast, non_breakfast)
+  end
+
+  def self.generate_normal_plan
+    breakfast = meals_by_one_filter('Breakfast')
+    non_breakfast = (Recipe.all.map { |recipe| recipe.name } - breakfast).shuffle
+    generate_day_plan(breakfast, non_breakfast)
+  end
+
 end
 
