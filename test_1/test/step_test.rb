@@ -1,3 +1,10 @@
+ENV["RACK_ENV"] = "test"
+
+require 'sinatra'
+require_relative '../data/database_persistance.rb'
+
+DB = DatabasePersistance.new
+
 require "minitest/autorun"
 require "minitest/reporters"
 

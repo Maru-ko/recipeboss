@@ -1,3 +1,5 @@
+# ENV["RACK_ENV"] = "development"
+
 require 'dotenv/load'
 require 'sinatra'
 require 'sinatra/reloader' if development?
