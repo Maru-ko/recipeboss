@@ -56,10 +56,18 @@ end
 
 desc 'Run tests'
 task :default => :test
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << "test"
-  t.libs << "lib"
-  t.test_files = FileList['test/*_test.rb']
+task :test do
+    sh "ruby #{File.expand_path("./test/recipe_test.rb")}"
+    sh "ruby #{File.expand_path("./test/step_test.rb")}"
+    sh "ruby #{File.expand_path("./test/ingredient_test.rb")}"
+    sh "ruby #{File.expand_path("./test/recipe_app_test.rb")}"
 end
+
+# This code below doesn't seem to work atm.
+
+# Rake::TestTask.new(:test) do |t|
+#   t.libs << "test"
+#   t.libs << "lib"
+#   t.test_files = FileList['test/*_test.rb']
+# end
 
