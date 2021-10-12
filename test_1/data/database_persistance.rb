@@ -1,8 +1,6 @@
 require "pg"
 
 class DatabasePersistance
-  attr_accessor :db
-
   def initialize(logger = nil)
     @db = if Sinatra::Base.production?
             PG.connect(ENV['DATABASE_URL'])
